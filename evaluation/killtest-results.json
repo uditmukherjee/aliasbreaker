@@ -1,0 +1,290 @@
+{
+  "batch_pass": 9,
+  "adaptive_pass": 10,
+  "adaptive_only_wins": [
+    "case-005"
+  ],
+  "batch_only_wins": [],
+  "elapsed_s": 2.329174280166626,
+  "rows": [
+    {
+      "case": "case-001",
+      "n_candidates": 3,
+      "sigma": 3.0,
+      "true_P": 16.094,
+      "periods": [
+        16.094,
+        8.047,
+        32.187
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9923341192978471,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9757049017704805,
+        "obs_used": 1
+      }
+    },
+    {
+      "case": "case-002",
+      "n_candidates": 3,
+      "sigma": 4.0,
+      "true_P": 14.646,
+      "periods": [
+        14.646,
+        7.323,
+        29.292
+      ],
+      "batch": {
+        "passed": false,
+        "abstain": true,
+        "truth_weight": 0.7030815163191558,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": false,
+        "abstain": true,
+        "truth_weight": 0.5696714706565434,
+        "obs_used": 6
+      }
+    },
+    {
+      "case": "case-003",
+      "n_candidates": 3,
+      "sigma": 5.0,
+      "true_P": 14.598,
+      "periods": [
+        14.598,
+        29.196,
+        7.299
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9999999999999805,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9999999924162745,
+        "obs_used": 2
+      }
+    },
+    {
+      "case": "case-004",
+      "n_candidates": 3,
+      "sigma": 6.0,
+      "true_P": 19.527,
+      "periods": [
+        19.527,
+        39.054,
+        9.763
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9999981155353652,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9999796794082922,
+        "obs_used": 5
+      }
+    },
+    {
+      "case": "case-005",
+      "n_candidates": 3,
+      "sigma": 3.0,
+      "true_P": 8.477,
+      "periods": [
+        8.477,
+        16.955,
+        4.239
+      ],
+      "batch": {
+        "passed": false,
+        "abstain": true,
+        "truth_weight": 0.8719420622062505,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9181871551298844,
+        "obs_used": 6
+      }
+    },
+    {
+      "case": "case-006",
+      "n_candidates": 4,
+      "sigma": 4.0,
+      "true_P": 5.969,
+      "periods": [
+        5.969,
+        2.985,
+        11.938,
+        1.201
+      ],
+      "batch": {
+        "passed": false,
+        "abstain": true,
+        "truth_weight": 0.8696680969826356,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": false,
+        "abstain": true,
+        "truth_weight": 0.2698123553844149,
+        "obs_used": 6
+      }
+    },
+    {
+      "case": "case-007",
+      "n_candidates": 3,
+      "sigma": 5.0,
+      "true_P": 5.864,
+      "periods": [
+        1.206,
+        11.727,
+        5.864
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.99998200036582,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9999922713407852,
+        "obs_used": 1
+      }
+    },
+    {
+      "case": "case-008",
+      "n_candidates": 4,
+      "sigma": 6.0,
+      "true_P": 5.21,
+      "periods": [
+        10.421,
+        5.21,
+        1.238,
+        2.605
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9995817353671729,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9769844863192991,
+        "obs_used": 4
+      }
+    },
+    {
+      "case": "case-009",
+      "n_candidates": 3,
+      "sigma": 3.0,
+      "true_P": 3.795,
+      "periods": [
+        1.358,
+        3.795,
+        7.59
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9996641905693896,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9879562892322818,
+        "obs_used": 4
+      }
+    },
+    {
+      "case": "case-010",
+      "n_candidates": 4,
+      "sigma": 4.0,
+      "true_P": 4.663,
+      "periods": [
+        9.325,
+        1.273,
+        2.331,
+        4.663
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9969395068967316,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9971955450755393,
+        "obs_used": 6
+      }
+    },
+    {
+      "case": "case-011",
+      "n_candidates": 3,
+      "sigma": 5.0,
+      "true_P": 4.973,
+      "periods": [
+        9.947,
+        4.973,
+        1.252
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9999993341644992,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9990390472647708,
+        "obs_used": 2
+      }
+    },
+    {
+      "case": "case-012",
+      "n_candidates": 3,
+      "sigma": 6.0,
+      "true_P": 9.691,
+      "periods": [
+        9.691,
+        19.382,
+        4.846
+      ],
+      "batch": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.986457456588289,
+        "obs_used": 6
+      },
+      "adaptive": {
+        "passed": true,
+        "abstain": false,
+        "truth_weight": 0.9764949433357145,
+        "obs_used": 2
+      }
+    }
+  ]
+}
