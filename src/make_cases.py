@@ -288,7 +288,7 @@ def gen_final(out_dir, manifest_path):
         "generator_commit": commit,
         "environment": {"python": platform.python_version(),
                         "numpy": np.__version__},
-        "cases": [c for s in QUOTAS for c in filled[s]],
+        "cases": [c for s in filled for c in filled[s]],
     }
     manifest_path.write_text(json.dumps(manifest, indent=2))
     print(f"manifest -> {manifest_path}")
