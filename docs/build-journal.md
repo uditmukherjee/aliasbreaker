@@ -59,3 +59,25 @@ Improvement Changelog.
   theta. Scripted-adaptive's stop-on-first-resolve shows a confirmation
   weakness (case-110 false-res at 2 obs) — a concrete headroom hypothesis for
   the LLM arm.
+- 2026-08-29 · ARCHITECTURE DECISION (human + Claude): the runtime agent is a
+  Claude Code project itself — a /aliasbreaker skill drives a locked-down
+  session (allowlist = World CLI only) headlessly via `claude -p`, model
+  pinned to Sonnet 5; trace auditor verifies no out-of-protocol tool call.
+  Rationale: subscription-based (no API key), richest trajectory format,
+  meta-story (runtime built in the harness that built it). Disclosed
+  tradeoffs: judges need Claude Code (runs on any ANTHROPIC_API_KEY) or the
+  keyless audit-replay path; sampling params not controllable in-harness.
+  Evidence-ledger rule added: every phase closes with artifact + journal row
+  + commit.
+- 2026-08-29 · A1 World CLI shipped (src/aliasbreaker/cli.py): start/state/
+  diagnostics/observe/finalize with per-run state dir + append-only action
+  log; legality enforced world-side (smoke test: chronology violation
+  correctly rejected with exit 2). Case fixtures serialized to
+  data/cases/dev/ (12 cases, same seeds as feasibility).
+- 2026-08-29 · A2 theta calibration (charter §3): 120 fresh cases incl. 12
+  natural basin-absent; grid {0.85,...,0.997}; smallest theta with worst-arm
+  FRR <= 5% is 0.997 (exactly 5.0%). FRR falls slowly with theta because
+  false resolutions are dominated by decisive wrong fits (incl. basin-absent
+  cases), not marginal crossings. Power cost disclosed: batch correct-rate
+  0.69 -> 0.47 across the grid. THETA_DEFAULT=0.997 committed; table in
+  evaluation/theta-calibration.json.

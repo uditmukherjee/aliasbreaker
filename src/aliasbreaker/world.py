@@ -49,6 +49,39 @@ class IllegalAction(Exception):
     pass
 
 
+def case_to_dict(case):
+    """Serialize a Case to a JSON-safe dict. Hidden fields live under
+    'hidden'; the runtime agent's locked profile never reads fixture files,
+    and the trace auditor verifies that."""
+    return {
+        "case_id": case.case_id, "seed": case.seed, "sigma": case.sigma,
+        "budget": case.budget,
+        "init_t": [float(v) for v in case.init_t],
+        "init_y": [float(v) for v in case.init_y],
+        "slot_t": [float(v) for v in case.slot_t],
+        "candidates": [float(p) for p in case.candidates],
+        "freq_df": case.freq_df,
+        "hidden": {
+            "slot_y": [float(v) for v in case.slot_y],
+            "true_params": case.true_params,
+            "true_basin_index": case.true_basin_index,
+        },
+    }
+
+
+def case_from_dict(d):
+    return Case(
+        case_id=d["case_id"], seed=int(d["seed"]), sigma=float(d["sigma"]),
+        budget=int(d["budget"]),
+        init_t=np.array(d["init_t"]), init_y=np.array(d["init_y"]),
+        slot_t=np.array(d["slot_t"]),
+        candidates=list(d["candidates"]), freq_df=float(d["freq_df"]),
+        slot_y=np.array(d["hidden"]["slot_y"]),
+        true_params=dict(d["hidden"]["true_params"]),
+        true_basin_index=int(d["hidden"]["true_basin_index"]),
+    )
+
+
 class Campaign:
     """Chronological follow-up campaign over a case's slots.
 

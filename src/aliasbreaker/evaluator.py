@@ -11,7 +11,9 @@ import numpy as np
 
 from .fitting import fit_basin, support_from_chi2
 
-THETA_DEFAULT = 0.9  # placeholder until charter calibration
+# Calibrated per charter §3 on 120 dev cases (smallest grid value with
+# worst-arm false-resolution rate <= 5%). See evaluation/theta-calibration.json.
+THETA_DEFAULT = 0.997
 
 
 def verdict(case, obs_t, obs_y, theta=THETA_DEFAULT):
