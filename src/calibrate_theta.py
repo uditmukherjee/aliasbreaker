@@ -46,7 +46,11 @@ def main():
         row = {}
         for arm, fn in ARMS.items():
             results = [fn(c, theta) for c in cases]
+            # Selection uses INTEGER counts (rounded rates are presentation
+            # only) — diff-gate finding 13.
             row[arm] = {
+                "false_resolution_count": sum(
+                    r["false_resolution"] for r in results),
                 "false_resolution_rate": round(
                     sum(r["false_resolution"] for r in results) / len(cases), 4),
                 "correct_rate": round(
@@ -54,16 +58,23 @@ def main():
                 "abstain_rate": round(
                     sum(r["abstained"] for r in results) / len(cases), 4),
             }
-        row["worst_arm_frr"] = max(v["false_resolution_rate"]
-                                   for v in row.values() if isinstance(v, dict))
+        row["worst_arm_frr_count"] = max(
+            v["false_resolution_count"] for v in row.values()
+            if isinstance(v, dict))
         table[str(theta)] = row
-        print(f"theta={theta}: worst-arm FRR={row['worst_arm_frr']:.3f}  "
+        print(f"theta={theta}: worst-arm FR count="
+              f"{row['worst_arm_frr_count']}/{len(cases)}  "
               + "  ".join(f"{a}: corr={row[a]['correct_rate']:.2f} "
-                          f"frr={row[a]['false_resolution_rate']:.3f}"
+                          f"fr={row[a]['false_resolution_count']}"
                           for a in ARMS))
 
-    chosen = next((th for th in THETA_GRID
-                   if table[str(th)]["worst_arm_frr"] <= FRR_BOUND), None)
+    chosen = next(
+        (th for th in THETA_GRID
+         if table[str(th)]["worst_arm_frr_count"] <= FRR_BOUND * len(cases)),
+        None)
+    if chosen is None:
+        raise SystemExit("no theta on the grid meets the FRR bound — "
+                         "charter amendment required before proceeding")
     elapsed = time.time() - t0
     out = {
         "theta_grid": THETA_GRID, "n_cases": len(cases),

@@ -129,6 +129,12 @@
    "phi": 0.39922745621619343,
    "gamma": -3.8492183143959426
   },
-  "true_basin_index": 2
+  "true_basin_index": 2,
+  "oracle": {
+   "resolvable": true,
+   "n_random": 2000,
+   "oracle_seed": 1234,
+   "theta": 0.997
+  }
  }
 }

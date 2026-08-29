@@ -1,30 +1,33 @@
-"""Headless launcher for the AliasBreaker runtime agent (LLM arm).
+"""Headless launcher for the AliasBreaker runtime agent (LLM arm) — v2.
 
-For each case x replicate: spawns a locked-down Claude Code session in
-runtime/ (`claude -p`), captures the stream-json transcript, then checks
-completion (verdict.json exists), runs the trace auditor, and collects the
-evaluator verdict. Replicate IDs are fixed up front (charter §7); a session
-that times out, errors, or fails audit scores as noncompletion/disqualified —
-recorded, never retried silently.
+Eligibility (post diff-gate 1): a run's verdict counts only if ALL hold —
+provider process exited 0 within timeout, transcript audits clean against the
+assigned case+run, and the recorded campaign replays exactly (fixture hash,
+measurements, verdict recomputation). Anything else scores as
+noncompletion/unresolved; the raw record is retained, never retried silently.
 
 Usage (repo root):
-  python scripts/run_llm_arm.py --cases data/cases/dev --label dev-shakedown \
+  python scripts/run_llm_arm.py --cases data/cases/dev --label dev-v1 \
       [--replicates 1] [--model claude-sonnet-5] [--timeout 900] [--only case-101]
 """
 
 import argparse
 import json
+import re
 import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from audit_trace import audit  # noqa: E402
-
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = ROOT / "runtime"
+sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src"))
+from audit_trace import audit  # noqa: E402
+from aliasbreaker.replay import replay  # noqa: E402
+
+SLUG = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 
 
 def claude_argv(prompt, model):
@@ -38,6 +41,11 @@ def claude_argv(prompt, model):
     return argv
 
 
+def _kill_tree(proc):
+    subprocess.run(["taskkill", "/F", "/T", "/PID", str(proc.pid)],
+                   capture_output=True)
+
+
 def run_one(case_path, run_id, model, timeout):
     run_dir = RUNTIME / "runs" / run_id
     if run_dir.exists():
@@ -48,27 +56,51 @@ def run_one(case_path, run_id, model, timeout):
               f"RUN: runs/{run_id} . Follow the protocol in CLAUDE.md "
               f"exactly. Begin with start; end with finalize.")
     transcript = RUNTIME / "runs" / f"{run_id}.transcript.jsonl"
+    stderr_file = RUNTIME / "runs" / f"{run_id}.stderr.log"
     t0 = time.time()
-    status = "completed"
-    try:
-        with open(transcript, "w", encoding="utf-8") as out:
-            subprocess.run(claude_argv(prompt, model), cwd=RUNTIME,
-                           stdout=out, stderr=subprocess.PIPE,
-                           stdin=subprocess.DEVNULL, timeout=timeout,
-                           check=False)
-    except subprocess.TimeoutExpired:
-        status = "timeout"
+    status, exit_code = "completed", None
+    with open(transcript, "w", encoding="utf-8") as out, \
+            open(stderr_file, "w", encoding="utf-8") as err:
+        proc = subprocess.Popen(claude_argv(prompt, model), cwd=RUNTIME,
+                                stdout=out, stderr=err,
+                                stdin=subprocess.DEVNULL)
+        try:
+            exit_code = proc.wait(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            _kill_tree(proc)
+            status = "timeout"
     elapsed = round(time.time() - t0, 1)
+    if status == "completed" and exit_code != 0:
+        status = "provider_error"
 
     verdict_path = run_dir / "verdict.json"
-    verdict = json.loads(verdict_path.read_text()) if verdict_path.exists() else None
+    verdict = (json.loads(verdict_path.read_text())
+               if verdict_path.exists() else None)
     if verdict is None and status == "completed":
         status = "noncompletion"
-    audit_result = audit(transcript) if transcript.exists() else {"ok": False}
+    audit_result = audit(transcript, expected_run=run_id,
+                         expected_case=case_path.stem)
+    replay_result = replay(run_dir) if verdict_path.exists() else {"ok": False}
+
+    eligible = (status == "completed" and audit_result["ok"]
+                and replay_result["ok"])
+    outcome = {
+        "eligible": eligible,
+        "correct": bool(verdict and verdict.get("correct")) if eligible else False,
+        "false_resolution": bool(verdict and verdict.get("false_resolution")) if eligible else False,
+        "abstained": bool(verdict and verdict.get("abstained")) if eligible else None,
+        "scored_as": ("verdict" if eligible else "noncompletion/unresolved"),
+    }
     return {
         "run_id": run_id, "case": case_path.stem, "status": status,
-        "elapsed_s": elapsed, "audit_ok": audit_result.get("ok", False),
-        "audit": audit_result, "verdict": verdict,
+        "exit_code": exit_code, "elapsed_s": elapsed,
+        "model_requested": None,  # filled by caller
+        "model_reported": audit_result.get("model_reported"),
+        "audit_ok": audit_result["ok"],
+        "replay_ok": replay_result.get("ok", False),
+        "outcome": outcome,
+        "audit": audit_result, "replay": replay_result,
+        "verdict_raw": verdict,
         "transcript": str(transcript.relative_to(ROOT)),
     }
 
@@ -82,6 +114,8 @@ def main():
     ap.add_argument("--timeout", type=int, default=900)
     ap.add_argument("--only", default=None)
     args = ap.parse_args()
+    if not SLUG.match(args.label):
+        raise SystemExit("label must be a lowercase slug ([a-z0-9-])")
 
     case_paths = sorted(Path(args.cases).resolve().glob("*.json"))
     if args.only:
@@ -95,26 +129,30 @@ def main():
             run_id = f"{args.label}-{case_path.stem}-r{rep}"
             print(f"running {run_id} ...", flush=True)
             r = run_one(case_path, run_id, args.model, args.timeout)
-            v = r["verdict"] or {}
-            print(f"  -> {r['status']} in {r['elapsed_s']}s  audit_ok="
-                  f"{r['audit_ok']}  resolved={v.get('resolved')}  "
-                  f"correct={v.get('correct')}  n_obs={v.get('n_obs')}",
+            r["model_requested"] = args.model
+            o = r["outcome"]
+            print(f"  -> {r['status']} in {r['elapsed_s']}s  "
+                  f"audit={r['audit_ok']} replay={r['replay_ok']} "
+                  f"eligible={o['eligible']} correct={o['correct']}",
                   flush=True)
             results.append(r)
 
-    out = ROOT / "evaluation" / f"llm-arm-{args.label}.json"
-    out.parent.mkdir(exist_ok=True)
+    n_eligible = sum(r["outcome"]["eligible"] for r in results)
     summary = {
-        "label": args.label, "model": args.model,
+        "label": args.label, "model_requested": args.model,
+        "models_reported": sorted({r["model_reported"] for r in results
+                                   if r["model_reported"]}),
         "n_runs": len(results),
-        "completed": sum(r["status"] == "completed" for r in results),
-        "audit_ok": sum(r["audit_ok"] for r in results),
-        "correct": sum(bool((r["verdict"] or {}).get("correct"))
-                       for r in results),
-        "false_resolutions": sum(bool((r["verdict"] or {}).get(
-            "false_resolution")) for r in results),
+        "n_eligible": n_eligible,
+        "ineligible": [r["run_id"] for r in results
+                       if not r["outcome"]["eligible"]],
+        "correct": sum(r["outcome"]["correct"] for r in results),
+        "false_resolutions": sum(r["outcome"]["false_resolution"]
+                                 for r in results),
         "results": results,
     }
+    out = ROOT / "evaluation" / f"llm-arm-{args.label}.json"
+    out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(summary, indent=2))
     print(f"\nsummary -> {out}")
     print(json.dumps({k: v for k, v in summary.items() if k != "results"},

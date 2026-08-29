@@ -116,3 +116,41 @@ Improvement Changelog.
   abstains — the demo's weaker greedy campaign topping out at 0.991 and
   abstaining (correct candidate leading, no false resolution) demonstrates
   exactly that incentive.
+- 2026-08-29 · Codex DIFF-GATE 1: NEEDS-REWORK, 14 findings (brainstorm/
+  diffgate1-codex.md). Accepted all Criticals: auditor's quoted-content
+  exemption allowed $()/backtick substitution (fixed: $, backticks, CR/LF
+  now forbidden raw, grammar parsed with shlex); CLI unbound to assigned
+  case/run and --theta overridable (fixed: --theta removed, path containment
+  under runs/ and data/cases/, fixture SHA-256 pinned at start and
+  re-verified every command; auditor enforces assigned case/run, exactly one
+  start first + one finalize last); launcher scored ineligible runs (fixed:
+  eligibility = clean exit + clean audit + clean replay, else scored
+  noncompletion, raw record retained); charter §8 audit replay implemented
+  (src/aliasbreaker/replay.py — fixture hash, action replay, measurement
+  match, verdict recomputation; tamper test: edited verdict.json detected).
+  Also: transactional ordering (log-before-state, verdict-before-flag),
+  mandatory --why, JSON argparse errors, exact theta + higher precision in
+  public state, basin separation 4->5 grid steps (charter amended), oracle
+  label + config serialized into fixtures at generation, calibration selects
+  on integer counts. Deferred with rationale: SQLite event store and MCP
+  rewrite (over-engineering at this scale — Bash grammar is now fail-closed
+  and disclosed), report hash-binding (minimal case-id check planned),
+  frozen-manifest launcher mode (built at freeze, Phase D).
+- 2026-08-29 · DEV SHAKEDOWN v1 (fixtures v1, prompt v1, Sonnet 5): 12 runs,
+  11 completed, 10 CORRECT, 0 false resolutions, obs 3-6. Case-111
+  noncompletion caused by orchestrator editing cli.py mid-flight (fixture-
+  hash field missing in its meta) — our fault, disclosed; its transcript
+  shows the agent attempting recovery with out-of-protocol commands (sleep,
+  2>&1), which the auditor correctly flagged. Audit failures on 105/107/108/
+  112 were auditor-v1 false positives (quoted absolute cd path blanked
+  before the runtime check) — fixed in auditor v2. Evidence:
+  evaluation/llm-arm-dev-v1.json.
+- 2026-08-29 · Fixtures v2 regenerated (basin separation 5 steps, oracle
+  labels embedded; all 12 dev cases resolvable). Non-LLM arms on fixtures v2
+  at theta=0.997: batch 6/12, even 4/12, adaptive 4/12, zero false
+  resolutions (evaluation/arms-dev-fixtures-v2.json). New observed failure
+  mode: scripted-adaptive burned the chronological cursor with greedy late
+  jumps and abstained at 3 obs on case-111 — cursor management joins
+  confirmation as a pre-registered LLM-headroom hypothesis. Tests 94/94
+  green after rework; CLI v2 + replay validated end-to-end incl. tamper
+  detection.

@@ -67,7 +67,7 @@ def fit_basin(t, y, sigma, P_center, df, half_width_steps=2.0, n_fine=25):
 
 
 def candidate_periods(t, y, sigma, delta_chi2_keep=12.0, max_candidates=6,
-                      min_sep_steps=4):
+                      min_sep_steps=5):
     """Candidate periods = top non-overlapping periodogram basins.
 
     Derived from the supplied observations only; the hidden truth is never an

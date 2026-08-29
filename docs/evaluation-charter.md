@@ -27,10 +27,12 @@ change requires rerunning every arm and documenting it in the changelog.
 Candidates come from a least-squares periodogram of the INITIAL observations
 only: frequency grid f ∈ [1/100, 1.2] cycles/day, step 1/(4·T_span); for each
 f, exact linear fit of (A, B, γ); Δχ² vs the constant-only model; candidate
-periods = top local maxima separated by ≥ 4 grid steps, within Δχ²_keep of the
+periods = top local maxima separated by ≥ 5 grid steps, within Δχ²_keep of the
 best peak, max 6. A candidate's identity is its frequency BASIN (±2 grid steps
-around its peak); every refit refines the period within the basin — basins are
-disjoint by construction, so identities are stable. The hidden truth is used ONLY
+around its peak); with ≥5-step separation, closed basins are strictly disjoint
+(no shared boundary frequency), so identities are stable. [Amended pre-freeze
+2026-08-29 from ≥4 after diff-gate 1 flagged that two centers exactly 4 steps
+apart share a boundary point.] The hidden truth is used ONLY
 to generate measurements and to score. Whether the true period's basin is in
 the candidate set is an evaluator-side fact.
 

@@ -1,0 +1,717 @@
+{
+  "label": "dev-v1",
+  "model": "claude-sonnet-5",
+  "n_runs": 12,
+  "completed": 11,
+  "audit_ok": 7,
+  "correct": 10,
+  "false_resolutions": 0,
+  "results": [
+    {
+      "run_id": "dev-v1-case-101-r1",
+      "case": "case-101",
+      "status": "completed",
+      "elapsed_s": 94.4,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-101-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 14,
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1,
+          "state": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999999848384411,
+        "truth_support": 0.9999999848384411,
+        "chi2s": [
+          14.808025149039745,
+          52.01401059609527,
+          52.41245041085636
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          2,
+          4,
+          5,
+          9,
+          12
+        ],
+        "stop_reason": "Candidate 0 (P=12.2683d) reached support 1.0 after two confirming observations at 4-sigma-separating slots, confirming resolution above theta despite an earlier mid-campaign swing"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-101-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-102-r1",
+      "case": "case-102",
+      "status": "completed",
+      "elapsed_s": 67.2,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-102-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 13,
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999898222293235,
+        "truth_support": 0.9999898222293235,
+        "chi2s": [
+          303.98759011541006,
+          31.577069265701144,
+          8.586477733397286,
+          58.68688369652781,
+          64.14026949782121,
+          233.7387266505655
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          2,
+          4,
+          5,
+          8,
+          21
+        ],
+        "stop_reason": "Candidate 2 at P=11.35d reached support 1.0, exceeding theta 0.997, after eliminating candidates 0,1,3,4,5 with 5 discriminating observations"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-102-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-103-r1",
+      "case": "case-103",
+      "status": "completed",
+      "elapsed_s": 91.3,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-103-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 12,
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999976811234284,
+        "truth_support": 0.9999976811234284,
+        "chi2s": [
+          82.2764948149553,
+          100.29720033254087,
+          5.781610276142616,
+          52.08217916840793,
+          31.730537605567886,
+          62.80762609510416
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          13,
+          16,
+          20,
+          23,
+          26
+        ],
+        "stop_reason": "Candidate 2 (P=12.9406d) reached support 1.0, exceeding theta after two confirmation observations against its remaining rivals"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-103-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-104-r1",
+      "case": "case-104",
+      "status": "completed",
+      "elapsed_s": 93.3,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-104-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 15,
+        "cli_command_counts": {
+          "diagnostics": 6,
+          "finalize": 1,
+          "observe": 6,
+          "start": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": false,
+        "abstained": true,
+        "pred": 2,
+        "correct": false,
+        "false_resolution": false,
+        "max_support": 0.9899397591773198,
+        "truth_support": 0.9899397591773198,
+        "chi2s": [
+          44.15427922282435,
+          22.14216061612722,
+          12.959637125900104,
+          67.2353093669772,
+          34.514635384702366,
+          39.932602269824294
+        ],
+        "n_obs": 6,
+        "theta": 0.997,
+        "observed_slots": [
+          25,
+          27,
+          28,
+          30,
+          33,
+          37
+        ],
+        "stop_reason": "Budget exhausted with candidate 2 (17.0648d) leading at support 0.9899, below the 0.997 resolution threshold, so we abstain rather than overclaim a resolved orbit"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-104-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-105-r1",
+      "case": "case-105",
+      "status": "completed",
+      "elapsed_s": 54.9,
+      "audit_ok": false,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-105-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 10,
+        "cli_command_counts": {},
+        "violations": [
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli start --case ../data/cases/dev/case-105.json --run runs/dev-v1-case-105-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-105-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-105-r1 --slot 0 --why \"Slot 0 separates all three candidate pairs at the capped 4-sigma level, maximizing discrimination per observation\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-105-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-105-r1 --slot 1 --why \"Pair 0,1 remains the dominant contest and slot 1 still separates it at 4 sigma, the best available discriminator\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-105-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli state --run runs/dev-v1-case-105-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-105-r1 --slot 2 --why \"Confirming the leading candidate with one extra point since support crossed theta after only two observations and a large swing\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli finalize --run runs/dev-v1-case-105-r1 --why \"Candidate 0 at period 6.578 days reached support 0.9999 after two discriminating observations and held on a confirmation point, clearing theta with the other candidates driven to near zero\""
+          }
+        ]
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999413250663832,
+        "truth_support": 0.9999413250663832,
+        "chi2s": [
+          2.0915082725340803,
+          188.1757814686806,
+          21.578386814425894
+        ],
+        "n_obs": 3,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          1,
+          2
+        ],
+        "stop_reason": "Candidate 0 at period 6.578 days reached support 0.9999 after two discriminating observations and held on a confirmation point, clearing theta with the other candidates driven to near zero"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-105-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-106-r1",
+      "case": "case-106",
+      "status": "completed",
+      "elapsed_s": 61.1,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-106-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 9,
+        "cli_command_counts": {
+          "diagnostics": 3,
+          "finalize": 1,
+          "observe": 3,
+          "start": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999914398507413,
+        "truth_support": 0.9999914398507413,
+        "chi2s": [
+          6.599182980811374,
+          160.11154554895913,
+          30.951286452305865,
+          31.778045526691887,
+          155.84550520348574
+        ],
+        "n_obs": 3,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          4,
+          7
+        ],
+        "stop_reason": "Candidate 0 period 12.3205d reached support 0.999 after two observations and held at 1.0 after a confirmation observation, clearing theta with the remaining candidates driven to zero"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-106-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-107-r1",
+      "case": "case-107",
+      "status": "completed",
+      "elapsed_s": 96.9,
+      "audit_ok": false,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-107-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 13,
+        "cli_command_counts": {},
+        "violations": [
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli start --case ../data/cases/dev/case-107.json --run runs/dev-v1-case-107-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-107-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-107-r1 --slot 5 --why \"Slot t=37.518 separates candidate 0 from candidates 1 2 3 and 4 all at max separation while pair 0-2 has only 7 future high-separation slots so this scarce window is seized first\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-107-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-107-r1 --slot 8 --why \"Slot t=43.275 gives max separation for both leaders 1 and 2 against rivals 3 and 4 covering four live pairs at once while candidate 0 is already ruled out\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-107-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-107-r1 --slot 14 --why \"Slot t=55.114 gives max separation for the decisive pair 1 vs 2 which now dominates remaining support\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-107-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-107-r1 --slot 18 --why \"Confirmation point at t=59.482 max separation for candidate 2 versus runner-up 1 before finalizing since support crossed after few observations\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-107-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-107-r1 --slot 23 --why \"Slot t=67.274 targets the last live rival 4 against leader 2 at max separation to try to push support past the theta threshold\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli finalize --run runs/dev-v1-case-107-r1 --why \"Candidate 2 period 9.1638d support reached 0.9997 exceeding theta after confirming against leader 1 and last rival 4 at max-separation slots\""
+          }
+        ]
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9997401311138262,
+        "truth_support": 0.9997401311138262,
+        "chi2s": [
+          38.66550073247578,
+          23.001330179513342,
+          5.200474943206154,
+          34.40810452094699,
+          27.739466223834278,
+          23.42434599895109
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          5,
+          8,
+          14,
+          18,
+          23
+        ],
+        "stop_reason": "Candidate 2 period 9.1638d support reached 0.9997 exceeding theta after confirming against leader 1 and last rival 4 at max-separation slots"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-107-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-108-r1",
+      "case": "case-108",
+      "status": "completed",
+      "elapsed_s": 76.4,
+      "audit_ok": false,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-108-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 11,
+        "cli_command_counts": {},
+        "violations": [
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli start --case ../data/cases/dev/case-108.json --run runs/dev-v1-case-108-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-108-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-108-r1 --slot 0 --why \"Slot 0 (t=31.119) separates candidate 0 from all five rivals at 4-sigma, the single most efficient first probe\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-108-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-108-r1 --slot 2 --why \"Slot 2 (t=34.32) is a top discriminator for both leading pairs 0-1 and 0-2 at 4-sigma\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-108-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-108-r1 --slot 4 --why \"Slot 4 (t=35.576) is the top discriminator for the most contested pair 1-2 and also separates 0-2 at 4-sigma\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-108-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-108-r1 --slot 8 --why \"Slot 8 (t=43.566) is the top remaining discriminator for the still-live pair 1-2 to confirm candidate 1 past theta\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli finalize --run runs/dev-v1-case-108-r1 --why \"Candidate 1 (P=11.109d) reached support 1.0, decisively clearing theta after confirmation at slot 8\""
+          }
+        ]
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 1,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999815014332601,
+        "truth_support": 0.9999815014332601,
+        "chi2s": [
+          31.245955462149205,
+          8.964561545285548,
+          47.10139923424576,
+          34.46746154741322,
+          36.43088272143312,
+          55.44172415095768
+        ],
+        "n_obs": 4,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          2,
+          4,
+          8
+        ],
+        "stop_reason": "Candidate 1 (P=11.109d) reached support 1.0, decisively clearing theta after confirmation at slot 8"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-108-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-109-r1",
+      "case": "case-109",
+      "status": "completed",
+      "elapsed_s": 57.3,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-109-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 9,
+        "cli_command_counts": {
+          "diagnostics": 3,
+          "finalize": 1,
+          "observe": 3,
+          "start": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 1,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9998207479587898,
+        "truth_support": 0.9998207479587898,
+        "chi2s": [
+          21.18818140375329,
+          3.6729626307120844,
+          25.204895126827193,
+          46.69436002157757,
+          31.477073272072964,
+          45.574570913224115
+        ],
+        "n_obs": 3,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          8,
+          9
+        ],
+        "stop_reason": "Candidate 1 (P=12.9642d) confirmed at support 0.9998 after two discriminating observations plus a confirmation point, exceeding theta"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-109-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-110-r1",
+      "case": "case-110",
+      "status": "completed",
+      "elapsed_s": 78.4,
+      "audit_ok": true,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-110-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 16,
+        "cli_command_counts": {
+          "diagnostics": 6,
+          "finalize": 1,
+          "observe": 6,
+          "start": 1,
+          "state": 1
+        },
+        "violations": []
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 4,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999762900393047,
+        "truth_support": 0.9999762900393047,
+        "chi2s": [
+          52.00713329146625,
+          50.68360493331229,
+          68.18045550867846,
+          41.31882088510615,
+          18.426228035928993,
+          40.94721466543364
+        ],
+        "n_obs": 6,
+        "theta": 0.997,
+        "observed_slots": [
+          4,
+          8,
+          10,
+          25,
+          29,
+          30
+        ],
+        "stop_reason": "After early lead by candidate 0 was overturned and a close 3 vs 4 alias battle, final points drive candidate 4 (18.56d) to support 1.0, clearing theta"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-110-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-111-r1",
+      "case": "case-111",
+      "status": "noncompletion",
+      "elapsed_s": 102.2,
+      "audit_ok": false,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-111-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 11,
+        "cli_command_counts": {
+          "diagnostics": 2,
+          "observe": 2,
+          "start": 1,
+          "state": 2
+        },
+        "violations": [
+          {
+            "tool": "Bash",
+            "command": "python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-111-r1 2>&1"
+          },
+          {
+            "tool": "Bash",
+            "command": "sleep 1; python -m aliasbreaker.cli state --run runs/dev-v1-case-111-r1 2>&1"
+          },
+          {
+            "tool": "Bash",
+            "command": "python -m aliasbreaker.cli finalize --run runs/dev-v1-case-111-r1 --why \"Run metadata corrupted after slot-30 observe call; CLI raises KeyError case_sha256 on every subsequent command so campaign cannot continue or be queried further\" 2>&1"
+          }
+        ]
+      },
+      "verdict": null,
+      "transcript": "runtime\\runs\\dev-v1-case-111-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1-case-112-r1",
+      "case": "case-112",
+      "status": "completed",
+      "elapsed_s": 96.8,
+      "audit_ok": false,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1-case-112-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 15,
+        "cli_command_counts": {},
+        "violations": [
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli start --case ../data/cases/dev/case-112.json --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-112-r1 --slot 14 --why \"Slot 14 separates candidate pairs 0-2 and 2-3 at 4 sigma while keeping the 0-3 discriminating slots reachable\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-112-r1 --slot 24 --why \"Candidates 2 and 3 are the closest competitors and slot 24 separates that pair at 4 sigma while keeping later slots 29 and 44 reachable\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-112-r1 --slot 29 --why \"Candidates 2 and 5 now dominate the support mass and slot 29 separates that pair at 4 sigma while leaving slot 30 free for confirmation\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-112-r1 --slot 31 --why \"Support flipped from candidate 2 to candidate 5 after a single point so confirming the leading 2-5 pair at slot 31 before finalizing\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-112-r1 --slot 34 --why \"Candidates 0 and 2 now hold the dominant remaining support product and slot 34 separates that pair at 4 sigma\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli diagnostics --run runs/dev-v1-case-112-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli observe --run runs/dev-v1-case-112-r1 --slot 40 --why \"Candidate 2 support is just below theta and slot 40 gives the last budget a 4 sigma separation against its remaining rival 0\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd \"D:\\Apps\\micro1-frontier-hackathon\\runtime\" && python -m aliasbreaker.cli finalize --run runs/dev-v1-case-112-r1 --why \"After six observations candidate 2 at period 12.13574 days reached support 0.998749 clearing theta 0.997 while all rivals collapsed below 0.002\""
+          }
+        ]
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9987492809314445,
+        "truth_support": 0.9987492809314445,
+        "chi2s": [
+          37.80498160954192,
+          32.00883504285058,
+          8.461901232061198,
+          27.429578599734455,
+          37.0882537509225,
+          21.967725490970075
+        ],
+        "n_obs": 6,
+        "theta": 0.997,
+        "observed_slots": [
+          14,
+          24,
+          29,
+          31,
+          34,
+          40
+        ],
+        "stop_reason": "After six observations candidate 2 at period 12.13574 days reached support 0.998749 clearing theta 0.997 while all rivals collapsed below 0.002"
+      },
+      "transcript": "runtime\\runs\\dev-v1-case-112-r1.transcript.jsonl"
+    }
+  ]
+}

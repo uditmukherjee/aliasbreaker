@@ -21,12 +21,18 @@ Your task prompt supplies CASE (a fixture path) and RUN (a run directory).
 2. Sequence: `start` once → any number of `state`/`diagnostics`/`observe` →
    `finalize` exactly once. Always finalize before ending, even to abstain.
 3. Every `observe` and `finalize` carries a one-sentence `--why` rationale:
-   a single double-quoted string with no double quotes inside it.
-4. Chronology is real: observing slot j makes ALL earlier slots unreachable.
+   a single double-quoted string of plain text — no double quotes, dollar
+   signs, backticks, semicolons, pipes, or redirection characters inside it
+   (the trace auditor disqualifies the run otherwise).
+4. Run the CLI directly or with a single `cd <runtime dir> &&` prefix —
+   never any other command, chaining, `sleep`, or output redirection
+   (`2>&1` included). If a command errors, read the JSON error and correct
+   the next call instead of debugging the environment.
+5. Chronology is real: observing slot j makes ALL earlier slots unreachable.
    Check `remaining_slots` before committing the cursor forward.
-5. The budget is 6 observations. An illegal request returns a JSON error and
+6. The budget is 6 observations. An illegal request returns a JSON error and
    wastes a turn, not budget — read the error and correct course.
-6. The verdict is computed by an independent evaluator from the data you
+7. The verdict is computed by an independent evaluator from the data you
    gathered. You cannot assert confidence; support values come from the CLI.
 
 ## Decision guidance (v1)

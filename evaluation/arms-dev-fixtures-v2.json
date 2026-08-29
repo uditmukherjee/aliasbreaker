@@ -1,0 +1,626 @@
+{
+  "summary": {
+    "label": "dev-fixtures-v2",
+    "theta": 0.997,
+    "n_cases": 12,
+    "n_resolvable": 12,
+    "elapsed_s": 0.28,
+    "batch_correct_on_resolvable": 6,
+    "batch_false_resolutions": 0,
+    "batch_mean_obs": 6.0,
+    "even_correct_on_resolvable": 4,
+    "even_false_resolutions": 0,
+    "even_mean_obs": 6.0,
+    "adaptive_correct_on_resolvable": 4,
+    "adaptive_false_resolutions": 0,
+    "adaptive_mean_obs": 4.5
+  },
+  "rows": [
+    {
+      "case": "case-101",
+      "sigma": 2.0,
+      "n_candidates": 3,
+      "resolvable": true,
+      "fixture": "case-101.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9995373974400771,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          16
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999994815367,
+        "n_obs": 6,
+        "slots": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9956628974059571,
+        "n_obs": 6,
+        "slots": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      }
+    },
+    {
+      "case": "case-102",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-102.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999985808509564,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          34
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999098190894,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          26,
+          35,
+          44
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999999979783,
+        "n_obs": 4,
+        "slots": [
+          34,
+          39,
+          41,
+          42
+        ]
+      }
+    },
+    {
+      "case": "case-103",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-103.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9963096671396688,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          13,
+          35
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.8851706785908743,
+        "n_obs": 6,
+        "slots": [
+          0,
+          7,
+          14,
+          22,
+          29,
+          36
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.2169260855037639,
+        "n_obs": 2,
+        "slots": [
+          35,
+          36
+        ]
+      }
+    },
+    {
+      "case": "case-104",
+      "sigma": 5.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-104.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.31329045151996515,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          25,
+          26,
+          33
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.09711561944867601,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          28,
+          37,
+          46
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9230091039565522,
+        "n_obs": 6,
+        "slots": [
+          25,
+          28,
+          31,
+          32,
+          33,
+          34
+        ]
+      }
+    },
+    {
+      "case": "case-105",
+      "sigma": 2.0,
+      "n_candidates": 3,
+      "resolvable": true,
+      "fixture": "case-105.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999999463178,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999943424787991,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          17,
+          25,
+          34,
+          42
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999413762229328,
+        "n_obs": 2,
+        "slots": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "case": "case-106",
+      "sigma": 3.0,
+      "n_candidates": 5,
+      "resolvable": true,
+      "fixture": "case-106.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999995848488,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          13
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.057481832120165374,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          25,
+          33,
+          41
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999993909088,
+        "n_obs": 3,
+        "slots": [
+          13,
+          17,
+          18
+        ]
+      }
+    },
+    {
+      "case": "case-107",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-107.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9432833266561149,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          13,
+          14,
+          18
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.905014047080162,
+        "n_obs": 6,
+        "slots": [
+          0,
+          7,
+          15,
+          22,
+          30,
+          37
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.5216151121898488,
+        "n_obs": 6,
+        "slots": [
+          18,
+          25,
+          26,
+          27,
+          28,
+          29
+        ]
+      }
+    },
+    {
+      "case": "case-108",
+      "sigma": 5.0,
+      "n_candidates": 5,
+      "resolvable": true,
+      "fixture": "case-108.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999799751462,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          8
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999983242175638,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          15,
+          23,
+          30,
+          38
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.8197315324717271,
+        "n_obs": 6,
+        "slots": [
+          6,
+          19,
+          22,
+          23,
+          24,
+          25
+        ]
+      }
+    },
+    {
+      "case": "case-109",
+      "sigma": 2.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-109.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999999970426,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          8,
+          23
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.22083885152663743,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          17,
+          26,
+          34,
+          43
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999279316939413,
+        "n_obs": 4,
+        "slots": [
+          1,
+          22,
+          26,
+          27
+        ]
+      }
+    },
+    {
+      "case": "case-110",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-110.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.14365393068923982,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          4,
+          5,
+          11,
+          39
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.5436454475090006,
+        "n_obs": 6,
+        "slots": [
+          0,
+          10,
+          19,
+          29,
+          38,
+          48
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9620813217337394,
+        "n_obs": 6,
+        "slots": [
+          4,
+          31,
+          32,
+          33,
+          34,
+          35
+        ]
+      }
+    },
+    {
+      "case": "case-111",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-111.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.6110806384604119,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          32,
+          35
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9391871567978889,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.5863568181982316,
+        "n_obs": 3,
+        "slots": [
+          35,
+          39,
+          40
+        ]
+      }
+    },
+    {
+      "case": "case-112",
+      "sigma": 5.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-112.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.7705061456363614,
+        "n_obs": 6,
+        "slots": [
+          0,
+          1,
+          2,
+          8,
+          14,
+          23
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.3279797670800768,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          26,
+          35,
+          44
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.17469362599179333,
+        "n_obs": 6,
+        "slots": [
+          23,
+          40,
+          41,
+          42,
+          43,
+          44
+        ]
+      }
+    }
+  ]
+}
