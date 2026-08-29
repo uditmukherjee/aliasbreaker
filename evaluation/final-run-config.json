@@ -1,0 +1,18 @@
+{
+  "frozen": "at selection-lock commit; no change after freeze",
+  "model": "claude-sonnet-5",
+  "replicates": ["r1", "r2", "r3"],
+  "timeout_s": 900,
+  "cases_dir": "data/cases/final",
+  "label": "final",
+  "theta_source": "src/aliasbreaker/evaluator.py THETA_DEFAULT (0.997, calibrated: evaluation/theta-calibration.json)",
+  "bootstrap_seed": 20260830,
+  "eligibility": "clean provider exit AND clean trace audit (assigned case+run) AND clean audit replay; anything else scores noncompletion/unresolved",
+  "retry_policy": "no retries of completed-but-ineligible runs; transport-level failures are recorded with status and scored noncompletion",
+  "commands": {
+    "arms": "python src/run_arms.py --cases data/cases/final --label final",
+    "llm": "python scripts/run_llm_arm.py --cases data/cases/final --label final --replicates 3 --timeout 900",
+    "analysis": "python src/analyze_final.py"
+  },
+  "sampling_note": "Claude Code harness does not expose temperature control; disclosed. Model pinned via --model; provider-reported model recorded per run from the transcript."
+}

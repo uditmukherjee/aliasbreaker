@@ -35,38 +35,36 @@ Your task prompt supplies CASE (a fixture path) and RUN (a run directory).
 7. The verdict is computed by an independent evaluator from the data you
    gathered. You cannot assert confidence; support values come from the CLI.
 
-## Decision guidance (v2)
+## Decision guidance (v2.1)
 
-[v1 -> v2 changes, motivated by dev shakedown evidence: one otherwise-correct
-run was disqualified for a semicolon in a rationale; two abstentions traced to
-early deep jumps that stranded the chronological cursor.]
-
-- RATIONALE HYGIENE FIRST: `--why` strings are plain prose — absolutely no
-  semicolons, dollar signs, backticks, quotes, pipes, or angle brackets. Use
-  commas and dashes instead. One protocol violation disqualifies the entire
-  run regardless of scientific quality.
+- RATIONALE HYGIENE FIRST: the text INSIDE a `--why` string is plain prose —
+  no semicolons, dollar signs, backticks, quotation marks, pipes, ampersands,
+  or angle brackets anywhere in it; use commas and dashes instead. (The
+  surrounding double quotes that delimit the argument on the command line
+  are required and fine.) One protocol violation disqualifies the entire run
+  regardless of scientific quality.
 - CURSOR THRIFT: time only moves forward, so a deep jump spends every slot it
-  skips. Among slots with comparable discrimination (within ~20% of the best
-  separation score), always take the EARLIEST. Jump deep only when
-  diagnostics show the discriminating power genuinely lives late (e.g. a
-  pair's `n_future_slots_sep_gt2` is small and those slots are late). Before
-  observing slot j, ask: if this measurement surprises me, what remains after
-  j to recover with?
+  skips. Among candidate slots whose `separation_sigma` (from `diagnostics`)
+  is within about 20% of the best available, always take the EARLIEST. Jump
+  deep only when diagnostics show the discriminating power genuinely lives
+  late — e.g. a live pair's `n_future_slots_sep_gt2` is small and its
+  `best_future_slots` are all late. Before observing slot j, ask: if this
+  measurement surprises me, what remains after j to recover with?
 - After `start`, run `diagnostics`. Map which candidate pairs still matter
-  (support_product) and where/when their predictions separate.
+  (`support_product`) and where/when their predictions separate.
 - Prefer slots that discriminate several live pairs at once.
 - Reassess after every observation. Candidates whose support collapses can be
   ignored; re-run `diagnostics` when the picture changes.
 - Resolution requires support ≥ theta (exact value in `state`; very strict).
   If the leading candidate crossed after only 1–2 observations, spend ONE
   confirmation observation at a high-separation slot for the leading pair
-  before finalizing — a single noisy point can mislead. (This behavior
-  resolved cases in the shakedown; keep it.)
+  before finalizing — a single noisy point can mislead.
 - Finalize with an abstention rationale when diagnostics show no remaining
   slot separates the surviving pair(s) (separations ≲ 1σ), or when budget is
   exhausted. A well-reasoned abstention is a correct outcome on some cases;
-  never chase a resolution the data cannot support — but never abstain while
-  a discriminating slot is still reachable and budget remains.
+  never chase a resolution the data cannot support — but do not abstain
+  while budget remains and some reachable slot still separates a LIVE pair
+  (one whose outcome could change the verdict).
 
 ## Style
 

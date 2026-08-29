@@ -192,3 +192,31 @@ Improvement Changelog.
   even 4/12 · adaptive 4/12 · batch 6/12 · LLM v1 9/12 · LLM v2 11/12.
   Evidence: evaluation/llm-arm-dev-v2.json. Prompt v2 is the final prompt;
   policies now locked pending freeze.
+- 2026-08-29 · WORDING AMENDMENT (diff-gate 2 finding 7): the v1->v2 ledger
+  entry above should be read as: an observed +2 gated-score difference in ONE
+  paired development draw (single LLM replicate per prompt version, dev cases
+  adaptively inspected during prompt design — in-sample development evidence,
+  not a stable-effect claim). Raw scientific outcomes separate from gated:
+  v1 was 10/12 raw-correct (case-103 correct but disqualified), v2 11/12 raw
+  and gated. "Zero false resolutions" = zero OBSERVED. Mean-obs denominator:
+  eligible runs. No uncertainty claim is supported by one replicate; the
+  final evaluation runs 3 predeclared replicates.
+- 2026-08-29 · Codex DIFF-GATE 2 (pre-freeze): APPROVE-WITH-CHANGES, 9
+  findings (brainstorm/diffgate2-codex.md). Implemented before lock:
+  charter §4 amendment authorizing oracle use SOLELY for the predeclared
+  10/2 resolvable/unresolvable composition; §5 rewritten with full quota
+  vector (incl. ordinary one-per-sigma subquota), precedence, discard-not-
+  demote overflow rule, and all numeric thresholds; stratum predicates
+  strengthened (live-candidate requirements, misleading = support OVERTAKE
+  under the shared rule, scarce window defined in days on slot_t); stratum
+  field removed from fixtures (manifest-only); generator fails on non-empty
+  output dir, records seed range + predicate flags + generator commit + env;
+  prompt v2.1 (dev-history commentary removed, metrics named, quoting
+  clarified, abstention rule scoped to live pairs — guidance semantics
+  unchanged from measured v2); CLI leak-scan test added; frozen analysis
+  path (src/analyze_final.py: replicate-mean per case, paired diff vs batch,
+  case-clustered bootstrap seed 20260830) + final-run-config.json. Deferred,
+  disclosed: full behavioral confirmation-existence check in misleading
+  predicate (oracle resolvability already guarantees recoverability by some
+  design); canonical-JSON serialization ceremony; clean-checkout generation
+  (replaced by clean-working-tree verification at the lock commit).

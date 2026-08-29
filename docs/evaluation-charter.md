@@ -67,21 +67,45 @@ A case is RESOLVABLE iff (a) the true period's basin is in the candidate set,
 and (b) a search over legal 6-slot chronological designs — joint greedy design
 plus 2,000 seeded random designs — finds at least one whose realized outcomes
 yield a correct RESOLVED verdict under §3. Oracle labels are computed at
-generation time, stored hidden from all arms, and never used to filter final
-cases (they only stratify reporting).
+generation time and stored hidden from all arms. [Amended pre-freeze
+2026-08-29, diff-gate 2 finding 1: oracle labels ARE used at final-set
+generation for exactly one purpose — enforcing the predeclared composition of
+10 resolvable + 2 unresolvable cases (§5 quotas). They are never used to
+rank, compare, or swap cases within a stratum, and never expose any policy's
+performance. All other uses remain reporting-only stratification.]
 
-## 5. Strata for the final set (~12 cases, generation rules predeclared)
+## 5. Strata for the final set (12 cases, generation rules predeclared)
 
-1. Ordinary alias ambiguity (≥3 candidate basins), mixed σ ∈ {2,3,4,5} m/s.
-2. Tempting-early-slot: early nights discriminate the wrong pair.
-3. Scarce-future-window: the discriminating phase is reachable only in a late,
-   narrow availability window (reservation test).
-4. Misleading-observation: a realized outcome that supports a wrong candidate
-   until confirmed (confirmation test).
-5. Near-equivalent / unresolvable: correct behavior is abstention.
+Quota vector: **4 ordinary** (one case per σ ∈ {2,3,4,5} m/s), **2
+tempting-early**, **2 scarce-window**, **2 misleading-observation**, **2
+unresolvable**. Structural predicates (arm-independent: they may consult
+hidden truth and realized outcomes, never any policy's behavior), with all
+numeric thresholds fixed here and echoed in the manifest:
+
+1. **Ordinary**: resolvable, ≥3 candidate basins, no special predicate fires.
+2. **Tempting-early**: the strongest separation in the first third of slots
+   belongs to a pair of LIVE wrong candidates (initial support ≥ 0.10 each,
+   separation > 2.5σ) while every truth-involving pair stays weak early
+   (< 1.5σ).
+3. **Scarce-window**: for the best-fitting live rival vs truth, all
+   discriminating slots (separation > 2σ) number ≤ 3, sit within the last 20
+   days of the horizon, and span ≤ 5 days.
+4. **Misleading-observation**: adding one early realized outcome (first half
+   of slots) to the initial data makes a LIVE wrong candidate OVERTAKE the
+   truth under the shared support rule (its support > truth's and ≥ 0.5).
+5. **Unresolvable**: oracle label false (used per the §4 amendment solely for
+   the 10/2 composition); correct behavior is abstention.
+
+Precedence when several predicates fire: unresolvable > misleading-obs >
+scarce-window > tempting-early > ordinary. A case matching a full stratum is
+DISCARDED, never demoted to a lower stratum. Seeds are scanned sequentially
+from 5000; first-fit fills quotas; predicate flags for every accepted case
+are recorded evaluator-side in the manifest for audit.
 
 Final cases are generated from fresh seeds by these rules AFTER all policies,
-prompts, and thresholds are locked; no post-generation case swaps.
+prompts, and thresholds are locked (a pushed selection-lock commit precedes
+generation); no post-generation case swaps. The final set is a deliberately
+stratified benchmark, not a population prevalence estimate.
 
 ## 6. Arms and information contract
 
