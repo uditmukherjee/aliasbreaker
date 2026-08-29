@@ -183,3 +183,12 @@ Improvement Changelog.
   reachable (targets 104/107), (3) confirmation guidance kept verbatim.
   Launching dev-v2 shakedown on identical fixtures for the paired
   comparison.
+- 2026-08-29 · DEV-V2 RESULT (identical fixtures/theta): 11/12 correct,
+  12/12 eligible, 0 false resolutions, mean ~4.4 obs. Paired vs v1b:
+  case-103 converted (rationale hygiene — no protocol violations anywhere),
+  case-104 converted (cursor thrift — resolved in 5 obs where v1 stranded
+  itself), no regressions; case-107 still abstains but now at the full
+  budget (fights to the end) instead of quitting at 3 obs. Ledger:
+  even 4/12 · adaptive 4/12 · batch 6/12 · LLM v1 9/12 · LLM v2 11/12.
+  Evidence: evaluation/llm-arm-dev-v2.json. Prompt v2 is the final prompt;
+  policies now locked pending freeze.
