@@ -1,0 +1,1040 @@
+{
+  "label": "dev-v1b",
+  "model_requested": "claude-sonnet-5",
+  "models_reported": [
+    "claude-sonnet-5"
+  ],
+  "n_runs": 12,
+  "n_eligible": 11,
+  "ineligible": [
+    "dev-v1b-case-103-r1"
+  ],
+  "correct": 9,
+  "false_resolutions": 0,
+  "results": [
+    {
+      "run_id": "dev-v1b-case-101-r1",
+      "case": "case-101",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 88.9,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-101-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 13,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-101-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9997308688720046,
+        "truth_support": 0.9997308688720046,
+        "chi2s": [
+          12.539254046357154,
+          28.979340667154187,
+          57.486500143580756
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          2,
+          3,
+          8,
+          12,
+          16
+        ],
+        "stop_reason": "Candidate 0 support reached 0.9997 exceeding theta 0.997 after five targeted observations resolving the 0-1 and 0-2 alias pairs"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-101-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-102-r1",
+      "case": "case-102",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 68.3,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-102-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 13,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-102-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999898222293235,
+        "truth_support": 0.9999898222293235,
+        "chi2s": [
+          303.98759011541006,
+          31.577069265701144,
+          8.586477733397286,
+          58.68688369652781,
+          64.14026949782121,
+          233.7387266505655
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          2,
+          4,
+          5,
+          8,
+          21
+        ],
+        "stop_reason": "Candidate 2 at period 11.35 days reached support 0.99999, clearing the 0.997 resolution threshold after a confirmation observation, so the campaign resolves in its favor with one observation left in reserve"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-102-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-103-r1",
+      "case": "case-103",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 175.1,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": false,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": false,
+        "correct": false,
+        "false_resolution": false,
+        "abstained": null,
+        "scored_as": "noncompletion/unresolved"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-103-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 16,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "diagnostics",
+          "state",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 6,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1,
+          "state": 1
+        },
+        "violations": [
+          {
+            "tool": "Bash",
+            "command": "python -m aliasbreaker.cli observe --run runs/dev-v1b-case-103-r1 --slot 5 --why \"Candidates near periods 1.09d and 0.93d now dominate and are nearly tied; t=43.29 gives maximal predicted separation for that pair\""
+          }
+        ]
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-103-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999856397511657,
+        "truth_support": 0.9999856397511657,
+        "chi2s": [
+          67.352452981329,
+          85.93258683995296,
+          11.18928142654638,
+          33.51717469559509,
+          42.20308908036592,
+          78.48187020695454
+        ],
+        "n_obs": 6,
+        "theta": 0.997,
+        "observed_slots": [
+          1,
+          5,
+          7,
+          13,
+          20,
+          26
+        ],
+        "stop_reason": "Support for the P=13.21d candidate rose to 0.99999 after confirmation points at t=70.27 and t=78.56 crossed theta, resolving the orbit and ruling out the initially favored short-period aliases"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-103-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-104-r1",
+      "case": "case-104",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 107.6,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": false,
+        "false_resolution": false,
+        "abstained": true,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-104-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 12,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 4,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-104-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": false,
+        "abstained": true,
+        "pred": 2,
+        "correct": false,
+        "false_resolution": false,
+        "max_support": 0.542182049608921,
+        "truth_support": 0.542182049608921,
+        "chi2s": [
+          10.244436986170518,
+          20.084274537867774,
+          9.715584327376135,
+          15.514847442773084,
+          17.989975034430334,
+          27.491073786509162
+        ],
+        "n_obs": 4,
+        "theta": 0.997,
+        "observed_slots": [
+          23,
+          27,
+          37,
+          46
+        ],
+        "stop_reason": "Candidates 0 and 2 remain close at 0.42 versus 0.54 support with no future slot separating them by more than 2 sigma, so the data cannot resolve the alias to theta and I abstain."
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-104-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-105-r1",
+      "case": "case-105",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 34.3,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-105-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 7,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 2,
+          "finalize": 1,
+          "observe": 2,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-105-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999413762229328,
+        "truth_support": 0.9999413762229328,
+        "chi2s": [
+          2.0772254448897365,
+          147.65256439277243,
+          21.56584857724841
+        ],
+        "n_obs": 2,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          1
+        ],
+        "stop_reason": "Candidate 0 (P=6.578d) support reached 0.999941 exceeding theta 0.997 after a confirmation observation, with the other candidates driven near zero"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-105-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-106-r1",
+      "case": "case-106",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 75.1,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-106-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 10,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "state",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 3,
+          "finalize": 1,
+          "observe": 3,
+          "start": 1,
+          "state": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-106-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999914398507413,
+        "truth_support": 0.9999914398507413,
+        "chi2s": [
+          6.599182980811374,
+          160.11154554895913,
+          30.951286452305865,
+          31.778045526691887,
+          155.84550520348574
+        ],
+        "n_obs": 3,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          4,
+          7
+        ],
+        "stop_reason": "Candidate 0 (period 12.06d) reached support 0.999991, exceeding theta 0.997, confirmed by an independent slot after crossing threshold, with all rivals collapsed near zero"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-106-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-107-r1",
+      "case": "case-107",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 92.0,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": false,
+        "false_resolution": false,
+        "abstained": true,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-107-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 12,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "state",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "state",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 4,
+          "finalize": 1,
+          "observe": 3,
+          "start": 1,
+          "state": 2
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-107-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": false,
+        "abstained": true,
+        "pred": 2,
+        "correct": false,
+        "false_resolution": false,
+        "max_support": 0.40234335466104,
+        "truth_support": 0.40234335466104,
+        "chi2s": [
+          3.0260839758238745,
+          6.234908313697097,
+          2.3494164327269282,
+          5.4374180736418545,
+          4.111183940213425,
+          15.750018806567
+        ],
+        "n_obs": 3,
+        "theta": 0.997,
+        "observed_slots": [
+          3,
+          18,
+          36
+        ],
+        "stop_reason": "Leading pair 0 vs 2 sits at 0.40 vs 0.29 support and the only remaining slot separates them by under 1 sigma, so the data cannot resolve the alias and I abstain"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-107-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-108-r1",
+      "case": "case-108",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 92.2,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-108-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 13,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-108-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 1,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999977164876992,
+        "truth_support": 0.9999977164876992,
+        "chi2s": [
+          47.821404824326635,
+          11.546166366058282,
+          60.364597098468,
+          37.53756330126978,
+          56.82265191804057
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          2,
+          4,
+          5,
+          8
+        ],
+        "stop_reason": "Candidate 1 at P=11.109d reached support 0.999998 exceeding theta after sequential 4-sigma discriminating observations eliminated all rivals"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-108-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-109-r1",
+      "case": "case-109",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 62.6,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-109-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 9,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 3,
+          "finalize": 1,
+          "observe": 3,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-109-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 1,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9998207479587898,
+        "truth_support": 0.9998207479587898,
+        "chi2s": [
+          21.18818140375329,
+          3.6729626307120844,
+          25.204895126827193,
+          46.69436002157757,
+          31.477073272072964,
+          45.574570913224115
+        ],
+        "n_obs": 3,
+        "theta": 0.997,
+        "observed_slots": [
+          0,
+          8,
+          9
+        ],
+        "stop_reason": "Candidate 1 at period 12.96419 days confirmed with support 0.999821 across two independent high separation observations exceeding theta"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-109-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-110-r1",
+      "case": "case-110",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 85.2,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-110-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 15,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 6,
+          "finalize": 1,
+          "observe": 6,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-110-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 4,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999830179281913,
+        "truth_support": 0.9999830179281913,
+        "chi2s": [
+          47.74315119158771,
+          50.18432125536552,
+          52.12249471439556,
+          44.242019218433576,
+          20.805103418882823,
+          44.587457230582565
+        ],
+        "n_obs": 6,
+        "theta": 0.997,
+        "observed_slots": [
+          4,
+          8,
+          15,
+          16,
+          25,
+          30
+        ],
+        "stop_reason": "Candidate 4 support reached 0.999983 exceeding theta after the final observation broke the last live pair with 3, resolving the period to 17.16 days"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-110-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-111-r1",
+      "case": "case-111",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 68.0,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-111-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 11,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 4,
+          "finalize": 1,
+          "observe": 4,
+          "start": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-111-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 1,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.999749616607489,
+        "truth_support": 0.999749616607489,
+        "chi2s": [
+          20.903313833348076,
+          4.295254265680248,
+          34.286976004456,
+          34.08534913842562,
+          30.339912160170392,
+          37.20561026064884
+        ],
+        "n_obs": 4,
+        "theta": 0.997,
+        "observed_slots": [
+          27,
+          28,
+          32,
+          33
+        ],
+        "stop_reason": "Candidate 1 at period 14.70211 days reached support 0.99975 above theta after confirmation at slot 33, resolving the campaign"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-111-r1.transcript.jsonl"
+    },
+    {
+      "run_id": "dev-v1b-case-112-r1",
+      "case": "case-112",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 105.3,
+      "model_requested": "claude-sonnet-5",
+      "model_reported": "claude-sonnet-5",
+      "audit_ok": true,
+      "replay_ok": true,
+      "outcome": {
+        "eligible": true,
+        "correct": true,
+        "false_resolution": false,
+        "abstained": false,
+        "scored_as": "verdict"
+      },
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-112-r1.transcript.jsonl",
+        "ok": true,
+        "n_tool_calls": 14,
+        "model_reported": "claude-sonnet-5",
+        "cli_sequence": [
+          "start",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "state",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "diagnostics",
+          "observe",
+          "finalize"
+        ],
+        "cli_command_counts": {
+          "diagnostics": 5,
+          "finalize": 1,
+          "observe": 5,
+          "start": 1,
+          "state": 1
+        },
+        "violations": []
+      },
+      "replay": {
+        "run": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\dev-v1b-case-112-r1",
+        "ok": true,
+        "checks": {
+          "artifacts_readable": true,
+          "fixture_hash": true,
+          "replay_legality": true,
+          "measurement_match": true,
+          "state_matches_log": true,
+          "verdict_present": true,
+          "verdict_recomputes": true
+        },
+        "mismatches": []
+      },
+      "verdict_raw": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 2,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999490452927365,
+        "truth_support": 0.9999490452927365,
+        "chi2s": [
+          24.201779588309716,
+          53.516390023846405,
+          4.325308519725817,
+          30.370706340259567,
+          70.21003379662022,
+          33.53017843751807
+        ],
+        "n_obs": 5,
+        "theta": 0.997,
+        "observed_slots": [
+          1,
+          8,
+          9,
+          14,
+          15
+        ],
+        "stop_reason": "Candidate 2 support reached 0.9999 exceeding theta 0.997 after a confirmation observation, with all other candidates driven below 0.001, resolving the alias unambiguously"
+      },
+      "transcript": "runtime\\runs\\dev-v1b-case-112-r1.transcript.jsonl"
+    }
+  ]
+}

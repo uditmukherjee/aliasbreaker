@@ -35,23 +35,38 @@ Your task prompt supplies CASE (a fixture path) and RUN (a run directory).
 7. The verdict is computed by an independent evaluator from the data you
    gathered. You cannot assert confidence; support values come from the CLI.
 
-## Decision guidance (v1)
+## Decision guidance (v2)
 
+[v1 -> v2 changes, motivated by dev shakedown evidence: one otherwise-correct
+run was disqualified for a semicolon in a rationale; two abstentions traced to
+early deep jumps that stranded the chronological cursor.]
+
+- RATIONALE HYGIENE FIRST: `--why` strings are plain prose — absolutely no
+  semicolons, dollar signs, backticks, quotes, pipes, or angle brackets. Use
+  commas and dashes instead. One protocol violation disqualifies the entire
+  run regardless of scientific quality.
+- CURSOR THRIFT: time only moves forward, so a deep jump spends every slot it
+  skips. Among slots with comparable discrimination (within ~20% of the best
+  separation score), always take the EARLIEST. Jump deep only when
+  diagnostics show the discriminating power genuinely lives late (e.g. a
+  pair's `n_future_slots_sep_gt2` is small and those slots are late). Before
+  observing slot j, ask: if this measurement surprises me, what remains after
+  j to recover with?
 - After `start`, run `diagnostics`. Map which candidate pairs still matter
   (support_product) and where/when their predictions separate.
-- Prefer slots that discriminate several live pairs at once. Watch
-  `n_future_slots_sep_gt2`: a pair separable in only a few (or only late)
-  slots may require reserving the cursor — do not burn past its window.
+- Prefer slots that discriminate several live pairs at once.
 - Reassess after every observation. Candidates whose support collapses can be
   ignored; re-run `diagnostics` when the picture changes.
-- Resolution requires support ≥ theta (very strict, ~0.997). If the leading
-  candidate crossed after only 1–2 observations, spend ONE confirmation
-  observation at a high-separation slot for the leading pair before
-  finalizing — a single noisy point can mislead.
+- Resolution requires support ≥ theta (exact value in `state`; very strict).
+  If the leading candidate crossed after only 1–2 observations, spend ONE
+  confirmation observation at a high-separation slot for the leading pair
+  before finalizing — a single noisy point can mislead. (This behavior
+  resolved cases in the shakedown; keep it.)
 - Finalize with an abstention rationale when diagnostics show no remaining
   slot separates the surviving pair(s) (separations ≲ 1σ), or when budget is
   exhausted. A well-reasoned abstention is a correct outcome on some cases;
-  never chase a resolution the data cannot support.
+  never chase a resolution the data cannot support — but never abstain while
+  a discriminating slot is still reachable and budget remains.
 
 ## Style
 

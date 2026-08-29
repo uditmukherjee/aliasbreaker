@@ -154,3 +154,32 @@ Improvement Changelog.
   confirmation as a pre-registered LLM-headroom hypothesis. Tests 94/94
   green after rework; CLI v2 + replay validated end-to-end incl. tamper
   detection.
+- 2026-08-29 · Gate-mandated regression tests (Opus subagent): suite 94 ->
+  198 green in 5.1s. Proofs added: batch/even plans read hidden outcomes
+  zero times; adaptive reads exactly the observed set; -0.5 support
+  coefficient locked (negative test incl.); 53 adversarial auditor cases
+  fail closed; replay detects 9 tamper types. Subagent flagged that the
+  orchestrator's brief wrongly asked semicolons-in-why to pass; the shipped
+  fail-closed contract was encoded instead (correct call).
+- 2026-08-29 · ITERATION LEDGER, fixtures v2, theta 0.997, identical cases:
+  | arm | correct | false-res | mean obs |
+  | batch (baseline)      | 6/12 | 0 | 6.0 |
+  | even-spacing          | 4/12 | 0 | 6.0 |
+  | scripted-adaptive     | 4/12 | 0 | 4.5 |
+  | LLM v1 (dev-v1b)      | 9/12 | 0 | ~4.1 | (11/12 eligible)
+  Evidence: evaluation/arms-dev-fixtures-v2.json, evaluation/llm-arm-dev-v1b.json.
+  LLM failure analysis: case-103 DISQUALIFIED by the eligibility gate — a
+  semicolon inside a --why rationale (protocol rule 3); its raw verdict was
+  CORRECT, so protocol compliance cost one case (the gate working as
+  designed). Cases 104/107: reasoned abstentions from bad positions — the
+  agent jumped deep early, stranded the cursor, then correctly concluded the
+  REMAINING slots could not resolve (same pathology as scripted-adaptive's
+  case-111). Confirmation behavior confirmed working (103's stop_reason
+  cites confirmation points crossing theta).
+- 2026-08-29 · Prompt v2 (runtime/CLAUDE.md): evidence-driven changes only —
+  (1) rationale hygiene first (converts 103-type losses), (2) cursor thrift
+  rule: earliest among comparable slots, deep jumps only when discrimination
+  genuinely lives late, plus never abstain while a discriminating slot is
+  reachable (targets 104/107), (3) confirmation guidance kept verbatim.
+  Launching dev-v2 shakedown on identical fixtures for the paired
+  comparison.
