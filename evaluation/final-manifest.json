@@ -1,0 +1,190 @@
+{
+  "seed_range_scanned": [
+    30000,
+    30231
+  ],
+  "n_seeds_scanned": 232,
+  "n_valid_cases_seen": 232,
+  "quotas": {
+    "ordinary": 4,
+    "crowded": 2,
+    "misleading_obs": 2,
+    "unresolvable": 2,
+    "scarce_window_constructed": 2
+  },
+  "ordinary_sigma_subquota": "one case per sigma in {2,3,4,5}",
+  "theta": 0.997,
+  "oracle": {
+    "n_random": 2000,
+    "oracle_seed": 1234,
+    "theta": 0.997
+  },
+  "predicate_thresholds": {
+    "live_support": 0.1,
+    "misleading_overtake_support_ge": 0.5,
+    "crowded_min_candidates": 6,
+    "crowded_min_sigma": 4.0,
+    "scarce_keep_last_days": 25.0,
+    "scarce_max_disc_slots": 6
+  },
+  "stratum_precedence": "unresolvable > misleading_obs > crowded > ordinary (natural scan; overflow discarded, never demoted); scarce_window is CONSTRUCTED from a separate fresh seed range by availability masking (probe evidence: the stratum is structurally absent in natural draws)",
+  "generator_commit": "039ac2a8a9d733c72745c445b4e2e0d385a23d39",
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "2.5.1"
+  },
+  "cases": [
+    {
+      "case_id": "case-30005",
+      "seed": 30005,
+      "sigma": 3.0,
+      "stratum": "ordinary",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": false,
+        "crowded": false
+      },
+      "sha256": "6b36c866c708d851993406a3683cfd98be473a3f2914148c9f02263befa1ec1e"
+    },
+    {
+      "case_id": "case-30008",
+      "seed": 30008,
+      "sigma": 2.0,
+      "stratum": "ordinary",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": false,
+        "crowded": false
+      },
+      "sha256": "76949760317ef37ee65e92cfd151e71b06dfb0170ebc4df848162c0dfdc953c4"
+    },
+    {
+      "case_id": "case-30058",
+      "seed": 30058,
+      "sigma": 4.0,
+      "stratum": "ordinary",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": false,
+        "crowded": false
+      },
+      "sha256": "68e7e3b5b1c0a21d9c1e33da49b98f875e30c0e0713d7f9d419868fc468ff328"
+    },
+    {
+      "case_id": "case-30231",
+      "seed": 30231,
+      "sigma": 5.0,
+      "stratum": "ordinary",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": false,
+        "crowded": false
+      },
+      "sha256": "e1dbd3a787baa02824fe9c28de7df23249ffc9b8508d3f3e4bab710ffcf1d43b"
+    },
+    {
+      "case_id": "case-30002",
+      "seed": 30002,
+      "sigma": 4.0,
+      "stratum": "crowded",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": false,
+        "crowded": true
+      },
+      "sha256": "e27d9be2db4575d980d04d8eb86611bcee085c0f454f54381de892a2ea275335"
+    },
+    {
+      "case_id": "case-30007",
+      "seed": 30007,
+      "sigma": 5.0,
+      "stratum": "crowded",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": false,
+        "crowded": true
+      },
+      "sha256": "dc679d63483ab8065451b0b90cf8f62d9a979112d3c885a6270f937ee9f638c1"
+    },
+    {
+      "case_id": "case-30000",
+      "seed": 30000,
+      "sigma": 2.0,
+      "stratum": "misleading_obs",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": true,
+        "misleading_slot": 12
+      },
+      "sha256": "42db816cacee6c410b8548f83a0018e5377f0f0395dc04616ef94dddbcbcfdd8"
+    },
+    {
+      "case_id": "case-30001",
+      "seed": 30001,
+      "sigma": 3.0,
+      "stratum": "misleading_obs",
+      "predicate_flags": {
+        "resolvable": true,
+        "misleading_obs": true,
+        "misleading_slot": 7
+      },
+      "sha256": "30feece3b2d9c0a19bcfe9b51ba250a95f2a093793a6ea92bc300f86d4be06ea"
+    },
+    {
+      "case_id": "case-30003",
+      "seed": 30003,
+      "sigma": 5.0,
+      "stratum": "unresolvable",
+      "predicate_flags": {
+        "resolvable": false
+      },
+      "sha256": "5f55d304128fc1df84f2897bd8f93948bfc5c0c1057292c06eae736023c50b79"
+    },
+    {
+      "case_id": "case-30010",
+      "seed": 30010,
+      "sigma": 4.0,
+      "stratum": "unresolvable",
+      "predicate_flags": {
+        "resolvable": false
+      },
+      "sha256": "c2886a8b2a4cb8d22432f82437ba197a01adbf2ca95510a7acbf69fbe43e63cd"
+    },
+    {
+      "case_id": "case-80003m",
+      "seed": 80003,
+      "sigma": 3.0,
+      "stratum": "scarce_window",
+      "constructed": true,
+      "predicate_flags": {
+        "resolvable": true,
+        "constructed_scarce": true,
+        "masked_slots": 8,
+        "kept_disc": 5,
+        "rival_pair": [
+          0,
+          2
+        ]
+      },
+      "sha256": "f0fa3ee082e8a22cf0c64659300c09f472d62f749a5a1fe31ecb5419d82bac0b"
+    },
+    {
+      "case_id": "case-80036m",
+      "seed": 80036,
+      "sigma": 4.0,
+      "stratum": "scarce_window",
+      "constructed": true,
+      "predicate_flags": {
+        "resolvable": true,
+        "constructed_scarce": true,
+        "masked_slots": 11,
+        "kept_disc": 6,
+        "rival_pair": [
+          0,
+          1
+        ]
+      },
+      "sha256": "f9ee2991bd908685c8f2be78a5d7e57d463b7981bd32be5e2bebfd52380a88b4"
+    }
+  ]
+}
