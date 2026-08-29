@@ -45,11 +45,13 @@ class TestTruthRV(unittest.TestCase):
                                places=12)
 
     def test_amplitude_and_offset_recovered_from_extremes(self):
-        # Dense sampling over many periods: peak-to-peak = 2K, mean = gamma.
+        # Dense sampling over many periods: peak-to-peak -> 2K, mean -> gamma.
+        # A finite grid never lands exactly on the extremum, so the tolerance
+        # here is set by the sampling step, not by the model.
         t = np.linspace(0.0, 730.0, 200001)
         y = truth_rv(self.PARAMS, t)
         self.assertAlmostEqual(0.5 * (y.max() - y.min()), self.PARAMS["K"],
-                               places=6)
+                               places=4)
         self.assertAlmostEqual(float(y.mean()), self.PARAMS["gamma"], places=4)
 
 

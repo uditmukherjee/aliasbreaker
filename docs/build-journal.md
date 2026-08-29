@@ -81,3 +81,12 @@ Improvement Changelog.
   cases), not marginal crossings. Power cost disclosed: batch correct-rate
   0.69 -> 0.47 across the grid. THETA_DEFAULT=0.997 committed; table in
   evaluation/theta-calibration.json.
+- 2026-08-29 · A3/A4 shipped: runtime/ Claude Code project (CLAUDE.md protocol
+  v1, locked settings allowing only the World CLI, /aliasbreaker skill),
+  headless launcher (scripts/run_llm_arm.py, model pinned claude-sonnet-5,
+  fixed replicate IDs, timeouts/noncompletions recorded), trace auditor
+  (scripts/audit_trace.py — any non-CLI tool call disqualifies the run).
+- 2026-08-29 · B1 test suite (Opus subagent): 94 stdlib-unittest tests green
+  in 3.8s — physics, periodogram/basins, world determinism, leakage guards
+  (poisoned-truth cases choose identical slots), chronology/budget, verdict
+  consistency, planners, oracle. No real bugs found in src/.
