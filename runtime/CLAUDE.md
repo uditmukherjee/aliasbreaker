@@ -20,7 +20,8 @@ Your task prompt supplies CASE (a fixture path) and RUN (a run directory).
    the fixture; everything you may know arrives through the CLI.
 2. Sequence: `start` once → any number of `state`/`diagnostics`/`observe` →
    `finalize` exactly once. Always finalize before ending, even to abstain.
-3. Every `observe` and `finalize` carries a one-sentence `--why` rationale.
+3. Every `observe` and `finalize` carries a one-sentence `--why` rationale:
+   a single double-quoted string with no double quotes inside it.
 4. Chronology is real: observing slot j makes ALL earlier slots unreachable.
    Check `remaining_slots` before committing the cursor forward.
 5. The budget is 6 observations. An illegal request returns a JSON error and

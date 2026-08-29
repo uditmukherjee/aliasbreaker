@@ -90,3 +90,14 @@ Improvement Changelog.
   in 3.8s — physics, periodogram/basins, world determinism, leakage guards
   (poisoned-truth cases choose identical slots), chronology/budget, verdict
   consistency, planners, oracle. No real bugs found in src/.
+- 2026-08-29 · END-TO-END PROOF: first headless runtime-agent run (Sonnet 5,
+  locked profile) on case-101 — CORRECT resolution in 4/6 observations, 93s.
+  Trajectory shows the v1 guidance working: confirmation observation after a
+  single-obs support crossing, candidate pruning, evidence-citing finalize
+  rationale, 2 observations saved. Auditor v1 had two false-positive classes
+  (our own /aliasbreaker Skill invocation; `cd runtime &&` prefix) and one
+  real gap (quoted --why text scanned for shell metacharacters); fixed —
+  quoted content exempted, cd-prefix + Skill(aliasbreaker) allowed, single
+  '&' and pipes/redirection still rejected. Smoke transcript re-audits clean
+  (13 tool calls, 0 violations); preserved at
+  evaluation/transcripts/smoke-case-101-r1.transcript.jsonl.

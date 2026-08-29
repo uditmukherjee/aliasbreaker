@@ -15,8 +15,28 @@ import re
 import sys
 from pathlib import Path
 
-ALLOWED = re.compile(
+CLI_RE = re.compile(
     r"^python -m aliasbreaker\.cli (start|state|diagnostics|observe|finalize)\b")
+CD_RUNTIME_RE = re.compile(r'^cd\s+"?[^;|&<>]*runtime[/\\]?"?$')
+FORBIDDEN_SHELL = re.compile(r"[;|<>]")
+
+
+def _bash_ok(command):
+    """Allow exactly: an optional `cd <...runtime>` prefix joined by one `&&`,
+    then a single World CLI invocation. No pipes, chains, or redirection.
+    Double-quoted content (--why rationales) is exempt from the shell-
+    metacharacter scan — quoted text cannot chain commands."""
+    stripped = re.sub(r'"[^"]*"', '""', command.strip())
+    if FORBIDDEN_SHELL.search(stripped):
+        return False
+    parts = [p.strip() for p in stripped.split("&&")]
+    if any("&" in p for p in parts):
+        return False
+    if len(parts) == 1:
+        return bool(CLI_RE.match(parts[0]))
+    if len(parts) == 2:
+        return bool(CD_RUNTIME_RE.match(parts[0])) and bool(CLI_RE.match(parts[1]))
+    return False
 
 
 def _iter_tool_uses(obj):
@@ -44,13 +64,17 @@ def audit(path):
         for tu in _iter_tool_uses(event):
             n_calls += 1
             name = tu.get("name", "?")
-            command = (tu.get("input") or {}).get("command", "")
+            inp = tu.get("input") or {}
+            if name == "Skill" and inp.get("skill") == "aliasbreaker":
+                continue  # invoking our own campaign skill is protocol
+            command = inp.get("command", "")
             if name != "Bash":
-                violations.append({"tool": name, "input": tu.get("input")})
-            elif not ALLOWED.match(command.strip()):
+                violations.append({"tool": name, "input": inp})
+            elif not _bash_ok(command):
                 violations.append({"tool": "Bash", "command": command})
             else:
-                cli_commands.append(command.strip().split()[3])
+                cli = command.strip().split("&&")[-1].strip()
+                cli_commands.append(cli.split()[3])
     return {
         "transcript": str(path),
         "ok": not violations,

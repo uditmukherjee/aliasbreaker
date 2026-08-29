@@ -1,0 +1,105 @@
+{
+  "label": "smoke",
+  "model": "claude-sonnet-5",
+  "n_runs": 1,
+  "completed": 1,
+  "audit_ok": 0,
+  "correct": 1,
+  "false_resolutions": 0,
+  "results": [
+    {
+      "run_id": "smoke-case-101-r1",
+      "case": "case-101",
+      "status": "completed",
+      "elapsed_s": 92.9,
+      "audit_ok": false,
+      "audit": {
+        "transcript": "D:\\Apps\\micro1-frontier-hackathon\\runtime\\runs\\smoke-case-101-r1.transcript.jsonl",
+        "ok": false,
+        "n_tool_calls": 13,
+        "cli_command_counts": {},
+        "violations": [
+          {
+            "tool": "Skill",
+            "input": {
+              "skill": "aliasbreaker",
+              "args": "../data/cases/dev/case-101.json runs/smoke-case-101-r1"
+            }
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli start --case ../data/cases/dev/case-101.json --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli diagnostics --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli observe --run runs/smoke-case-101-r1 --slot 2 --why \"Slot 2 (t=35.292) separates both the leading pair (12.27d vs 1.088d) and the (1.088d vs 0.924d) pair at 4-sigma, maximizing discrimination per observation.\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli diagnostics --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli observe --run runs/smoke-case-101-r1 --slot 4 --why \"Confirming the leading candidate (12.27d) after a single-observation crossing; slot 4 (t=38.161) separates both remaining live pairs (0,1) and (0,2) at 4-sigma.\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli diagnostics --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli observe --run runs/smoke-case-101-r1 --slot 5 --why \"Candidate 0 (12.27d) still below resolution threshold against candidate 2 (0.924d); slot 5 (t=39.12) separates all live pairs at 4-sigma.\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli diagnostics --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli observe --run runs/smoke-case-101-r1 --slot 9 --why \"Candidates 0 (12.27d) and 2 (0.924d) are now near-tied (0.46/0.54) after candidate 1 was eliminated; slot 9 (t=43.322) is the top-ranked discriminator for this pair at 4-sigma.\""
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli diagnostics --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli state --run runs/smoke-case-101-r1"
+          },
+          {
+            "tool": "Bash",
+            "command": "cd D:/Apps/micro1-frontier-hackathon/runtime && python -m aliasbreaker.cli finalize --run runs/smoke-case-101-r1 --why \"Candidate 0 (P=12.2683d) resolved to support=1.0 with all other candidates at 0.0 (chi2 14.04 vs 39.24/34.1) after 4 observations; diagnostics show no remaining live pairs to discriminate, so the campaign is complete with 2 observations unused.\""
+          }
+        ]
+      },
+      "verdict": {
+        "resolved": true,
+        "abstained": false,
+        "pred": 0,
+        "correct": true,
+        "false_resolution": false,
+        "max_support": 0.9999525508265671,
+        "truth_support": 0.9999525508265671,
+        "chi2s": [
+          14.042050515244526,
+          39.23882297964475,
+          34.10133320014096
+        ],
+        "n_obs": 4,
+        "theta": 0.997,
+        "observed_slots": [
+          2,
+          4,
+          5,
+          9
+        ],
+        "stop_reason": "Candidate 0 (P=12.2683d) resolved to support=1.0 with all other candidates at 0.0 (chi2 14.04 vs 39.24/34.1) after 4 observations; diagnostics show no remaining live pairs to discriminate, so the campaign is complete with 2 observations unused."
+      },
+      "transcript": "runtime\\runs\\smoke-case-101-r1.transcript.jsonl"
+    }
+  ]
+}
