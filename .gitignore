@@ -1,7 +1,8 @@
 # Local/temporary
 tmp/
-runs/
 *.log
+# runtime/runs is deliberately TRACKED: campaign run dirs and transcripts are
+# submission trajectory evidence.
 
 # Secrets
 .env

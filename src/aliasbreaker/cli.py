@@ -231,22 +231,28 @@ def cmd_finalize(args):
         _fail("run is already finalized")
     theta = meta["theta"]  # pinned at start; never floats with code changes
     v = verdict(case, campaign.obs_t, campaign.obs_y, theta)
-    (run / "verdict.json").write_text(json.dumps(
-        {**v, "theta": theta, "observed_slots": campaign.obs_idx,
-         "stop_reason": args.why}, indent=2))
+    # PUBLIC fields only — truth-side facts (correct, truth_support, ...)
+    # are never written into the agent's workspace; the evaluator recomputes
+    # them from the case + observations (mock-judge critical finding 2).
+    public_v = {
+        "resolved": v["resolved"], "abstained": v["abstained"],
+        "pred": v["pred"], "max_support": v["max_support"],
+        "chi2s": v["chi2s"], "n_obs": v["n_obs"], "theta": theta,
+        "observed_slots": campaign.obs_idx, "stop_reason": args.why,
+    }
+    (run / "verdict.json").write_text(json.dumps(public_v, indent=2))
     _log(run, {"cmd": "finalize", "why": args.why,
                "resolved": v["resolved"]})
     state["finalized"] = True
     _save_state(run, state)
-    public = {
+    print(json.dumps({
         "resolved": v["resolved"],
         "abstained": v["abstained"],
         "selected_candidate_index": v["pred"] if v["resolved"] else None,
         "max_support": round(v["max_support"], 6),
         "observations_used": v["n_obs"],
         "theta": theta,
-    }
-    print(json.dumps(public, indent=1))
+    }, indent=1))
 
 
 class _JsonArgParser(argparse.ArgumentParser):

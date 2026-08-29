@@ -1,0 +1,28 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999856397511657,
+  "truth_support": 0.9999856397511657,
+  "chi2s": [
+    67.352452981329,
+    85.93258683995296,
+    11.18928142654638,
+    33.51717469559509,
+    42.20308908036592,
+    78.48187020695454
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    1,
+    5,
+    7,
+    13,
+    20,
+    26
+  ],
+  "stop_reason": "Support for the P=13.21d candidate rose to 0.99999 after confirmation points at t=70.27 and t=78.56 crossed theta, resolving the orbit and ruling out the initially favored short-period aliases"
+}

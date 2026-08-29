@@ -1,0 +1,27 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999976811234284,
+  "truth_support": 0.9999976811234284,
+  "chi2s": [
+    82.2764948149553,
+    100.29720033254087,
+    5.781610276142616,
+    52.08217916840793,
+    31.730537605567886,
+    62.80762609510416
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    13,
+    16,
+    20,
+    23,
+    26
+  ],
+  "stop_reason": "Candidate 2 (P=12.9406d) reached support 1.0, exceeding theta after two confirmation observations against its remaining rivals"
+}

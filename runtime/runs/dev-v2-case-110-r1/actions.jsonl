@@ -1,0 +1,14 @@
+{"ts": 1788014060.104, "cmd": "start", "case_id": "case-110", "case_sha256": "569f5ce43db714e4d03983682c93e6f6b470e0d8e3a66ee5cf5bc39975cafc55", "theta": 0.997}
+{"ts": 1788014064.756, "cmd": "diagnostics"}
+{"ts": 1788014075.121, "cmd": "observe", "slot": 4, "ok": true, "rv": -6.904721, "why": "Pair 0-1 dominates remaining support and separates by 4 sigma at slot 4, earliest such slot, so testing here first"}
+{"ts": 1788014080.77, "cmd": "diagnostics"}
+{"ts": 1788014086.893, "cmd": "observe", "slot": 8, "ok": true, "rv": 11.130842, "why": "Pair 0-1 still dominant, slot 8 gives 4 sigma separation and is earliest reachable such slot"}
+{"ts": 1788014091.831, "cmd": "diagnostics"}
+{"ts": 1788014098.414, "cmd": "observe", "slot": 10, "ok": true, "rv": 12.707451, "why": "Candidate 0 leads but has not crossed theta, slot 10 gives 4 sigma separation against the next strongest rival pair 0-3 and is the earliest reachable option"}
+{"ts": 1788014103.604, "cmd": "diagnostics"}
+{"ts": 1788014112.667, "cmd": "observe", "slot": 25, "ok": true, "rv": 5.330738, "why": "Only pair 3-4 remains live, slot 25 gives full 4 sigma separation and is the earliest reachable slot at that strength"}
+{"ts": 1788014117.703, "cmd": "diagnostics"}
+{"ts": 1788014122.34, "cmd": "observe", "slot": 29, "ok": true, "rv": 8.355263, "why": "Pair 3-4 remains the only contest, slot 29 is earliest reachable slot with full 4 sigma separation, keeping one slot in reserve to confirm"}
+{"ts": 1788014127.71, "cmd": "diagnostics"}
+{"ts": 1788014132.871, "cmd": "observe", "slot": 30, "ok": true, "rv": 6.780772, "why": "Candidate 4 leads near theta but has not crossed it, final budgeted slot 30 gives full 4 sigma separation against remaining rival 3 and is earliest reachable"}
+{"ts": 1788014137.754, "cmd": "finalize", "why": "Candidate 4, period 17.16031 days, reached support 0.999976 which clears theta 0.997 after two confirming observations resolved the late 3-4 alias contest", "resolved": true}

@@ -1,0 +1,10 @@
+{"ts": 1788012940.466, "cmd": "start", "case_id": "case-111", "case_sha256": "7421b1009caf401ec215f987a03a784632c2478aeabc0e6c080ad6976a9ddd64", "theta": 0.997}
+{"ts": 1788012945.107, "cmd": "diagnostics"}
+{"ts": 1788012955.268, "cmd": "observe", "slot": 27, "ok": true, "rv": 14.749358, "why": "Slot 27 separates the leading 0-1 and 1-2 pairs by up to 4 and 3.7 sigma, the best joint discriminator among the three dominant candidates"}
+{"ts": 1788012959.787, "cmd": "diagnostics"}
+{"ts": 1788012967.884, "cmd": "observe", "slot": 28, "ok": true, "rv": 19.296087, "why": "Slot 28 gives full 4 sigma separation across the 0-2, 1-2, and 1-4 pairs, the broadest joint discriminator remaining"}
+{"ts": 1788012972.724, "cmd": "diagnostics"}
+{"ts": 1788012978.51, "cmd": "observe", "slot": 32, "ok": true, "rv": 3.147996, "why": "Slot 32 gives full 4 sigma separation for the now-dominant 0-1 pair, the only pair with meaningful remaining support product"}
+{"ts": 1788012983.697, "cmd": "diagnostics"}
+{"ts": 1788012989.495, "cmd": "observe", "slot": 33, "ok": true, "rv": -14.573338, "why": "Confirmation observation at slot 33 gives full 4 sigma separation for both remaining live pairs 1-3 and 1-5 against the leading candidate"}
+{"ts": 1788012994.861, "cmd": "finalize", "why": "Candidate 1 at period 14.70211 days reached support 0.99975 above theta after confirmation at slot 33, resolving the campaign", "resolved": true}

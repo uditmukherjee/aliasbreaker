@@ -1,0 +1,26 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.999749616607489,
+  "truth_support": 0.999749616607489,
+  "chi2s": [
+    20.903313833348076,
+    4.295254265680248,
+    34.286976004456,
+    34.08534913842562,
+    30.339912160170392,
+    37.20561026064884
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    27,
+    28,
+    32,
+    33
+  ],
+  "stop_reason": "Candidate 1 at period 14.70211 days reached support 0.99975 above theta after confirmation at slot 33, resolving the campaign"
+}

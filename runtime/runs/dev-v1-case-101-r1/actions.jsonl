@@ -1,0 +1,13 @@
+{"ts": 1788010931.068, "cmd": "start", "case_id": "case-101"}
+{"ts": 1788010936.006, "cmd": "diagnostics"}
+{"ts": 1788010942.288, "cmd": "observe", "slot": 2, "ok": true, "rv": -15.159, "why": "Slot 2 separates both the leading pair (0,1) and pair (1,2) at 4 sigma, maximizing discriminating power per observation"}
+{"ts": 1788010947.815, "cmd": "diagnostics"}
+{"ts": 1788010953.626, "cmd": "observe", "slot": 4, "ok": true, "rv": -10.503, "why": "Slot 4 gives 4 sigma separation for both remaining live pairs (0,1) and (0,2) to sharpen the leading candidate"}
+{"ts": 1788010959.375, "cmd": "diagnostics"}
+{"ts": 1788010964.805, "cmd": "observe", "slot": 5, "ok": true, "rv": -6.405, "why": "Slot 5 gives 4 sigma separation for the dominant live pair (0,2) to push candidate 0 support toward resolution"}
+{"ts": 1788010970.796, "cmd": "diagnostics"}
+{"ts": 1788010975.975, "cmd": "observe", "slot": 9, "ok": true, "rv": 16.711, "why": "Slot 9 gives 4 sigma separation for the only remaining live pair (0,2) which is currently near a coin flip"}
+{"ts": 1788010982.072, "cmd": "diagnostics"}
+{"ts": 1788010989.199, "cmd": "state"}
+{"ts": 1788011001.918, "cmd": "observe", "slot": 12, "ok": true, "rv": -12.334, "why": "Confirmation point at a previously high-separation slot for pair 0-2 to guard against the mid-campaign support swing before finalizing"}
+{"ts": 1788011007.727, "cmd": "finalize", "why": "Candidate 0 (P=12.2683d) reached support 1.0 after two confirming observations at 4-sigma-separating slots, confirming resolution above theta despite an earlier mid-campaign swing", "resolved": true}

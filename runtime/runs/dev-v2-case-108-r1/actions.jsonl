@@ -1,0 +1,11 @@
+{"ts": 1788013908.195, "cmd": "start", "case_id": "case-108", "case_sha256": "af84763fb6f8cba9376a14bc4701b62a789c3d6c37c1f89d043df54f19de1d25", "theta": 0.997}
+{"ts": 1788013912.266, "cmd": "diagnostics"}
+{"ts": 1788013919.619, "cmd": "observe", "slot": 0, "ok": true, "rv": -8.635355, "why": "Earliest reachable slot, separates the two leading pairs 0-1 and 0-2 at max sigma, no cursor cost"}
+{"ts": 1788013923.868, "cmd": "diagnostics"}
+{"ts": 1788013934.099, "cmd": "state"}
+{"ts": 1788013942.463, "cmd": "observe", "slot": 2, "ok": true, "rv": 16.980777, "why": "Near-earliest reachable slot, hits max separation for both leading pairs 0-1 and 0-2 at once, minimal cursor cost"}
+{"ts": 1788013946.724, "cmd": "diagnostics"}
+{"ts": 1788013955.096, "cmd": "observe", "slot": 4, "ok": true, "rv": 4.300838, "why": "Earliest listed slot for the now-leading pair 1-2, also separates pair 0-2, keeps cursor thrift"}
+{"ts": 1788013959.489, "cmd": "diagnostics"}
+{"ts": 1788013964.599, "cmd": "observe", "slot": 8, "ok": true, "rv": 15.951619, "why": "Confirmation observation at top slot for the decisive pair 1-2, leader has not yet crossed theta"}
+{"ts": 1788013969.877, "cmd": "finalize", "why": "Candidate 1, period 11.3 days, crossed theta at support 0.999984 after a confirmation observation at the top-separation slot for the decisive pair 1-2, all rivals collapsed below 3e-5", "resolved": true}

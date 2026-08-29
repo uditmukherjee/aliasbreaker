@@ -1,0 +1,15 @@
+{"ts": 1788011619.977, "cmd": "start", "case_id": "case-110"}
+{"ts": 1788011624.818, "cmd": "diagnostics"}
+{"ts": 1788011631.262, "cmd": "observe", "slot": 4, "ok": true, "rv": -6.905, "why": "Only the 1.52d vs 2.93d pair carries real support; slot 4 gives max 4-sigma separation between them"}
+{"ts": 1788011634.993, "cmd": "diagnostics"}
+{"ts": 1788011640.092, "cmd": "observe", "slot": 8, "ok": true, "rv": 11.131, "why": "One confirmation point at 4-sigma separation for the leading 1.52d vs 2.93d pair before finalizing"}
+{"ts": 1788011643.933, "cmd": "diagnostics"}
+{"ts": 1788011650.611, "cmd": "observe", "slot": 10, "ok": true, "rv": 12.707, "why": "Support at 0.954 is short of theta; slot 10 gives 4-sigma separation against the next-strongest residual candidate 3"}
+{"ts": 1788011655.991, "cmd": "diagnostics"}
+{"ts": 1788011660.211, "cmd": "state"}
+{"ts": 1788011665.28, "cmd": "observe", "slot": 25, "ok": true, "rv": 5.331, "why": "Prior two points overturned candidate 0; slot 25 gives 4-sigma separation for the now-leading 1.06d vs 18.6d pair"}
+{"ts": 1788011669.484, "cmd": "diagnostics"}
+{"ts": 1788011673.79, "cmd": "observe", "slot": 29, "ok": true, "rv": 8.355, "why": "3 vs 4 flipped lead and remains close; slot 29 is the earliest 4-sigma separator with budget left to confirm"}
+{"ts": 1788011677.451, "cmd": "diagnostics"}
+{"ts": 1788011681.315, "cmd": "observe", "slot": 30, "ok": true, "rv": 6.781, "why": "Final budget point at 4-sigma separation to push candidate 4 support past theta before finalizing"}
+{"ts": 1788011686.251, "cmd": "finalize", "why": "After early lead by candidate 0 was overturned and a close 3 vs 4 alias battle, final points drive candidate 4 (18.56d) to support 1.0, clearing theta", "resolved": true}

@@ -74,21 +74,28 @@ def run_one(case_path, run_id, model, timeout):
         status = "provider_error"
 
     verdict_path = run_dir / "verdict.json"
-    verdict = (json.loads(verdict_path.read_text())
-               if verdict_path.exists() else None)
-    if verdict is None and status == "completed":
+    public_verdict = (json.loads(verdict_path.read_text())
+                      if verdict_path.exists() else None)
+    if public_verdict is None and status == "completed":
         status = "noncompletion"
     audit_result = audit(transcript, expected_run=run_id,
-                         expected_case=case_path.stem)
+                         expected_case=case_path.stem,
+                         expected_cwd=str(RUNTIME))
     replay_result = replay(run_dir) if verdict_path.exists() else {"ok": False}
+    # Truth-side outcome comes ONLY from the evaluator's fresh recomputation
+    # during replay — never from files in the agent's workspace.
+    fresh = replay_result.get("fresh_verdict") or {}
 
+    reported = audit_result.get("model_reported") or ""
+    model_ok = reported.startswith(model)
     eligible = (status == "completed" and audit_result["ok"]
-                and replay_result["ok"])
+                and replay_result["ok"] and model_ok)
     outcome = {
         "eligible": eligible,
-        "correct": bool(verdict and verdict.get("correct")) if eligible else False,
-        "false_resolution": bool(verdict and verdict.get("false_resolution")) if eligible else False,
-        "abstained": bool(verdict and verdict.get("abstained")) if eligible else None,
+        "model_ok": model_ok,
+        "correct": bool(fresh.get("correct")) if eligible else False,
+        "false_resolution": bool(fresh.get("false_resolution")) if eligible else False,
+        "abstained": bool(fresh.get("abstained")) if eligible else None,
         "scored_as": ("verdict" if eligible else "noncompletion/unresolved"),
     }
     return {
@@ -100,7 +107,7 @@ def run_one(case_path, run_id, model, timeout):
         "replay_ok": replay_result.get("ok", False),
         "outcome": outcome,
         "audit": audit_result, "replay": replay_result,
-        "verdict_raw": verdict,
+        "verdict_raw": public_verdict,
         "transcript": str(transcript.relative_to(ROOT)),
     }
 
@@ -116,6 +123,13 @@ def main():
     args = ap.parse_args()
     if not SLUG.match(args.label):
         raise SystemExit("label must be a lowercase slug ([a-z0-9-])")
+    if shutil.which("claude") is None:
+        raise SystemExit(
+            "PRECONDITION FAILED: the Claude Code CLI ('claude') is not on "
+            "PATH. The LLM arm requires Claude Code with authentication "
+            "(subscription login or ANTHROPIC_API_KEY). The deterministic "
+            "arms (src/run_arms.py) and audit replay (aliasbreaker.replay) "
+            "run without it. No summary was written.")
 
     case_paths = sorted(Path(args.cases).resolve().glob("*.json"))
     if args.only:
@@ -137,9 +151,15 @@ def main():
                   flush=True)
             results.append(r)
 
+    import hashlib
+    prompt_bytes = (RUNTIME / "CLAUDE.md").read_bytes()
+    commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT,
+                            capture_output=True, text=True).stdout.strip()
     n_eligible = sum(r["outcome"]["eligible"] for r in results)
     summary = {
         "label": args.label, "model_requested": args.model,
+        "prompt_sha256": hashlib.sha256(prompt_bytes).hexdigest(),
+        "code_commit": commit,
         "models_reported": sorted({r["model_reported"] for r in results
                                    if r["model_reported"]}),
         "n_runs": len(results),

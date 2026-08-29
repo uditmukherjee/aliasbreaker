@@ -69,10 +69,14 @@ class TestArms(unittest.TestCase):
                 for out in outs:
                     self.assertTrue(VERDICT_KEYS.issubset(out.keys()))
 
-    def test_run_batch_slots_equal_the_design(self):
+    def test_run_batch_slots_are_a_prefix_of_the_design(self):
+        # v3 arms execute the predeclared plan under the SHARED stop rule, so
+        # the executed slots are a chronological prefix of the design.
         for case, out in zip(self.cases, self.results["batch"]):
             with self.subTest(case=case.case_id):
-                self.assertEqual(out["slots"], batch_design(case))
+                design = batch_design(case)
+                self.assertEqual(out["slots"], design[:len(out["slots"])])
+                self.assertGreater(len(out["slots"]), 0)
 
     def test_every_arm_respects_budget_range_and_chronology(self):
         for arm, outs in self.results.items():
@@ -96,12 +100,19 @@ class TestArms(unittest.TestCase):
                 self.assertEqual(a["pred"], b["pred"])
                 self.assertEqual(a["resolved"], b["resolved"])
 
-    def test_even_spacing_is_actually_spread_out(self):
+    def test_even_spacing_plan_is_actually_spread_out(self):
+        # The PLAN spans the horizon; execution may stop early under the
+        # shared rule, so assert on the plan prefix property instead.
         for case, out in zip(self.cases, self.results["even"]):
             with self.subTest(case=case.case_id):
-                slots = out["slots"]
-                self.assertEqual(slots[0], 0)
-                self.assertEqual(slots[-1], len(case.slot_t) - 1)
+                n = len(case.slot_t)
+                k = min(case.budget, n)
+                plan = sorted({int(round(i))
+                               for i in np.linspace(0, n - 1, k)})
+                self.assertEqual(out["slots"], plan[:len(out["slots"])])
+                self.assertEqual(out["slots"][0], 0)
+                if len(out["slots"]) == len(plan):
+                    self.assertEqual(out["slots"][-1], n - 1)
 
     def test_scripted_adaptive_stops_early_only_when_resolved(self):
         # The ablation's declared stopping rule: it keeps observing until the
@@ -122,7 +133,10 @@ class TestArms(unittest.TestCase):
         self.assertTrue(loose["resolved"])
         strict = run_batch(case, theta=1.01)
         self.assertFalse(strict["resolved"])
-        self.assertEqual(loose["slots"], strict["slots"])
+        # A looser theta stops no later: its slots are a prefix of the
+        # stricter run's slots (same plan, earlier shared-rule stop).
+        self.assertEqual(loose["slots"],
+                         strict["slots"][:len(loose["slots"])])
 
     def test_adaptive_never_exceeds_budget_under_a_loose_theta(self):
         for case in self.cases:

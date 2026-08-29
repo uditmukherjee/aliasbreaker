@@ -1,0 +1,6 @@
+{"ts": 1788012497.979, "cmd": "start", "case_id": "case-105", "case_sha256": "0ee21e494ce941beffcde7dcff23a014e66b6e26b742b2c5cf1e8c9b2966b8de", "theta": 0.997}
+{"ts": 1788012502.336, "cmd": "diagnostics"}
+{"ts": 1788012507.407, "cmd": "observe", "slot": 0, "ok": true, "rv": 12.694158, "why": "Slot 0 separates all live pairs at max separation and is earliest reachable, so it best discriminates the leading 0 vs 1 alias pair without burning the cursor"}
+{"ts": 1788012511.966, "cmd": "diagnostics"}
+{"ts": 1788012516.447, "cmd": "observe", "slot": 1, "ok": true, "rv": 10.25122, "why": "Confirmation observation at max separation for the now-leading 0 vs 1 pair to guard against a single noisy point misleading the flip"}
+{"ts": 1788012520.404, "cmd": "finalize", "why": "Candidate 0 (P=6.578d) support reached 0.999941 exceeding theta 0.997 after a confirmation observation, with the other candidates driven near zero", "resolved": true}

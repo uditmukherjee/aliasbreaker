@@ -1,0 +1,12 @@
+{"ts": 1788013225.895, "cmd": "start", "case_id": "case-101", "case_sha256": "4c569bd20af66de0601452bca10687f165ef8f51e08f3f50e9dd30587015013f", "theta": 0.997}
+{"ts": 1788013231.901, "cmd": "diagnostics"}
+{"ts": 1788013241.45, "cmd": "observe", "slot": 2, "ok": true, "rv": -15.158607, "why": "Slot 2 near t=35.3 gives 4-sigma separation for both the leading pair 0-1 and pair 1-2, covering the two most contested candidates with minimal cursor advance"}
+{"ts": 1788013247.417, "cmd": "diagnostics"}
+{"ts": 1788013253.629, "cmd": "observe", "slot": 3, "ok": true, "rv": -16.492803, "why": "Slot 3 near t=37.3 is the earliest reachable point giving 4-sigma separation for the now-dominant pair 0-2, taken before any deeper jump"}
+{"ts": 1788013258.531, "cmd": "diagnostics"}
+{"ts": 1788013263.668, "cmd": "observe", "slot": 8, "ok": true, "rv": 17.205527, "why": "Slot 8 near t=42.1 is the earliest reachable 4-sigma discriminator for the still-dominant pair 0-2"}
+{"ts": 1788013269.207, "cmd": "diagnostics"}
+{"ts": 1788013275.119, "cmd": "observe", "slot": 12, "ok": true, "rv": -12.333609, "why": "Candidate 0 is near threshold at slot 8, spending one confirmation observation at slot 12 t=47.1 which still gives 4-sigma separation for the remaining live pair 0-2"}
+{"ts": 1788013280.046, "cmd": "diagnostics"}
+{"ts": 1788013286.16, "cmd": "observe", "slot": 16, "ok": true, "rv": -1.283895, "why": "Support is just under theta at 0.9956, taking the earliest remaining 4-sigma slot for pair 0-2 to push resolution over the threshold"}
+{"ts": 1788013292.677, "cmd": "finalize", "why": "Candidate 0, period 12.27 days, reached support 0.9997 above theta 0.997 after five confirming observations at slots 2, 3, 8, 12, and 16 that each separated it from the remaining candidates by 4 sigma", "resolved": true}

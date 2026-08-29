@@ -1,0 +1,15 @@
+{"ts": 1788012219.931, "cmd": "start", "case_id": "case-103", "case_sha256": "216eec70e462f4666cccbab410a6847b6f7cab84428aed8533099805532a96b7", "theta": 0.997}
+{"ts": 1788012229.442, "cmd": "diagnostics"}
+{"ts": 1788012252.737, "cmd": "observe", "slot": 1, "ok": true, "rv": 11.990315, "why": "Broad discriminator at t=35.32 separates many lower-support candidate pairs at once, testing whether candidates 2-5 can be ruled out early"}
+{"ts": 1788012266.588, "cmd": "diagnostics"}
+{"ts": 1788012276.735, "cmd": "observe", "slot": 5, "ok": true, "rv": -14.991309, "why": "Candidates near periods 1.09d and 0.93d now dominate and are nearly tied; t=43.29 gives maximal predicted separation for that pair"}
+{"ts": 1788012296.378, "cmd": "diagnostics"}
+{"ts": 1788012318.079, "cmd": "state"}
+{"ts": 1788012325.492, "cmd": "observe", "slot": 7, "ok": true, "rv": 19.413788, "why": "t=48.15 gives maximal separation for the P=1.08d vs P=2.5d pair while also stress-testing the remaining weaker alternatives"}
+{"ts": 1788012330.419, "cmd": "diagnostics"}
+{"ts": 1788012337.458, "cmd": "observe", "slot": 13, "ok": true, "rv": 25.235184, "why": "t=61.47 gives maximal separation for the leading P=1.08d candidate against its main remaining rival at P=13.2d"}
+{"ts": 1788012344.497, "cmd": "diagnostics"}
+{"ts": 1788012350.965, "cmd": "observe", "slot": 20, "ok": true, "rv": -11.811321, "why": "Support flipped sharply after the last point, so confirming the P=13.2d vs P=1.08d pair at its best remaining separation t=70.27 before trusting the new leader"}
+{"ts": 1788012357.762, "cmd": "diagnostics"}
+{"ts": 1788012365.519, "cmd": "observe", "slot": 26, "ok": true, "rv": 8.466207, "why": "Final budgeted point at t=78.56 targets the last non-negligible rival at P=0.93d to push the leading P=13.2d candidate past the resolution threshold"}
+{"ts": 1788012370.863, "cmd": "finalize", "why": "Support for the P=13.21d candidate rose to 0.99999 after confirmation points at t=70.27 and t=78.56 crossed theta, resolving the orbit and ruling out the initially favored short-period aliases", "resolved": true}

@@ -1,0 +1,12 @@
+{"ts": 1788012061.741, "cmd": "start", "case_id": "case-101", "case_sha256": "4c569bd20af66de0601452bca10687f165ef8f51e08f3f50e9dd30587015013f", "theta": 0.997}
+{"ts": 1788012067.818, "cmd": "diagnostics"}
+{"ts": 1788012075.194, "cmd": "observe", "slot": 2, "ok": true, "rv": -15.158607, "why": "Slot 2 separates both the leading 0-1 pair and the 1-2 pair at max separation, maximizing information per observation"}
+{"ts": 1788012082.023, "cmd": "diagnostics"}
+{"ts": 1788012089.194, "cmd": "observe", "slot": 3, "ok": true, "rv": -16.492803, "why": "Candidate 0 now leads with candidate 2 as the only live rival, slot 3 gives maximum separation for that pair"}
+{"ts": 1788012095.603, "cmd": "diagnostics"}
+{"ts": 1788012102.675, "cmd": "observe", "slot": 8, "ok": true, "rv": 17.205527, "why": "Pair 0-2 remains the only contested rivalry and still short of theta, slot 8 is the top separator for it"}
+{"ts": 1788012109.793, "cmd": "diagnostics"}
+{"ts": 1788012115.557, "cmd": "observe", "slot": 12, "ok": true, "rv": -12.333609, "why": "Candidate 0 support is 0.991, just under theta, one confirmation observation at the top separator for the residual 0-2 pair"}
+{"ts": 1788012122.269, "cmd": "diagnostics"}
+{"ts": 1788012128.376, "cmd": "observe", "slot": 16, "ok": true, "rv": -1.283895, "why": "Support 0.9956 is just below theta, spending one more observation at the top separator for the residual 0-2 pair before finalizing"}
+{"ts": 1788012135.419, "cmd": "finalize", "why": "Candidate 0 support reached 0.9997 exceeding theta 0.997 after five targeted observations resolving the 0-1 and 0-2 alias pairs", "resolved": true}

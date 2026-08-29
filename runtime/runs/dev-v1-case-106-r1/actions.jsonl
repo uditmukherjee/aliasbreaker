@@ -1,0 +1,8 @@
+{"ts": 1788011333.016, "cmd": "start", "case_id": "case-106"}
+{"ts": 1788011338.928, "cmd": "diagnostics"}
+{"ts": 1788011345.761, "cmd": "observe", "slot": 0, "ok": true, "rv": -7.828, "why": "Slot 0 at t=31.154 separates the leading pairs 0-1 0-4 1-2 1-3 1-4 2-4 3-4 all at 4 sigma, the best multi-pair discriminator available"}
+{"ts": 1788011350.625, "cmd": "diagnostics"}
+{"ts": 1788011356.598, "cmd": "observe", "slot": 4, "ok": true, "rv": -13.754, "why": "Slot 4 at t=36.283 is the top discriminator for all three live pairs 0-2 0-3 2-3 simultaneously at 4 sigma"}
+{"ts": 1788011366.85, "cmd": "diagnostics"}
+{"ts": 1788011372.0, "cmd": "observe", "slot": 7, "ok": true, "rv": 8.133, "why": "Confirmation observation at t=42.112 for the leading pairs 0-2 and 0-3 since candidate 0 crossed theta after only two observations"}
+{"ts": 1788011377.047, "cmd": "finalize", "why": "Candidate 0 period 12.3205d reached support 0.999 after two observations and held at 1.0 after a confirmation observation, clearing theta with the remaining candidates driven to zero", "resolved": true}

@@ -1,0 +1,28 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 4,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999830179281913,
+  "truth_support": 0.9999830179281913,
+  "chi2s": [
+    47.74315119158771,
+    50.18432125536552,
+    52.12249471439556,
+    44.242019218433576,
+    20.805103418882823,
+    44.587457230582565
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    4,
+    8,
+    15,
+    16,
+    25,
+    30
+  ],
+  "stop_reason": "Candidate 4 support reached 0.999983 exceeding theta after the final observation broke the last live pair with 3, resolving the period to 17.16 days"
+}

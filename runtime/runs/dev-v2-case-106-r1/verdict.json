@@ -1,0 +1,24 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999914398507413,
+  "truth_support": 0.9999914398507413,
+  "chi2s": [
+    6.599182980811374,
+    160.11154554895913,
+    30.951286452305865,
+    31.778045526691887,
+    155.84550520348574
+  ],
+  "n_obs": 3,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    4,
+    7
+  ],
+  "stop_reason": "candidate 0, period 12.32048 days, resolved with support 0.999991 above theta 0.997, confirmed by an independent slot after crossing threshold in two observations"
+}

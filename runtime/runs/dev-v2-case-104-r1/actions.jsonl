@@ -1,0 +1,12 @@
+{"ts": 1788013543.688, "cmd": "start", "case_id": "case-104", "case_sha256": "2a864939c16286e56a12b357d9fa08e3d3eb870137594092cd6315664466e116", "theta": 0.997}
+{"ts": 1788013548.143, "cmd": "diagnostics"}
+{"ts": 1788013577.715, "cmd": "observe", "slot": 25, "ok": true, "rv": 22.128069, "why": "Slot 25 near t=63.3 gives strong separation for both leading pairs, candidate1-vs-2 at 3.87 sigma and candidate0-vs-1 at 4.0 sigma, best single-shot coverage of the dominant support pairs"}
+{"ts": 1788013582.176, "cmd": "diagnostics"}
+{"ts": 1788013591.537, "cmd": "observe", "slot": 27, "ok": true, "rv": -5.124204, "why": "Slot 27 near t=67.1 covers both candidate0-vs-1 and candidate1-vs-2 at 4.0 sigma, the two next most important live pairs, without skipping past reachable near-term slots"}
+{"ts": 1788013596.09, "cmd": "diagnostics"}
+{"ts": 1788013602.222, "cmd": "observe", "slot": 28, "ok": true, "rv": -10.631003, "why": "Slot 28 near t=67.5 is the earliest and strongest discriminator, 4.0 sigma, for the now-dominant candidate0-vs-2 pair"}
+{"ts": 1788013607.922, "cmd": "diagnostics"}
+{"ts": 1788013616.644, "cmd": "observe", "slot": 29, "ok": true, "rv": -10.314894, "why": "Confirmation observation at slot 29 near t=70.2, earliest reachable slot with 4.0 sigma separation on the remaining live candidate0-vs-2 pair, to solidify the leading candidate before finalizing"}
+{"ts": 1788013620.944, "cmd": "diagnostics"}
+{"ts": 1788013626.072, "cmd": "observe", "slot": 30, "ok": true, "rv": -8.824297, "why": "Slot 30 near t=71.2 is the earliest and strongest, 4.0 sigma, discriminator for the last live pair candidate2-vs-4, needed to push support past the theta threshold"}
+{"ts": 1788013631.091, "cmd": "finalize", "why": "Candidate2, period 17.06 days, reached support 0.9979 exceeding theta 0.997 after five observations that sequentially eliminated candidates 1, 0, and 4 via their highest-separation discriminating slots", "resolved": true}

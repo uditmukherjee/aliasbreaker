@@ -1,0 +1,4 @@
+{"ts": 1788011999.612, "cmd": "start", "case_id": "case-101", "case_sha256": "4c569bd20af66de0601452bca10687f165ef8f51e08f3f50e9dd30587015013f", "theta": 0.997}
+{"ts": 1788011999.751, "cmd": "observe", "slot": 2, "ok": true, "rv": -15.158607, "why": "replay validation observation"}
+{"ts": 1788011999.883, "cmd": "observe", "slot": 1, "ok": false, "error": "slot 1 not observable (cursor=3, n_slots=51)", "why": "should fail"}
+{"ts": 1788012000.025, "cmd": "finalize", "why": "replay validation stop", "resolved": false}

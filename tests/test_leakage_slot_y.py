@@ -95,17 +95,30 @@ class TestBatchArmsIgnoreSlotY(unittest.TestCase):
             self.assertEqual(batch_design(clean), batch_design(dirty),
                              f"{clean.case_id}: batch design moved")
 
-    def test_run_batch_slots_identical_under_slot_y_poisoning(self):
+    def test_batch_plan_identical_under_slot_y_poisoning(self):
+        # v3: the executed prefix legitimately depends on observed outcomes
+        # (shared stop rule), but the PLAN must be outcome-independent, and
+        # the executed slots must be a prefix of that same plan either way.
+        from aliasbreaker.planners import batch_design
         for clean, dirty in zip(self.cases, self.poisoned):
-            self.assertEqual(run_batch(clean)["slots"],
-                             run_batch(dirty)["slots"],
-                             f"{clean.case_id}: batch slots moved")
+            plan_c, plan_d = batch_design(clean), batch_design(dirty)
+            self.assertEqual(plan_c, plan_d,
+                             f"{clean.case_id}: batch PLAN moved")
+            for case, plan in ((clean, plan_c), (dirty, plan_d)):
+                slots = run_batch(case)["slots"]
+                self.assertEqual(slots, plan[:len(slots)],
+                                 f"{case.case_id}: slots not a plan prefix")
 
-    def test_even_spacing_slots_identical_under_slot_y_poisoning(self):
+    def test_even_spacing_plan_identical_under_slot_y_poisoning(self):
+        import numpy as np
         for clean, dirty in zip(self.cases, self.poisoned):
-            self.assertEqual(run_even_spacing(clean)["slots"],
-                             run_even_spacing(dirty)["slots"],
-                             f"{clean.case_id}: even-spacing slots moved")
+            n = len(clean.slot_t)
+            k = min(clean.budget, n)
+            plan = sorted({int(round(i)) for i in np.linspace(0, n - 1, k)})
+            for case in (clean, dirty):
+                slots = run_even_spacing(case)["slots"]
+                self.assertEqual(slots, plan[:len(slots)],
+                                 f"{case.case_id}: even slots not plan prefix")
 
     def test_batch_design_never_reads_slot_y_at_all(self):
         """batch_design is a pure function of the initial data + slot times."""

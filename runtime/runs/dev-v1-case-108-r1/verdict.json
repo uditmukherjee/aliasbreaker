@@ -1,0 +1,26 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999815014332601,
+  "truth_support": 0.9999815014332601,
+  "chi2s": [
+    31.245955462149205,
+    8.964561545285548,
+    47.10139923424576,
+    34.46746154741322,
+    36.43088272143312,
+    55.44172415095768
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    2,
+    4,
+    8
+  ],
+  "stop_reason": "Candidate 1 (P=11.109d) reached support 1.0, decisively clearing theta after confirmation at slot 8"
+}

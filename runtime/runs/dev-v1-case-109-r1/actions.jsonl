@@ -1,0 +1,8 @@
+{"ts": 1788011565.318, "cmd": "start", "case_id": "case-109"}
+{"ts": 1788011569.47, "cmd": "diagnostics"}
+{"ts": 1788011575.967, "cmd": "observe", "slot": 0, "ok": true, "rv": 10.206, "why": "Slot 0 separates the leading pairs 0-1 and 0-2 at max 4-sigma, the best early discriminator among top candidates"}
+{"ts": 1788011580.579, "cmd": "diagnostics"}
+{"ts": 1788011587.471, "cmd": "observe", "slot": 8, "ok": true, "rv": -7.942, "why": "Slot 8 gives 4-sigma separation for the now-leading pair 0 vs 1 while preserving later slots for a confirmation point"}
+{"ts": 1788011597.356, "cmd": "diagnostics"}
+{"ts": 1788011601.948, "cmd": "observe", "slot": 9, "ok": true, "rv": -4.684, "why": "Confirmation point at 4-sigma separation for the surviving pair 0 vs 1 before finalizing on candidate 1"}
+{"ts": 1788011606.789, "cmd": "finalize", "why": "Candidate 1 (P=12.9642d) confirmed at support 0.9998 after two discriminating observations plus a confirmation point, exceeding theta", "resolved": true}

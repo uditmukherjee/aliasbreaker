@@ -1,0 +1,12 @@
+{"ts": 1788011390.09, "cmd": "start", "case_id": "case-107"}
+{"ts": 1788011395.541, "cmd": "diagnostics"}
+{"ts": 1788011417.455, "cmd": "observe", "slot": 5, "ok": true, "rv": 5.763, "why": "Slot t=37.518 separates candidate 0 from candidates 1 2 3 and 4 all at max separation while pair 0-2 has only 7 future high-separation slots so this scarce window is seized first"}
+{"ts": 1788011421.577, "cmd": "diagnostics"}
+{"ts": 1788011437.018, "cmd": "observe", "slot": 8, "ok": true, "rv": -25.141, "why": "Slot t=43.275 gives max separation for both leaders 1 and 2 against rivals 3 and 4 covering four live pairs at once while candidate 0 is already ruled out"}
+{"ts": 1788011441.405, "cmd": "diagnostics"}
+{"ts": 1788011446.966, "cmd": "observe", "slot": 14, "ok": true, "rv": -3.916, "why": "Slot t=55.114 gives max separation for the decisive pair 1 vs 2 which now dominates remaining support"}
+{"ts": 1788011452.2, "cmd": "diagnostics"}
+{"ts": 1788011457.868, "cmd": "observe", "slot": 18, "ok": true, "rv": 1.986, "why": "Confirmation point at t=59.482 max separation for candidate 2 versus runner-up 1 before finalizing since support crossed after few observations"}
+{"ts": 1788011462.75, "cmd": "diagnostics"}
+{"ts": 1788011468.478, "cmd": "observe", "slot": 23, "ok": true, "rv": 9.984, "why": "Slot t=67.274 targets the last live rival 4 against leader 2 at max separation to try to push support past the theta threshold"}
+{"ts": 1788011473.016, "cmd": "finalize", "why": "Candidate 2 period 9.1638d support reached 0.9997 exceeding theta after confirming against leader 1 and last rival 4 at max-separation slots", "resolved": true}

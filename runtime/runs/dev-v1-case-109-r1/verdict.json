@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9998207479587898,
+  "truth_support": 0.9998207479587898,
+  "chi2s": [
+    21.18818140375329,
+    3.6729626307120844,
+    25.204895126827193,
+    46.69436002157757,
+    31.477073272072964,
+    45.574570913224115
+  ],
+  "n_obs": 3,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    8,
+    9
+  ],
+  "stop_reason": "Candidate 1 (P=12.9642d) confirmed at support 0.9998 after two discriminating observations plus a confirmation point, exceeding theta"
+}

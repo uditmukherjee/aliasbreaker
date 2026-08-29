@@ -91,6 +91,9 @@ def replay(run_dir):
            "fresh": {k: fresh[k] for k in
                      ("resolved", "pred", "n_obs", "max_support")}})
     out["ok"] = all(out["checks"].values())
+    # Truth-side facts live ONLY here (evaluator-side), recomputed fresh —
+    # never stored in the agent's workspace.
+    out["fresh_verdict"] = fresh
     return out
 
 

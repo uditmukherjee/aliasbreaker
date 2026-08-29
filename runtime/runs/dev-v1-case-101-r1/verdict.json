@@ -1,0 +1,24 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999999848384411,
+  "truth_support": 0.9999999848384411,
+  "chi2s": [
+    14.808025149039745,
+    52.01401059609527,
+    52.41245041085636
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    4,
+    5,
+    9,
+    12
+  ],
+  "stop_reason": "Candidate 0 (P=12.2683d) reached support 1.0 after two confirming observations at 4-sigma-separating slots, confirming resolution above theta despite an earlier mid-campaign swing"
+}

@@ -220,3 +220,48 @@ Improvement Changelog.
   predicate (oracle resolvability already guarantees recoverability by some
   design); canonical-JSON serialization ceremony; clean-checkout generation
   (replaced by clean-working-tree verification at the lock commit).
+- 2026-08-29 · MOCK JUDGING (adversarial Opus subagent as micro1 evaluator,
+  human-requested): 55/100 as-stands, gate-FAIL on missing README/repro/
+  video/trajectory packaging — and three verified criticals. (1) THE BATCH
+  BASELINE WAS DEGENERATE: linear pair score capped at 4 vs need 6 saturated
+  after ~2 picks, after which argmax over an all-zero vector selected slots
+  BY ARRAY INDEX — 35/72 baseline observations were index picks; one case
+  spent all 6 visits in the first 5 days of a 60-day horizon. An accidentally
+  weakened baseline (charter §5.1 violation in spirit). (2) verdict.json in
+  the agent's workspace carried correct/truth_support — an answer key in
+  sibling dirs during replicates. (3) docs/orchestration-reference.md
+  described a private client repo inside a submission whose ownership
+  transfers to micro1.
+- 2026-08-29 · Fixes, all verified: client-repo doc deleted (compliance).
+  Verdict split — run dirs now store PUBLIC fields only; truth-side facts
+  recomputed fresh by the evaluator during replay (leak test extended).
+  BASELINE REBUILT: chi2-shaped scoring (discrimination accumulates as
+  (delta/sigma)^2, matching the evaluator), uncapped per slot, per-pair
+  saturation at delta-chi2=16 with an unsaturated fallback (can never
+  degenerate to index picks); 8 scoring variants swept openly
+  (weighted/unweighted x saturated/unsaturated x need in {8..32}) and the
+  STRONGEST adopted as the baseline (unweighted saturated, 7/12): a baseline
+  chosen to be as good as we could make it. Shared stop rule extended to all
+  plan-executing arms (charter §6 amended; denying batch the stop had
+  structurally gifted the adaptive arms their efficiency margin). Launcher:
+  model-identity enforcement in eligibility, loud Claude-Code precondition,
+  prompt-sha256 + code-commit provenance in summaries. Auditor: cd target
+  must equal the launcher-supplied runtime dir exactly (path-suffix bypass
+  closed). analyze_final: executed for the first time via synthetic dry-run
+  after fixing crash paths (missing replicates score 0 over 3 expected; NaN
+  guards; manifest/arms case-set + fixture-hash validation) and the
+  bootstrap upgraded to two-stage (replicate variance propagated).
+  runtime/runs un-gitignored (trajectory evidence in-repo).
+- 2026-08-29 · HONEST DEV LEDGER (fair baseline, identical fixtures/theta):
+  even 4/12 (5.5 obs) · scripted-adaptive 4/12 (4.25) · batch 7/12 (5.17) ·
+  LLM v2 11/12 (~4.4, single replicate, dev cases inspected during prompt
+  design — in-sample). Margin vs fair batch: +4 cases observed, obs roughly
+  equal. Mock judge's own fair-batch probe reported 9/12; our sweep's best
+  reproducible variant reaches 7/12 — discrepancy noted, our 8-variant sweep
+  is committed as the anti-strawman evidence. Final evaluation (fresh
+  stratified cases, 3 replicates) remains the arbiter.
+- 2026-08-29 · Deferred from mock judging, disclosed: additional
+  "top2+thrift" scripted ablation; deny-by-default settings hardening;
+  history rewrite for the deleted client doc (present in git history; the
+  submission ZIP is built from the working tree, and the repo stays private
+  until then).

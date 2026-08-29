@@ -1,0 +1,14 @@
+{"ts": 1788011801.289, "cmd": "start", "case_id": "case-112", "case_sha256": "db9b50b81ae05b1b52bf0704309fab54764cc41bdb700f5273995ce20c1053c7", "theta": 0.997}
+{"ts": 1788011805.76, "cmd": "diagnostics"}
+{"ts": 1788011820.509, "cmd": "observe", "slot": 14, "ok": true, "rv": -7.588511, "why": "Slot 14 separates candidate pairs 0-2 and 2-3 at 4 sigma while keeping the 0-3 discriminating slots reachable"}
+{"ts": 1788011825.094, "cmd": "diagnostics"}
+{"ts": 1788011836.341, "cmd": "observe", "slot": 24, "ok": true, "rv": -18.328953, "why": "Candidates 2 and 3 are the closest competitors and slot 24 separates that pair at 4 sigma while keeping later slots 29 and 44 reachable"}
+{"ts": 1788011840.77, "cmd": "diagnostics"}
+{"ts": 1788011847.336, "cmd": "observe", "slot": 29, "ok": true, "rv": -6.904265, "why": "Candidates 2 and 5 now dominate the support mass and slot 29 separates that pair at 4 sigma while leaving slot 30 free for confirmation"}
+{"ts": 1788011851.712, "cmd": "diagnostics"}
+{"ts": 1788011859.154, "cmd": "observe", "slot": 31, "ok": true, "rv": -15.620586, "why": "Support flipped from candidate 2 to candidate 5 after a single point so confirming the leading 2-5 pair at slot 31 before finalizing"}
+{"ts": 1788011864.063, "cmd": "diagnostics"}
+{"ts": 1788011870.638, "cmd": "observe", "slot": 34, "ok": true, "rv": 9.535707, "why": "Candidates 0 and 2 now hold the dominant remaining support product and slot 34 separates that pair at 4 sigma"}
+{"ts": 1788011875.773, "cmd": "diagnostics"}
+{"ts": 1788011880.167, "cmd": "observe", "slot": 40, "ok": true, "rv": -15.314069, "why": "Candidate 2 support is just below theta and slot 40 gives the last budget a 4 sigma separation against its remaining rival 0"}
+{"ts": 1788011884.678, "cmd": "finalize", "why": "After six observations candidate 2 at period 12.13574 days reached support 0.998749 clearing theta 0.997 while all rivals collapsed below 0.002", "resolved": true}

@@ -1,0 +1,12 @@
+{"ts": 1788010476.696, "cmd": "start", "case_id": "case-101"}
+{"ts": 1788010482.684, "cmd": "diagnostics"}
+{"ts": 1788010489.36, "cmd": "observe", "slot": 2, "ok": true, "rv": -15.159, "why": "Slot 2 (t=35.292) separates both the leading pair (12.27d vs 1.088d) and the (1.088d vs 0.924d) pair at 4-sigma, maximizing discrimination per observation."}
+{"ts": 1788010494.616, "cmd": "diagnostics"}
+{"ts": 1788010501.976, "cmd": "observe", "slot": 4, "ok": true, "rv": -10.503, "why": "Confirming the leading candidate (12.27d) after a single-observation crossing; slot 4 (t=38.161) separates both remaining live pairs (0,1) and (0,2) at 4-sigma."}
+{"ts": 1788010507.121, "cmd": "diagnostics"}
+{"ts": 1788010512.794, "cmd": "observe", "slot": 5, "ok": true, "rv": -6.405, "why": "Candidate 0 (12.27d) still below resolution threshold against candidate 2 (0.924d); slot 5 (t=39.12) separates all live pairs at 4-sigma."}
+{"ts": 1788010517.866, "cmd": "diagnostics"}
+{"ts": 1788010523.763, "cmd": "observe", "slot": 9, "ok": true, "rv": 16.711, "why": "Candidates 0 (12.27d) and 2 (0.924d) are now near-tied (0.46/0.54) after candidate 1 was eliminated; slot 9 (t=43.322) is the top-ranked discriminator for this pair at 4-sigma."}
+{"ts": 1788010530.433, "cmd": "diagnostics"}
+{"ts": 1788010546.562, "cmd": "state"}
+{"ts": 1788010555.276, "cmd": "finalize", "why": "Candidate 0 (P=12.2683d) resolved to support=1.0 with all other candidates at 0.0 (chi2 14.04 vs 39.24/34.1) after 4 observations; diagnostics show no remaining live pairs to discriminate, so the campaign is complete with 2 observations unused.", "resolved": true}

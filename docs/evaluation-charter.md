@@ -119,10 +119,18 @@ action).
 
 | Arm | Scheduling | Stopping |
 | --- | --- | --- |
-| Baseline (batch) | Joint greedy 6-slot set design by marginal pair-coverage gain, deterministic earliest-night tie-break; committed upfront | None (structural: no feedback) |
-| Even-spacing (context baseline) | 6 evenly spaced available nights | None |
-| Scripted-adaptive (ablation) | Greedy next-slot by same pair-coverage score, recomputed after each observation | Stops when shared verdict rule would resolve |
+| Baseline (batch) | Joint greedy 6-slot set design by marginal chi²-shaped gain (uncapped per slot, per-pair saturation at Δχ²=16, unsaturated fallback), deterministic earliest-night tie-break; committed upfront from initial data only | Shared deterministic stop rule while executing the plan |
+| Even-spacing (context baseline) | 6 evenly spaced available nights | Shared deterministic stop rule |
+| Scripted-adaptive (ablation) | Greedy next-slot by the same chi²-shaped score, recomputed after each observation | Shared deterministic stop rule |
 | LLM agent (advanced) | LLM decides observe/skip/stop via tool calls over the same diagnostics | LLM decides, verdict still evaluator-computed |
+
+[Amended pre-freeze 2026-08-29 after mock judging: the original linear/capped
+pair-coverage score was degenerate (saturated, then picked slots by array
+index — an accidentally weakened baseline), and denying batch the shared stop
+rule structurally guaranteed the adaptive arms an efficiency margin. Both
+fixed: chi²-shaped scoring everywhere, and the shared stop rule applies to
+every arm since stopping on the shared verdict requires no scheduling
+feedback.]
 
 Intentional differences (disclosed): adaptive arms receive feedback and may
 stop; the LLM arm consumes API tokens/cost; all else equal.

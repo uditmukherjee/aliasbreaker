@@ -1,0 +1,10 @@
+{"ts": 1788013980.802, "cmd": "start", "case_id": "case-109", "case_sha256": "3b76117ae74450df311857fd06193744f1d510c1bb46b7802088980e03bb8d4b", "theta": 0.997}
+{"ts": 1788013984.816, "cmd": "diagnostics"}
+{"ts": 1788013991.926, "cmd": "observe", "slot": 0, "ok": true, "rv": 10.206042, "why": "earliest slot, separates the two leading candidate pairs 0-1 and 0-2 at max discrimination"}
+{"ts": 1788013995.967, "cmd": "diagnostics"}
+{"ts": 1788014011.392, "cmd": "observe", "slot": 1, "ok": true, "rv": 7.569686, "why": "earliest reachable slot, maxes separation for pairs 0-2 and 1-2 simultaneously per diagnostics"}
+{"ts": 1788014015.268, "cmd": "diagnostics"}
+{"ts": 1788014022.539, "cmd": "observe", "slot": 8, "ok": true, "rv": -7.941939, "why": "earliest top-tier slot for the now-dominant pair 0-1, max separation per diagnostics"}
+{"ts": 1788014030.169, "cmd": "diagnostics"}
+{"ts": 1788014041.748, "cmd": "observe", "slot": 9, "ok": true, "rv": -4.683958, "why": "one confirmation point for the leading pair 0-1 before finalizing, guarding against a single noisy measurement"}
+{"ts": 1788014046.245, "cmd": "finalize", "why": "candidate 1, period 12.96419 days, support 0.999962 clears theta 0.997 and held stable across a confirmation observation, all rival candidates driven near zero", "resolved": true}

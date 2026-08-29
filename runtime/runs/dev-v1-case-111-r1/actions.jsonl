@@ -1,0 +1,5 @@
+{"ts": 1788011699.337, "cmd": "start", "case_id": "case-111"}
+{"ts": 1788011703.355, "cmd": "diagnostics"}
+{"ts": 1788011718.806, "cmd": "observe", "slot": 27, "ok": true, "rv": 14.749, "why": "Slot 27 jointly separates the leading 0-1 and 1-2 candidate pairs at high sigma, the most efficient first probe"}
+{"ts": 1788011722.91, "cmd": "diagnostics"}
+{"ts": 1788011734.661, "cmd": "state"}

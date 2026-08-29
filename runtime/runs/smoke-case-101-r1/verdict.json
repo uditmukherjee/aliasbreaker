@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999525508265671,
+  "truth_support": 0.9999525508265671,
+  "chi2s": [
+    14.042050515244526,
+    39.23882297964475,
+    34.10133320014096
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    4,
+    5,
+    9
+  ],
+  "stop_reason": "Candidate 0 (P=12.2683d) resolved to support=1.0 with all other candidates at 0.0 (chi2 14.04 vs 39.24/34.1) after 4 observations; diagnostics show no remaining live pairs to discriminate, so the campaign is complete with 2 observations unused."
+}

@@ -1,0 +1,26 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999621521252426,
+  "truth_support": 0.9999621521252426,
+  "chi2s": [
+    24.69864237469568,
+    4.334839069897158,
+    68.66614752349244,
+    51.45127402727957,
+    53.28318235520585,
+    51.38999875666398
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    1,
+    8,
+    9
+  ],
+  "stop_reason": "candidate 1, period 12.96419 days, support 0.999962 clears theta 0.997 and held stable across a confirmation observation, all rival candidates driven near zero"
+}

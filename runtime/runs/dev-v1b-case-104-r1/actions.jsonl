@@ -1,0 +1,11 @@
+{"ts": 1788012392.772, "cmd": "start", "case_id": "case-104", "case_sha256": "2a864939c16286e56a12b357d9fa08e3d3eb870137594092cd6315664466e116", "theta": 0.997}
+{"ts": 1788012398.089, "cmd": "diagnostics"}
+{"ts": 1788012417.908, "cmd": "observe", "slot": 23, "ok": true, "rv": 21.589159, "why": "Slot 23 gives max separation for the leading pair (candidates 1 and 2, highest support product) while preserving later slots for confirmation."}
+{"ts": 1788012422.956, "cmd": "diagnostics"}
+{"ts": 1788012439.667, "cmd": "observe", "slot": 27, "ok": true, "rv": -5.124204, "why": "Slot 27 separates both the 0-vs-1 and 1-vs-2 pairs at max sigma while keeping slot 28 available for the top 0-vs-2 pair afterward."}
+{"ts": 1788012444.323, "cmd": "diagnostics"}
+{"ts": 1788012452.461, "cmd": "observe", "slot": 37, "ok": true, "rv": 5.324279, "why": "Slot 37 gives max separation for the only remaining contested pair, candidates 0 and 2, now that candidate 1 has collapsed."}
+{"ts": 1788012457.916, "cmd": "diagnostics"}
+{"ts": 1788012472.072, "cmd": "observe", "slot": 46, "ok": true, "rv": 18.057225, "why": "Slot 46 is the best remaining separation for the only contested pair, candidates 0 and 2, though the separation has weakened to under 2 sigma."}
+{"ts": 1788012476.75, "cmd": "diagnostics"}
+{"ts": 1788012481.911, "cmd": "finalize", "why": "Candidates 0 and 2 remain close at 0.42 versus 0.54 support with no future slot separating them by more than 2 sigma, so the data cannot resolve the alias to theta and I abstain.", "resolved": false}

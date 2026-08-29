@@ -1,0 +1,15 @@
+{"ts": 1788014238.838, "cmd": "start", "case_id": "case-112", "case_sha256": "07cb59940f6cea462be2e6bd8efcb024f7bd29effe14e22266826459237068f7", "theta": 0.997}
+{"ts": 1788014242.964, "cmd": "diagnostics"}
+{"ts": 1788014250.515, "cmd": "observe", "slot": 1, "ok": true, "rv": 15.007513, "why": "Slot at t=36.23 separates most live candidate pairs including 0-1, 0-4, 1-2, 1-3, 1-4, 2-4, 3-4, 4-5 at the capped 4-sigma level, and it is the earliest reachable slot with this broad discriminating power"}
+{"ts": 1788014255.192, "cmd": "diagnostics"}
+{"ts": 1788014277.437, "cmd": "observe", "slot": 4, "ok": true, "rv": -20.899331, "why": "Candidates 0, 2, 3 now dominate support with 0-3 the strongest pair and 2-3 close behind, slot at t=40.25 separates both 0-3 and 2-3 at the capped 4-sigma level and is the earliest reachable slot doing so"}
+{"ts": 1788014281.919, "cmd": "diagnostics"}
+{"ts": 1788014300.038, "cmd": "observe", "slot": 7, "ok": true, "rv": 3.954989, "why": "Only pairs 0-2, 0-3, 2-3 remain live with 2-3 strongest, slot at t=44.11 is the earliest reachable slot resolving 0-3 at the capped 4-sigma level while also giving near 3-sigma separation on 2-3, preserving cursor for later slots if needed"}
+{"ts": 1788014304.064, "cmd": "diagnostics"}
+{"ts": 1788014315.912, "cmd": "observe", "slot": 14, "ok": true, "rv": -7.588511, "why": "Candidates 2 and 3 now dominate support and their pair is by far the strongest remaining at support product 0.22, slot at t=53.59 gives the capped 4-sigma separation for exactly this pair, resolving the decisive contest"}
+{"ts": 1788014321.321, "cmd": "diagnostics"}
+{"ts": 1788014328.855, "cmd": "observe", "slot": 40, "ok": true, "rv": -15.314069, "why": "Candidate 2 leads at 0.95 support just under theta, the only live pair is 0 vs 2 and diagnostics show only one remaining slot with separation above 2-sigma for this pair, so a confirmation jump to t=84.51 for the near-4-sigma separation is justified rather than staying with an uninformative early slot"}
+{"ts": 1788014332.888, "cmd": "state"}
+{"ts": 1788014339.418, "cmd": "diagnostics"}
+{"ts": 1788014344.898, "cmd": "observe", "slot": 42, "ok": true, "rv": -10.229285, "why": "Candidate 2 sits at 0.9966 support just under theta of 0.997 with candidate 0 the only remaining rival, slot at t=87.27 is the best available remaining separation at 3.48-sigma for this pair and is the final budgeted observation"}
+{"ts": 1788014350.324, "cmd": "finalize", "why": "Candidate 2, period 11.24 days, resolved with support 0.9999 above theta 0.997 after six observations that progressively eliminated 0, 1, 3, 4, 5 with the final confirmation slot at t=87.27 crossing the threshold against the last rival candidate 0", "resolved": true}

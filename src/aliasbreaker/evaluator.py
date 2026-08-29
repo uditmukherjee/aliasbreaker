@@ -1,8 +1,8 @@
 """Evaluator-owned verdict rule and resolvability oracle (charter §3–4).
 
 The verdict is deterministic and identical for every arm: no agent supplies
-its own confidence. THETA below is a pre-calibration placeholder; the final
-value comes from the charter's calibration run and is committed with it.
+its own confidence. THETA_DEFAULT is the calibrated value (charter §3);
+see evaluation/theta-calibration.json for the committed calibration table.
 """
 
 import itertools

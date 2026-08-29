@@ -1,0 +1,10 @@
+{"ts": 1788014152.09, "cmd": "start", "case_id": "case-111", "case_sha256": "7421b1009caf401ec215f987a03a784632c2478aeabc0e6c080ad6976a9ddd64", "theta": 0.997}
+{"ts": 1788014156.681, "cmd": "diagnostics"}
+{"ts": 1788014183.777, "cmd": "observe", "slot": 7, "ok": true, "rv": -4.813523, "why": "Candidates 0, 1, 2 are the only ones with meaningful support, and slot 7 gives max separation for the 0-vs-2 pair while staying early, preserving all later slots for the 0-vs-1 and 1-vs-2 pairs that only separate late"}
+{"ts": 1788014188.686, "cmd": "diagnostics"}
+{"ts": 1788014195.851, "cmd": "observe", "slot": 11, "ok": true, "rv": 17.886071, "why": "Candidates 1 and 2 now dominate support, all other pairs are negligible, and slot 11 gives max separation for the 1-vs-2 pair while being the earliest of the tied-best options, preserving later slots"}
+{"ts": 1788014201.391, "cmd": "diagnostics"}
+{"ts": 1788014208.572, "cmd": "observe", "slot": 13, "ok": true, "rv": -13.500323, "why": "Candidate 1 leads support but has not crossed theta, the 1-vs-5 pair now has the largest support product, and slot 13 gives max separation for that pair while being the earliest of the tied-best options"}
+{"ts": 1788014213.919, "cmd": "diagnostics"}
+{"ts": 1788014219.548, "cmd": "observe", "slot": 22, "ok": true, "rv": -8.7681, "why": "Candidate 1 is at 0.964 support just below theta, the only remaining live pair is 0-vs-1, and slot 22 gives max separation for that pair while being the earliest of the tied-best options, keeping a confirmation slot in reserve"}
+{"ts": 1788014225.057, "cmd": "finalize", "why": "Candidate 1, period 14.70211 days, reached support 0.998 above theta 0.997 after four discriminating observations that sequentially eliminated candidates 0, 2, and 5, resolving the alias cleanly", "resolved": true}

@@ -1,0 +1,28 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 4,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999762900393047,
+  "truth_support": 0.9999762900393047,
+  "chi2s": [
+    52.00713329146625,
+    50.68360493331229,
+    68.18045550867846,
+    41.31882088510615,
+    18.426228035928993,
+    40.94721466543364
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    4,
+    8,
+    10,
+    25,
+    29,
+    30
+  ],
+  "stop_reason": "After early lead by candidate 0 was overturned and a close 3 vs 4 alias battle, final points drive candidate 4 (18.56d) to support 1.0, clearing theta"
+}

@@ -1,0 +1,24 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999914398507413,
+  "truth_support": 0.9999914398507413,
+  "chi2s": [
+    6.599182980811374,
+    160.11154554895913,
+    30.951286452305865,
+    31.778045526691887,
+    155.84550520348574
+  ],
+  "n_obs": 3,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    4,
+    7
+  ],
+  "stop_reason": "Candidate 0 period 12.3205d reached support 0.999 after two observations and held at 1.0 after a confirmation observation, clearing theta with the remaining candidates driven to zero"
+}

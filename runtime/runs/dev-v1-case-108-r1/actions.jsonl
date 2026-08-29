@@ -1,0 +1,10 @@
+{"ts": 1788011490.58, "cmd": "start", "case_id": "case-108"}
+{"ts": 1788011496.622, "cmd": "diagnostics"}
+{"ts": 1788011504.007, "cmd": "observe", "slot": 0, "ok": true, "rv": -8.635, "why": "Slot 0 (t=31.119) separates candidate 0 from all five rivals at 4-sigma, the single most efficient first probe"}
+{"ts": 1788011509.35, "cmd": "diagnostics"}
+{"ts": 1788011518.339, "cmd": "observe", "slot": 2, "ok": true, "rv": 16.981, "why": "Slot 2 (t=34.32) is a top discriminator for both leading pairs 0-1 and 0-2 at 4-sigma"}
+{"ts": 1788011523.57, "cmd": "diagnostics"}
+{"ts": 1788011529.626, "cmd": "observe", "slot": 4, "ok": true, "rv": 4.301, "why": "Slot 4 (t=35.576) is the top discriminator for the most contested pair 1-2 and also separates 0-2 at 4-sigma"}
+{"ts": 1788011535.95, "cmd": "diagnostics"}
+{"ts": 1788011542.747, "cmd": "observe", "slot": 8, "ok": true, "rv": 15.952, "why": "Slot 8 (t=43.566) is the top remaining discriminator for the still-live pair 1-2 to confirm candidate 1 past theta"}
+{"ts": 1788011548.293, "cmd": "finalize", "why": "Candidate 1 (P=11.109d) reached support 1.0, decisively clearing theta after confirmation at slot 8", "resolved": true}

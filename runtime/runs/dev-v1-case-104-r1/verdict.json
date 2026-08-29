@@ -1,0 +1,28 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 2,
+  "correct": false,
+  "false_resolution": false,
+  "max_support": 0.9899397591773198,
+  "truth_support": 0.9899397591773198,
+  "chi2s": [
+    44.15427922282435,
+    22.14216061612722,
+    12.959637125900104,
+    67.2353093669772,
+    34.514635384702366,
+    39.932602269824294
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    25,
+    27,
+    28,
+    30,
+    33,
+    37
+  ],
+  "stop_reason": "Budget exhausted with candidate 2 (17.0648d) leading at support 0.9899, below the 0.997 resolution threshold, so we abstain rather than overclaim a resolved orbit"
+}

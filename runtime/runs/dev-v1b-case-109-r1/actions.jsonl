@@ -1,0 +1,8 @@
+{"ts": 1788012794.093, "cmd": "start", "case_id": "case-109", "case_sha256": "3b76117ae74450df311857fd06193744f1d510c1bb46b7802088980e03bb8d4b", "theta": 0.997}
+{"ts": 1788012800.094, "cmd": "diagnostics"}
+{"ts": 1788012807.163, "cmd": "observe", "slot": 0, "ok": true, "rv": 10.206042, "why": "Slot 0 separates the two leading pairs, 0v1 and 0v2, at maximal 4 sigma, resolving the most probability mass first"}
+{"ts": 1788012812.108, "cmd": "diagnostics"}
+{"ts": 1788012824.065, "cmd": "observe", "slot": 8, "ok": true, "rv": -7.941939, "why": "0v1 is now the dominant surviving ambiguity, and slot 8 gives 4 sigma separation for that pair"}
+{"ts": 1788012829.51, "cmd": "diagnostics"}
+{"ts": 1788012835.448, "cmd": "observe", "slot": 9, "ok": true, "rv": -4.683958, "why": "Confirming the just-crossed leading candidate 1 with one more high separation point for pair 0v1 before finalizing"}
+{"ts": 1788012840.347, "cmd": "finalize", "why": "Candidate 1 at period 12.96419 days confirmed with support 0.999821 across two independent high separation observations exceeding theta", "resolved": true}

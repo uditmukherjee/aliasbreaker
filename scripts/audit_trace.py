@@ -30,7 +30,20 @@ CD_RUNTIME_RE = re.compile(r'^cd\s+"?[^&]*runtime[/\\]?"?$')
 SUBCOMMANDS = ("start", "state", "diagnostics", "observe", "finalize")
 
 
-def _parse_cli(command):
+def _cd_target_ok(cd_part, expected_cwd):
+    """When expected_cwd is given, the cd target must resolve to exactly that
+    directory (mock-judge finding: any path merely ENDING in 'runtime' could
+    smuggle in a different aliasbreaker package via the relative PYTHONPATH).
+    Without expected_cwd (ad-hoc audits), fall back to the suffix rule."""
+    if expected_cwd is None:
+        return bool(CD_RUNTIME_RE.match(cd_part))
+    target = cd_part[2:].strip().strip('"').strip("'")
+    norm = target.replace("/", "\\").rstrip("\\").lower()
+    want = str(expected_cwd).replace("/", "\\").rstrip("\\").lower()
+    return norm == want
+
+
+def _parse_cli(command, expected_cwd=None):
     """Return (subcommand, flags) if the command is exactly one World CLI
     call (optional cd-to-runtime prefix), else None."""
     if RAW_FORBIDDEN.search(command):
@@ -39,7 +52,8 @@ def _parse_cli(command):
     if any("&" in p for p in parts):
         return None
     if len(parts) == 2:
-        if not CD_RUNTIME_RE.match(parts[0]):
+        if not (parts[0].startswith("cd") and
+                _cd_target_ok(parts[0], expected_cwd)):
             return None
         cli = parts[1]
     elif len(parts) == 1:
@@ -91,7 +105,7 @@ def _find_model(obj):
     return None
 
 
-def audit(path, expected_run=None, expected_case=None):
+def audit(path, expected_run=None, expected_case=None, expected_cwd=None):
     path = Path(path)
     violations, sequence, model = [], [], None
     n_calls = skill_uses = 0
@@ -126,7 +140,7 @@ def audit(path, expected_run=None, expected_case=None):
                 violations.append({"tool": name, "input": inp})
                 continue
             command = inp.get("command", "")
-            parsed = _parse_cli(command)
+            parsed = _parse_cli(command, expected_cwd=expected_cwd)
             if parsed is None:
                 violations.append({"tool": "Bash", "command": command})
                 continue

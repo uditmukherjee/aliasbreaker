@@ -1,0 +1,354 @@
+{
+  "bootstrap_seed": 20260830,
+  "bootstrap_iters": 10000,
+  "n_resolvable": 10,
+  "n_unresolvable": 2,
+  "primary": {
+    "llm_correct_rate_resolvable": 0.6666666666666666,
+    "batch_correct_rate_resolvable": 0.5,
+    "paired_mean_diff_llm_minus_batch": 0.16666666666666666,
+    "bootstrap_95ci": [
+      -0.3,
+      0.6
+    ],
+    "note": "case-clustered bootstrap over resolvable cases; small n \u2014 interval is descriptive, no significance claim"
+  },
+  "secondary": {
+    "even_correct_rate_resolvable": 0.5,
+    "adaptive_correct_rate_resolvable": 0.5,
+    "unresolvable_stratum": {
+      "llm_false_res_mean": 0.0,
+      "batch_false_resolutions": 0,
+      "even_false_resolutions": 0,
+      "adaptive_false_resolutions": 0
+    },
+    "llm_mean_obs_eligible": 4.0,
+    "llm_ineligible_runs": [
+      "final-case-9005-r2"
+    ]
+  },
+  "per_case": [
+    {
+      "case": "case-9000",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "llm_correct_mean": 1.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": true,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": true,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": true,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9001",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "llm_correct_mean": 1.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9002",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "llm_correct_mean": 0.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": true,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": true,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": true,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9003",
+      "stratum": "ordinary",
+      "llm_replicates_present": 2,
+      "llm_eligible": 2,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "llm_correct_mean": 0.6666666666666666,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9004",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "llm_correct_mean": 1.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": true,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": true,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": true,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9005",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 2,
+      "llm_correct_replicates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "llm_correct_mean": 0.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9006",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "llm_correct_mean": 1.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": true,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": true,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": true,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9007",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "llm_correct_mean": 1.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9008",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "llm_correct_mean": 0.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": true,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": true,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": true,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9009",
+      "stratum": "ordinary",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "llm_correct_mean": 1.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9010",
+      "stratum": "unresolvable",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "llm_correct_mean": 0.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    },
+    {
+      "case": "case-9011",
+      "stratum": "unresolvable",
+      "llm_replicates_present": 3,
+      "llm_eligible": 3,
+      "llm_correct_replicates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "llm_correct_mean": 0.0,
+      "llm_false_res_mean": 0.0,
+      "llm_obs_eligible": [
+        4,
+        4,
+        4
+      ],
+      "batch_correct": false,
+      "batch_false_resolution": false,
+      "batch_n_obs": 5,
+      "even_correct": false,
+      "even_false_resolution": false,
+      "even_n_obs": 5,
+      "adaptive_correct": false,
+      "adaptive_false_resolution": false,
+      "adaptive_n_obs": 5
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{"ts": 1788012607.437, "cmd": "start", "case_id": "case-107", "case_sha256": "5ba39efa1bc186a5843c2ae18a4cd5d11a7f69f395db3f5d0fcc2329b2f0a4bf", "theta": 0.997}
+{"ts": 1788012611.361, "cmd": "diagnostics"}
+{"ts": 1788012621.686, "cmd": "observe", "slot": 3, "ok": true, "rv": -8.563892, "why": "Slot 3 at t=35.191 gives max separation for the most candidate pairs simultaneously, broadly narrowing the field"}
+{"ts": 1788012625.585, "cmd": "diagnostics"}
+{"ts": 1788012639.69, "cmd": "state"}
+{"ts": 1788012645.228, "cmd": "observe", "slot": 18, "ok": true, "rv": 1.985715, "why": "Slot 18 at t=59.48 separates the leading pair 0-vs-1 at 4 sigma and 0-vs-2 at 3.2 sigma, the two strongest remaining contenders"}
+{"ts": 1788012649.402, "cmd": "diagnostics"}
+{"ts": 1788012658.966, "cmd": "observe", "slot": 36, "ok": true, "rv": -0.923649, "why": "Pair 0-vs-2 now dominates remaining uncertainty and slot 36 gives max 4 sigma separation for it"}
+{"ts": 1788012662.905, "cmd": "diagnostics"}
+{"ts": 1788012671.131, "cmd": "state"}
+{"ts": 1788012685.626, "cmd": "finalize", "why": "Leading pair 0 vs 2 sits at 0.40 vs 0.29 support and the only remaining slot separates them by under 1 sigma, so the data cannot resolve the alias and I abstain", "resolved": false}

@@ -1,0 +1,12 @@
+{"ts": 1788012147.292, "cmd": "start", "case_id": "case-102", "case_sha256": "f4703969e9af1387996cf67af4b43987a5018f625bb7d864af98d99f3639f1bf", "theta": 0.997}
+{"ts": 1788012151.524, "cmd": "diagnostics"}
+{"ts": 1788012160.363, "cmd": "observe", "slot": 2, "ok": true, "rv": 20.554564, "why": "Slot targets peak 4-sigma separation between leading candidates 1 and 2, the dominant surviving pair, while preserving later slots for confirmation"}
+{"ts": 1788012164.284, "cmd": "diagnostics"}
+{"ts": 1788012170.72, "cmd": "observe", "slot": 4, "ok": true, "rv": -15.721211, "why": "Confirmation observation at 4-sigma separation to resolve remaining support for candidate 2 against leading candidate 1 before finalizing"}
+{"ts": 1788012174.812, "cmd": "diagnostics"}
+{"ts": 1788012181.649, "cmd": "observe", "slot": 5, "ok": true, "rv": -27.275212, "why": "Slot 5 gives 4-sigma separation for both live pairs 0-1 and 0-2 simultaneously, maximizing information after the unexpected support reversal toward candidate 2"}
+{"ts": 1788012185.431, "cmd": "diagnostics"}
+{"ts": 1788012189.747, "cmd": "observe", "slot": 8, "ok": true, "rv": 15.110556, "why": "Only pair 1 and 2 remain live and slot 8 gives peak 4-sigma separation to try to push candidate 2 support past the resolution threshold"}
+{"ts": 1788012193.433, "cmd": "diagnostics"}
+{"ts": 1788012197.734, "cmd": "observe", "slot": 21, "ok": true, "rv": -11.898665, "why": "Candidate 2 support at 0.98 is just under the 0.997 resolution threshold so one more 4-sigma observation on the sole remaining live pair is spent to try to cross it"}
+{"ts": 1788012202.369, "cmd": "finalize", "why": "Candidate 2 at period 11.35 days reached support 0.99999, clearing the 0.997 resolution threshold after a confirmation observation, so the campaign resolves in its favor with one observation left in reserve", "resolved": true}

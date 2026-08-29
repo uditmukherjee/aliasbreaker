@@ -1,0 +1,13 @@
+{"ts": 1788013009.514, "cmd": "start", "case_id": "case-112", "case_sha256": "07cb59940f6cea462be2e6bd8efcb024f7bd29effe14e22266826459237068f7", "theta": 0.997}
+{"ts": 1788013015.376, "cmd": "diagnostics"}
+{"ts": 1788013024.875, "cmd": "observe", "slot": 1, "ok": true, "rv": 15.007513, "why": "Slot 1 at t=36.23 separates the most live candidate pairs at 4 sigma including 0-1, 0-4, 1-2, 1-3, 1-4, 2-4, 3-4, 3-5 and 4-5, maximizing early discrimination power"}
+{"ts": 1788013030.347, "cmd": "diagnostics"}
+{"ts": 1788013047.17, "cmd": "state"}
+{"ts": 1788013055.072, "cmd": "observe", "slot": 8, "ok": true, "rv": 12.241685, "why": "Slot 8 at t=44.55 gives near-maximal separation for both the 0-2 pair (3.96 sigma) and the 2-3 pair (4 sigma), the two weakest links among the three surviving leading candidates"}
+{"ts": 1788013060.163, "cmd": "diagnostics"}
+{"ts": 1788013067.29, "cmd": "observe", "slot": 9, "ok": true, "rv": 24.275808, "why": "Slot 9 at t=45.21 tops the discrimination list for both remaining key pairs 0-2 and 0-3 at 4 sigma, plus 2-5 and 3-5, giving the most leverage on the three surviving leaders at once"}
+{"ts": 1788013073.219, "cmd": "diagnostics"}
+{"ts": 1788013080.567, "cmd": "observe", "slot": 14, "ok": true, "rv": -7.588511, "why": "Slot 14 at t=53.59 is the single best remaining discriminator for the dominant 2-3 pair at 4 sigma, and only 3 future slots separate this pair at all so this window must not be missed"}
+{"ts": 1788013086.449, "cmd": "diagnostics"}
+{"ts": 1788013092.805, "cmd": "observe", "slot": 15, "ok": true, "rv": -7.637226, "why": "Confirmation observation at slot 15 t=54.29 gives 4 sigma separation for the last live pair 0-2 to push the leading candidate 2 support past the theta threshold before finalizing"}
+{"ts": 1788013098.622, "cmd": "finalize", "why": "Candidate 2 support reached 0.9999 exceeding theta 0.997 after a confirmation observation, with all other candidates driven below 0.001, resolving the alias unambiguously", "resolved": true}

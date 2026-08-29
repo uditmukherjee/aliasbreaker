@@ -1,0 +1,12 @@
+{"ts": 1788013305.477, "cmd": "start", "case_id": "case-102", "case_sha256": "f4703969e9af1387996cf67af4b43987a5018f625bb7d864af98d99f3639f1bf", "theta": 0.997}
+{"ts": 1788013311.834, "cmd": "diagnostics"}
+{"ts": 1788013319.289, "cmd": "observe", "slot": 2, "ok": true, "rv": 20.554564, "why": "Pair 1-2 dominates remaining support, slot 2 is the earliest reachable point giving max separation for that pair"}
+{"ts": 1788013324.398, "cmd": "diagnostics"}
+{"ts": 1788013331.648, "cmd": "observe", "slot": 4, "ok": true, "rv": -15.721211, "why": "Confirmation point for leading pair 1-2 at the earliest high-separation slot before finalizing"}
+{"ts": 1788013337.723, "cmd": "diagnostics"}
+{"ts": 1788013347.655, "cmd": "observe", "slot": 5, "ok": true, "rv": -27.275212, "why": "Candidates 0 and 2 are now the tightest live pair alongside 1-2, slot 5 is the earliest reachable point with strong separation for 0-2"}
+{"ts": 1788013352.516, "cmd": "diagnostics"}
+{"ts": 1788013357.386, "cmd": "observe", "slot": 8, "ok": true, "rv": 15.110556, "why": "Only pair 1-2 remains live, slot 8 is the earliest reachable point with strong separation for it"}
+{"ts": 1788013363.339, "cmd": "diagnostics"}
+{"ts": 1788013368.297, "cmd": "observe", "slot": 21, "ok": true, "rv": -11.898665, "why": "Pair 1-2 still short of theta, slot 21 is the earliest reachable point with strong separation left"}
+{"ts": 1788013375.083, "cmd": "finalize", "why": "Candidate 2 at period 11.3505 days reached support 0.99999, above theta, after ruling out 0 and 1 with slots 2, 4, 5, 8, and 21", "resolved": true}

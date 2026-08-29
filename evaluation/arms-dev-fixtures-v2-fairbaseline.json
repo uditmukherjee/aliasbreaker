@@ -1,0 +1,607 @@
+{
+  "summary": {
+    "label": "dev-fixtures-v2-fairbaseline",
+    "theta": 0.997,
+    "n_cases": 12,
+    "n_resolvable": 12,
+    "elapsed_s": 0.61,
+    "batch_correct_on_resolvable": 7,
+    "batch_false_resolutions": 0,
+    "batch_mean_obs": 5.17,
+    "even_correct_on_resolvable": 4,
+    "even_false_resolutions": 0,
+    "even_mean_obs": 5.5,
+    "adaptive_correct_on_resolvable": 4,
+    "adaptive_false_resolutions": 0,
+    "adaptive_mean_obs": 4.25
+  },
+  "rows": [
+    {
+      "case": "case-101",
+      "sigma": 2.0,
+      "n_candidates": 3,
+      "resolvable": true,
+      "fixture": "case-101.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999280660616555,
+        "n_obs": 6,
+        "slots": [
+          16,
+          17,
+          18,
+          27,
+          31,
+          50
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999994815367,
+        "n_obs": 6,
+        "slots": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.999999888377509,
+        "n_obs": 3,
+        "slots": [
+          16,
+          47,
+          49
+        ]
+      }
+    },
+    {
+      "case": "case-102",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-102.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999857844048322,
+        "n_obs": 3,
+        "slots": [
+          0,
+          13,
+          28
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9996460277866759,
+        "n_obs": 5,
+        "slots": [
+          0,
+          9,
+          18,
+          26,
+          35
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999856800161446,
+        "n_obs": 3,
+        "slots": [
+          34,
+          35,
+          43
+        ]
+      }
+    },
+    {
+      "case": "case-103",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-103.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999991320015442,
+        "n_obs": 6,
+        "slots": [
+          1,
+          2,
+          5,
+          13,
+          34,
+          35
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.8851706785908743,
+        "n_obs": 6,
+        "slots": [
+          0,
+          7,
+          14,
+          22,
+          29,
+          36
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.2169260855037639,
+        "n_obs": 2,
+        "slots": [
+          35,
+          36
+        ]
+      }
+    },
+    {
+      "case": "case-104",
+      "sigma": 5.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-104.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.6191992654084976,
+        "n_obs": 6,
+        "slots": [
+          2,
+          15,
+          23,
+          25,
+          29,
+          44
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.09711561944867601,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          28,
+          37,
+          46
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.18662668141181998,
+        "n_obs": 6,
+        "slots": [
+          25,
+          28,
+          29,
+          42,
+          45,
+          46
+        ]
+      }
+    },
+    {
+      "case": "case-105",
+      "sigma": 2.0,
+      "n_candidates": 3,
+      "resolvable": true,
+      "fixture": "case-105.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999413762229328,
+        "n_obs": 2,
+        "slots": [
+          0,
+          1
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999998333289213,
+        "n_obs": 4,
+        "slots": [
+          0,
+          8,
+          17,
+          25
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999909665787992,
+        "n_obs": 3,
+        "slots": [
+          0,
+          37,
+          42
+        ]
+      }
+    },
+    {
+      "case": "case-106",
+      "sigma": 3.0,
+      "n_candidates": 5,
+      "resolvable": true,
+      "fixture": "case-106.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9875938362840598,
+        "n_obs": 6,
+        "slots": [
+          11,
+          12,
+          13,
+          20,
+          28,
+          41
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.057481832120165374,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          25,
+          33,
+          41
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.8745153590305215,
+        "n_obs": 5,
+        "slots": [
+          13,
+          37,
+          39,
+          40,
+          41
+        ]
+      }
+    },
+    {
+      "case": "case-107",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-107.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.6837189889269906,
+        "n_obs": 6,
+        "slots": [
+          3,
+          12,
+          14,
+          18,
+          26,
+          37
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.905014047080162,
+        "n_obs": 6,
+        "slots": [
+          0,
+          7,
+          15,
+          22,
+          30,
+          37
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9800685644007725,
+        "n_obs": 6,
+        "slots": [
+          18,
+          29,
+          31,
+          32,
+          34,
+          37
+        ]
+      }
+    },
+    {
+      "case": "case-108",
+      "sigma": 5.0,
+      "n_candidates": 5,
+      "resolvable": true,
+      "fixture": "case-108.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9996694562374111,
+        "n_obs": 3,
+        "slots": [
+          1,
+          5,
+          8
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9995105734547852,
+        "n_obs": 3,
+        "slots": [
+          0,
+          8,
+          15
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9561805796862837,
+        "n_obs": 5,
+        "slots": [
+          6,
+          22,
+          23,
+          36,
+          38
+        ]
+      }
+    },
+    {
+      "case": "case-109",
+      "sigma": 2.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-109.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999978724690652,
+        "n_obs": 6,
+        "slots": [
+          5,
+          11,
+          17,
+          23,
+          31,
+          38
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.22083885152663743,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          17,
+          26,
+          34,
+          43
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9987661903748817,
+        "n_obs": 5,
+        "slots": [
+          1,
+          6,
+          25,
+          32,
+          39
+        ]
+      }
+    },
+    {
+      "case": "case-110",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-110.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.8914338305639636,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          30,
+          33,
+          35,
+          37
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.5436454475090006,
+        "n_obs": 6,
+        "slots": [
+          0,
+          10,
+          19,
+          29,
+          38,
+          48
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.40994066601072404,
+        "n_obs": 5,
+        "slots": [
+          4,
+          19,
+          21,
+          25,
+          48
+        ]
+      }
+    },
+    {
+      "case": "case-111",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-111.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.5719203659358694,
+        "n_obs": 6,
+        "slots": [
+          15,
+          22,
+          23,
+          32,
+          35,
+          40
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9391871567978889,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.7357820537895096,
+        "n_obs": 3,
+        "slots": [
+          35,
+          38,
+          40
+        ]
+      }
+    },
+    {
+      "case": "case-112",
+      "sigma": 5.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-112.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9990804857763329,
+        "n_obs": 6,
+        "slots": [
+          1,
+          7,
+          8,
+          10,
+          14,
+          29
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.3279797670800768,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          26,
+          35,
+          44
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9462463641390768,
+        "n_obs": 5,
+        "slots": [
+          14,
+          31,
+          33,
+          40,
+          44
+        ]
+      }
+    }
+  ]
+}

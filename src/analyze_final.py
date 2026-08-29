@@ -25,13 +25,30 @@ BOOTSTRAP_ITERS = 10000
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main():
-    manifest = json.loads(
-        (ROOT / "evaluation" / "final-manifest.json").read_text())
-    arms = json.loads((ROOT / "evaluation" / "arms-final.json").read_text())
-    llm = json.loads((ROOT / "evaluation" / "llm-arm-final.json").read_text())
+EXPECTED_REPLICATES = 3
+
+
+def main(eval_dir=None):
+    ev = Path(eval_dir) if eval_dir else ROOT / "evaluation"
+    manifest = json.loads((ev / "final-manifest.json").read_text())
+    arms = json.loads((ev / "arms-final.json").read_text())
+    llm = json.loads((ev / "llm-arm-final.json").read_text())
 
     strata = {c["case_id"]: c["stratum"] for c in manifest["cases"]}
+    # Integrity: the arms results must cover exactly the manifest's cases,
+    # and fixture hashes must match the manifest (mock-judge finding).
+    manifest_ids = set(strata)
+    arms_ids = {r["case"] for r in arms["rows"]}
+    if arms_ids != manifest_ids:
+        raise SystemExit(f"arms/manifest case mismatch: "
+                         f"{sorted(arms_ids ^ manifest_ids)}")
+    import hashlib
+    for c in manifest["cases"]:
+        fixture = ROOT / "data" / "cases" / "final" / f"{c['case_id']}.json"
+        if fixture.exists():
+            actual = hashlib.sha256(fixture.read_bytes()).hexdigest()
+            if actual != c["sha256"]:
+                raise SystemExit(f"fixture hash mismatch: {c['case_id']}")
     resolvable_ids = sorted(c["case_id"] for c in manifest["cases"]
                             if c["stratum"] != "unresolvable")
     unresolvable_ids = sorted(c["case_id"] for c in manifest["cases"]
@@ -45,17 +62,23 @@ def main():
     per_case = []
     for cid in sorted(strata):
         reps = llm_by_case.get(cid, [])
+        # Missing replicates (crashed launcher, absent runs) score 0
+        # (noncompletion = unresolved) over the EXPECTED replicate count —
+        # never crash, never silently shrink the denominator.
         llm_correct = [1.0 if x["outcome"]["correct"] else 0.0 for x in reps]
         llm_false = [1.0 if x["outcome"]["false_resolution"] else 0.0
                      for x in reps]
+        llm_correct += [0.0] * (EXPECTED_REPLICATES - len(llm_correct))
+        llm_false += [0.0] * (EXPECTED_REPLICATES - len(llm_false))
         llm_obs = [x["verdict_raw"]["n_obs"] for x in reps
                    if x["outcome"]["eligible"] and x["verdict_raw"]]
         row = {
             "case": cid, "stratum": strata[cid],
-            "llm_replicates": len(reps),
+            "llm_replicates_present": len(reps),
             "llm_eligible": sum(x["outcome"]["eligible"] for x in reps),
-            "llm_correct_mean": float(np.mean(llm_correct)) if reps else None,
-            "llm_false_res_mean": float(np.mean(llm_false)) if reps else None,
+            "llm_correct_replicates": llm_correct,
+            "llm_correct_mean": float(np.mean(llm_correct)),
+            "llm_false_res_mean": float(np.mean(llm_false)),
             "llm_obs_eligible": llm_obs,
         }
         for arm in ("batch", "even", "adaptive"):
@@ -66,12 +89,27 @@ def main():
         per_case.append(row)
 
     res_rows = [r for r in per_case if r["case"] in resolvable_ids]
-    diffs = np.array([r["llm_correct_mean"] - (1.0 if r["batch_correct"]
-                                               else 0.0) for r in res_rows])
+    if not res_rows:
+        raise SystemExit("no resolvable cases in inputs — nothing to analyze")
+    # Two-stage bootstrap: resample cases WITH their replicate vectors, then
+    # within each drawn case resample replicate outcomes — so replicate
+    # variance is propagated, not discarded (mock-judge finding).
     rng = np.random.default_rng(BOOTSTRAP_SEED)
-    n = len(diffs)
-    boot = np.array([diffs[rng.integers(0, n, n)].mean()
-                     for _ in range(BOOTSTRAP_ITERS)])
+    reps_matrix = [np.array(r["llm_correct_replicates"]) for r in res_rows]
+    batch_vec = np.array([1.0 if r["batch_correct"] else 0.0
+                          for r in res_rows])
+    n = len(res_rows)
+    boot = np.empty(BOOTSTRAP_ITERS)
+    for it in range(BOOTSTRAP_ITERS):
+        idx = rng.integers(0, n, n)
+        diffs_it = np.empty(n)
+        for j, ci_ in enumerate(idx):
+            reps = reps_matrix[ci_]
+            resampled = reps[rng.integers(0, len(reps), len(reps))]
+            diffs_it[j] = resampled.mean() - batch_vec[ci_]
+        boot[it] = diffs_it.mean()
+    diffs = np.array([reps_matrix[j].mean() - batch_vec[j]
+                      for j in range(n)])
     ci = [float(np.percentile(boot, 2.5)), float(np.percentile(boot, 97.5))]
 
     def arm_rate(arm):
@@ -100,13 +138,15 @@ def main():
                     1 for r in unres if r[f"{arm}_false_resolution"])
                     for arm in ("batch", "even", "adaptive")},
             },
-            "llm_mean_obs_eligible": float(np.mean(
-                [o for r in per_case for o in r["llm_obs_eligible"]])),
+            "llm_mean_obs_eligible": (
+                float(np.mean(all_obs)) if (all_obs := [
+                    o for r in per_case for o in r["llm_obs_eligible"]])
+                else None),
             "llm_ineligible_runs": llm.get("ineligible", []),
         },
         "per_case": per_case,
     }
-    out = ROOT / "evaluation" / "final-analysis.json"
+    out = ev / "final-analysis.json"
     out.write_text(json.dumps(analysis, indent=2))
     print(json.dumps({k: analysis[k] for k in
                       ("primary", "secondary")}, indent=2))

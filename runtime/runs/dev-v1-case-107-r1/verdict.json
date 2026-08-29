@@ -1,0 +1,27 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9997401311138262,
+  "truth_support": 0.9997401311138262,
+  "chi2s": [
+    38.66550073247578,
+    23.001330179513342,
+    5.200474943206154,
+    34.40810452094699,
+    27.739466223834278,
+    23.42434599895109
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    5,
+    8,
+    14,
+    18,
+    23
+  ],
+  "stop_reason": "Candidate 2 period 9.1638d support reached 0.9997 exceeding theta after confirming against leader 1 and last rival 4 at max-separation slots"
+}

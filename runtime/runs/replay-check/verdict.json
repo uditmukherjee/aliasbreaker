@@ -1,0 +1,20 @@
+{
+  "resolved": true,
+  "abstained": true,
+  "pred": 0,
+  "correct": false,
+  "false_resolution": false,
+  "max_support": 0.7855492246829455,
+  "truth_support": 0.7855492246829455,
+  "chi2s": [
+    4.951219242124603,
+    13.456312402903484,
+    7.654875682135165
+  ],
+  "n_obs": 1,
+  "theta": 0.997,
+  "observed_slots": [
+    2
+  ],
+  "stop_reason": "replay validation stop"
+}

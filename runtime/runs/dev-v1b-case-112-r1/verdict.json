@@ -1,0 +1,27 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999490452927365,
+  "truth_support": 0.9999490452927365,
+  "chi2s": [
+    24.201779588309716,
+    53.516390023846405,
+    4.325308519725817,
+    30.370706340259567,
+    70.21003379662022,
+    33.53017843751807
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    1,
+    8,
+    9,
+    14,
+    15
+  ],
+  "stop_reason": "Candidate 2 support reached 0.9999 exceeding theta 0.997 after a confirmation observation, with all other candidates driven below 0.001, resolving the alias unambiguously"
+}

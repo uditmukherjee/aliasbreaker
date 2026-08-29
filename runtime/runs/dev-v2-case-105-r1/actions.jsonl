@@ -1,0 +1,9 @@
+{"ts": 1788013643.895, "cmd": "start", "case_id": "case-105", "case_sha256": "0ee21e494ce941beffcde7dcff23a014e66b6e26b742b2c5cf1e8c9b2966b8de", "theta": 0.997}
+{"ts": 1788013648.999, "cmd": "diagnostics"}
+{"ts": 1788013654.227, "cmd": "observe", "slot": 0, "ok": true, "rv": 12.694158, "why": "Earliest reachable slot separates all three candidate pairs at max 4 sigma, best cursor-thrifty choice"}
+{"ts": 1788013658.549, "cmd": "diagnostics"}
+{"ts": 1788013663.527, "cmd": "observe", "slot": 1, "ok": true, "rv": 10.25122, "why": "Only live pair is 0 vs 1, earliest reachable slot gives max separation, confirms leading candidate before finalizing"}
+{"ts": 1788013668.924, "cmd": "diagnostics"}
+{"ts": 1788013677.012, "cmd": "state"}
+{"ts": 1788013690.319, "cmd": "observe", "slot": 2, "ok": true, "rv": -22.970248, "why": "Confirmation observation after crossing theta in only two measurements, earliest reachable slot, guards against a single noisy point misleading the call"}
+{"ts": 1788013696.163, "cmd": "finalize", "why": "Candidate 0, period 6.578 days, support 0.999941 exceeds theta 0.997 and held steady across a confirmation observation, other candidates collapsed to near zero support", "resolved": true}

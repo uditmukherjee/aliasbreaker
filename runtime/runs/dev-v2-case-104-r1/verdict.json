@@ -1,0 +1,27 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9979449206035244,
+  "truth_support": 0.9979449206035244,
+  "chi2s": [
+    27.990088293929976,
+    20.49210212634042,
+    8.058512528720627,
+    74.44142236985266,
+    30.058712567786202,
+    60.30713781737428
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    25,
+    27,
+    28,
+    29,
+    30
+  ],
+  "stop_reason": "Candidate2, period 17.06 days, reached support 0.9979 exceeding theta 0.997 after five observations that sequentially eliminated candidates 1, 0, and 4 via their highest-separation discriminating slots"
+}

@@ -1,0 +1,26 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9980091201337348,
+  "truth_support": 0.9980091201337348,
+  "chi2s": [
+    17.848782613776194,
+    5.091119188783453,
+    21.33215697538497,
+    40.26595747509764,
+    36.735858891692686,
+    35.795094225658914
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    7,
+    11,
+    13,
+    22
+  ],
+  "stop_reason": "Candidate 1, period 14.70211 days, reached support 0.998 above theta 0.997 after four discriminating observations that sequentially eliminated candidates 0, 2, and 5, resolving the alias cleanly"
+}

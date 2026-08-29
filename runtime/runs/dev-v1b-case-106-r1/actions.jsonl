@@ -1,0 +1,9 @@
+{"ts": 1788012535.392, "cmd": "start", "case_id": "case-106", "case_sha256": "825fe6a5297b41376f755a3522cc372dd37e6cc4a77e590995304036b0540fb6", "theta": 0.997}
+{"ts": 1788012541.471, "cmd": "diagnostics"}
+{"ts": 1788012552.066, "cmd": "observe", "slot": 0, "ok": true, "rv": -7.82778, "why": "Slot 0 gives 4-sigma separation across most live candidate pairs (0-1, 1-2, 0-4, 2-4, 3-4), maximizing early discrimination"}
+{"ts": 1788012557.505, "cmd": "diagnostics"}
+{"ts": 1788012566.085, "cmd": "state"}
+{"ts": 1788012574.293, "cmd": "observe", "slot": 4, "ok": true, "rv": -13.754381, "why": "Slot 4 gives 4-sigma separation for all three live pairs (0-2, 0-3, 2-3), the single best joint discriminator remaining"}
+{"ts": 1788012582.251, "cmd": "diagnostics"}
+{"ts": 1788012588.136, "cmd": "observe", "slot": 7, "ok": true, "rv": 8.132604, "why": "Confirmation observation at slot 7, the top separator for the leading pair 0-2, to guard against a single noisy point after only two observations"}
+{"ts": 1788012594.33, "cmd": "finalize", "why": "Candidate 0 (period 12.06d) reached support 0.999991, exceeding theta 0.997, confirmed by an independent slot after crossing threshold, with all rivals collapsed near zero", "resolved": true}

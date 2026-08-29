@@ -1,0 +1,8 @@
+{"ts": 1788013708.568, "cmd": "start", "case_id": "case-106", "case_sha256": "825fe6a5297b41376f755a3522cc372dd37e6cc4a77e590995304036b0540fb6", "theta": 0.997}
+{"ts": 1788013713.617, "cmd": "diagnostics"}
+{"ts": 1788013720.641, "cmd": "observe", "slot": 0, "ok": true, "rv": -7.82778, "why": "earliest reachable slot, separates the leading pairs 0-1, 1-2, and several low-support pairs at once, per diagnostics"}
+{"ts": 1788013725.897, "cmd": "diagnostics"}
+{"ts": 1788013733.226, "cmd": "observe", "slot": 4, "ok": true, "rv": -13.754381, "why": "earliest slot that separates all three live pairs 0-2, 0-3, and 2-3 at full separation per diagnostics"}
+{"ts": 1788013738.713, "cmd": "diagnostics"}
+{"ts": 1788013743.445, "cmd": "observe", "slot": 7, "ok": true, "rv": 8.132604, "why": "confirmation observation at earliest high-separation slot for the leading pairs 0-2 and 0-3, since candidate 0 crossed theta after only two observations"}
+{"ts": 1788013748.748, "cmd": "finalize", "why": "candidate 0, period 12.32048 days, resolved with support 0.999991 above theta 0.997, confirmed by an independent slot after crossing threshold in two observations", "resolved": true}

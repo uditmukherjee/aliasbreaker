@@ -1,0 +1,14 @@
+{"ts": 1788011181.407, "cmd": "start", "case_id": "case-104"}
+{"ts": 1788011185.831, "cmd": "diagnostics"}
+{"ts": 1788011204.876, "cmd": "observe", "slot": 25, "ok": true, "rv": 22.128, "why": "Slot 25 (t=63.334) gives max 4.0-sigma separation for the 0-1 pair and 3.87-sigma for the leading 1-2 pair, the two dominant candidate pairs by support"}
+{"ts": 1788011209.067, "cmd": "diagnostics"}
+{"ts": 1788011215.681, "cmd": "observe", "slot": 27, "ok": true, "rv": -5.124, "why": "Slot 27 (t=67.101) gives max 4.0-sigma separation for both the 0-1 and 1-2 pairs, the two highest support_product pairs remaining"}
+{"ts": 1788011220.511, "cmd": "diagnostics"}
+{"ts": 1788011225.623, "cmd": "observe", "slot": 28, "ok": true, "rv": -10.631, "why": "Slot 28 (t=67.486) gives max 4.0-sigma separation for the now-dominant 0-2 pair, the only pair with meaningful remaining support"}
+{"ts": 1788011231.113, "cmd": "diagnostics"}
+{"ts": 1788011238.794, "cmd": "observe", "slot": 30, "ok": true, "rv": -8.824, "why": "Confirmation observation at slot 30 (t=71.23), max 4.0-sigma separation for the 0-2, 2-4 and 2-5 pairs, to solidify the leading candidate before finalizing"}
+{"ts": 1788011242.84, "cmd": "diagnostics"}
+{"ts": 1788011248.028, "cmd": "observe", "slot": 33, "ok": true, "rv": 10.641, "why": "Support for candidate 2 sits at 0.9951, just under the 0.997 resolution threshold, so one more max-separation observation at slot 33 for the last live pair 1-2 to try to close it out"}
+{"ts": 1788011251.79, "cmd": "diagnostics"}
+{"ts": 1788011256.362, "cmd": "observe", "slot": 37, "ok": true, "rv": 5.324, "why": "Final budgeted observation at slot 37 (t=80.141), max 4.0-sigma separation for the last live 1-2 pair, to try to push candidate 2 support past the 0.997 resolution threshold"}
+{"ts": 1788011261.529, "cmd": "finalize", "why": "Budget exhausted with candidate 2 (17.0648d) leading at support 0.9899, below the 0.997 resolution threshold, so we abstain rather than overclaim a resolved orbit", "resolved": false}

@@ -1,0 +1,21 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9999413762229328,
+  "truth_support": 0.9999413762229328,
+  "chi2s": [
+    2.0772254448897365,
+    147.65256439277243,
+    21.56584857724841
+  ],
+  "n_obs": 2,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    1
+  ],
+  "stop_reason": "Candidate 0 (P=6.578d) support reached 0.999941 exceeding theta 0.997 after a confirmation observation, with the other candidates driven near zero"
+}

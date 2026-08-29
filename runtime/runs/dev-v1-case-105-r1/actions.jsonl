@@ -1,0 +1,9 @@
+{"ts": 1788011274.015, "cmd": "start", "case_id": "case-105"}
+{"ts": 1788011278.157, "cmd": "diagnostics"}
+{"ts": 1788011283.266, "cmd": "observe", "slot": 0, "ok": true, "rv": 12.694, "why": "Slot 0 separates all three candidate pairs at the capped 4-sigma level, maximizing discrimination per observation"}
+{"ts": 1788011287.221, "cmd": "diagnostics"}
+{"ts": 1788011291.75, "cmd": "observe", "slot": 1, "ok": true, "rv": 10.251, "why": "Pair 0,1 remains the dominant contest and slot 1 still separates it at 4 sigma, the best available discriminator"}
+{"ts": 1788011297.238, "cmd": "diagnostics"}
+{"ts": 1788011301.991, "cmd": "state"}
+{"ts": 1788011313.239, "cmd": "observe", "slot": 2, "ok": true, "rv": -22.97, "why": "Confirming the leading candidate with one extra point since support crossed theta after only two observations and a large swing"}
+{"ts": 1788011317.908, "cmd": "finalize", "why": "Candidate 0 at period 6.578 days reached support 0.9999 after two discriminating observations and held on a confirmation point, clearing theta with the other candidates driven to near zero", "resolved": true}

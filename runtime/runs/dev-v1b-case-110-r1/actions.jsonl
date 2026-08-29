@@ -1,0 +1,14 @@
+{"ts": 1788012854.509, "cmd": "start", "case_id": "case-110", "case_sha256": "569f5ce43db714e4d03983682c93e6f6b470e0d8e3a66ee5cf5bc39975cafc55", "theta": 0.997}
+{"ts": 1788012859.686, "cmd": "diagnostics"}
+{"ts": 1788012866.736, "cmd": "observe", "slot": 4, "ok": true, "rv": -6.904721, "why": "Pair 0 vs 1 dominates remaining support and this slot gives max separation between their predicted RV curves"}
+{"ts": 1788012871.016, "cmd": "diagnostics"}
+{"ts": 1788012876.675, "cmd": "observe", "slot": 8, "ok": true, "rv": 11.130842, "why": "Confirming leading candidate 0 over 1 with a second high-separation point since resolution only reached after one observation"}
+{"ts": 1788012882.578, "cmd": "diagnostics"}
+{"ts": 1788012889.068, "cmd": "observe", "slot": 15, "ok": true, "rv": -3.666355, "why": "Slot maximizes separation for both remaining live pairs 0-3 and 0-4 to push candidate 0 support past theta"}
+{"ts": 1788012894.072, "cmd": "diagnostics"}
+{"ts": 1788012900.331, "cmd": "observe", "slot": 16, "ok": true, "rv": -12.935257, "why": "Candidate 3 surged to lead over candidate 0 after prior point so resolving the now-dominant 0 vs 3 pair at its best separation slot"}
+{"ts": 1788012904.799, "cmd": "diagnostics"}
+{"ts": 1788012909.188, "cmd": "observe", "slot": 25, "ok": true, "rv": 5.330738, "why": "Confirming leading candidate 3 against remaining rival 4 at their maximal separation slot before finalizing"}
+{"ts": 1788012914.278, "cmd": "diagnostics"}
+{"ts": 1788012921.02, "cmd": "observe", "slot": 30, "ok": true, "rv": 6.780772, "why": "Final budgeted observation to resolve the still-contested 3 vs 4 pair at its maximal separation slot"}
+{"ts": 1788012925.945, "cmd": "finalize", "why": "Candidate 4 support reached 0.999983 exceeding theta after the final observation broke the last live pair with 3, resolving the period to 17.16 days", "resolved": true}

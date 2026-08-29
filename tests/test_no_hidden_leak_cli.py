@@ -101,6 +101,14 @@ class TestNoHiddenLeak(unittest.TestCase):
                                 "leak scan stop"])
         self.assertEqual(code, 0)
         self._assert_clean(text, "finalize")
+        # The stored verdict in the agent's workspace must be PUBLIC-ONLY:
+        # truth-side facts are recomputed by the evaluator, never persisted
+        # where a sibling run could read them.
+        stored = json.loads(
+            (Path.cwd() / "runs" / "leak" / "verdict.json").read_text())
+        for key in ("correct", "truth_support", "false_resolution"):
+            self.assertNotIn(key, stored,
+                             f"verdict.json leaked truth-side key {key!r}")
 
 
 if __name__ == "__main__":

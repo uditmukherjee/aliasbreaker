@@ -1,0 +1,15 @@
+{"ts": 1788013762.826, "cmd": "start", "case_id": "case-107", "case_sha256": "5ba39efa1bc186a5843c2ae18a4cd5d11a7f69f395db3f5d0fcc2329b2f0a4bf", "theta": 0.997}
+{"ts": 1788013768.404, "cmd": "diagnostics"}
+{"ts": 1788013779.127, "cmd": "observe", "slot": 0, "ok": true, "rv": 1.206644, "why": "Earliest slot, separates candidate 5 from all other candidates at max sigma, high multi-pair discrimination"}
+{"ts": 1788013784.243, "cmd": "diagnostics"}
+{"ts": 1788013800.385, "cmd": "state"}
+{"ts": 1788013828.67, "cmd": "observe", "slot": 3, "ok": true, "rv": -8.563892, "why": "Earliest slot discriminating six live pairs at max sigma including candidate 1, 3, and 4 against the leaders, cheap relative to later slot 5"}
+{"ts": 1788013833.833, "cmd": "diagnostics"}
+{"ts": 1788013843.382, "cmd": "observe", "slot": 5, "ok": true, "rv": 5.763241, "why": "Earliest reachable slot maximally separating candidates 0 and 2, the second largest live pair by support product"}
+{"ts": 1788013848.713, "cmd": "diagnostics"}
+{"ts": 1788013859.076, "cmd": "observe", "slot": 14, "ok": true, "rv": -3.915891, "why": "Only remaining live pair is 1 vs 2, this earlier slot gives comparable separation to the later slot 36 option while preserving budget for confirmation"}
+{"ts": 1788013864.514, "cmd": "diagnostics"}
+{"ts": 1788013875.213, "cmd": "observe", "slot": 18, "ok": true, "rv": 1.985715, "why": "Earliest slot within twenty percent of the best separation for the sole live pair 1 vs 2, preserves one slot for a confirmation observation"}
+{"ts": 1788013880.933, "cmd": "diagnostics"}
+{"ts": 1788013886.242, "cmd": "observe", "slot": 19, "ok": true, "rv": -7.727817, "why": "Final budgeted observation, earliest slot at max separation for the sole remaining live pair 1 vs 2 to push support over threshold"}
+{"ts": 1788013893.285, "cmd": "finalize", "why": "Budget exhausted, candidate 2 at period 9.16 days reached support 0.9954 against theta 0.997, just short of the strict threshold so abstaining honestly rather than overclaiming resolution", "resolved": false}

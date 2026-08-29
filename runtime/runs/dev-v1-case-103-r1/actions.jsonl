@@ -1,0 +1,12 @@
+{"ts": 1788011090.423, "cmd": "start", "case_id": "case-103"}
+{"ts": 1788011094.76, "cmd": "diagnostics"}
+{"ts": 1788011121.5, "cmd": "observe", "slot": 13, "ok": true, "rv": 25.235, "why": "Candidates 0 and 1 are the dominant pair (support product 0.0802, all others below 0.036); slot 13 gives the max 4-sigma separation for this pair"}
+{"ts": 1788011126.73, "cmd": "diagnostics"}
+{"ts": 1788011137.502, "cmd": "observe", "slot": 16, "ok": true, "rv": 0.861, "why": "Support shifted to candidates 2 and 3 as the dominant pair (product 0.112); slot 16 gives 4-sigma separation for this pair and also helps several secondary pairs"}
+{"ts": 1788011141.292, "cmd": "diagnostics"}
+{"ts": 1788011146.002, "cmd": "observe", "slot": 20, "ok": true, "rv": -11.811, "why": "Candidates 2 and 3 remain the dominant unresolved pair (product 0.1985); slot 20 is the top 4-sigma discriminator for this pair"}
+{"ts": 1788011151.237, "cmd": "diagnostics"}
+{"ts": 1788011155.502, "cmd": "observe", "slot": 23, "ok": true, "rv": 28.814, "why": "Confirmation observation for leading candidate 2 against its remaining rival 5 (product 0.0174) at the best 4-sigma slot before finalizing"}
+{"ts": 1788011159.348, "cmd": "diagnostics"}
+{"ts": 1788011163.473, "cmd": "observe", "slot": 26, "ok": true, "rv": 8.466, "why": "Only pair 2 vs 4 remains live (product 0.014); slot 26 gives max 4-sigma separation to push resolution past theta"}
+{"ts": 1788011168.056, "cmd": "finalize", "why": "Candidate 2 (P=12.9406d) reached support 1.0, exceeding theta after two confirmation observations against its remaining rivals", "resolved": true}

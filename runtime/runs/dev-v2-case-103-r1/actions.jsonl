@@ -1,0 +1,12 @@
+{"ts": 1788013389.758, "cmd": "start", "case_id": "case-103", "case_sha256": "216eec70e462f4666cccbab410a6847b6f7cab84428aed8533099805532a96b7", "theta": 0.997}
+{"ts": 1788013395.005, "cmd": "diagnostics"}
+{"ts": 1788013441.412, "cmd": "observe", "slot": 1, "ok": true, "rv": 11.990315, "why": "Slot 1 is cheap, only skipping slot 0, and separates most of the weaker-candidate pairs at once, letting us prune the field before spending budget on the leading pair"}
+{"ts": 1788013448.039, "cmd": "diagnostics"}
+{"ts": 1788013456.609, "cmd": "state"}
+{"ts": 1788013468.333, "cmd": "observe", "slot": 5, "ok": true, "rv": -14.991309, "why": "Candidates 3 and 4 now dominate support and slot 5 is the earliest reachable point giving max separation for that pair"}
+{"ts": 1788013473.847, "cmd": "diagnostics"}
+{"ts": 1788013502.364, "cmd": "observe", "slot": 13, "ok": true, "rv": 25.235184, "why": "Pair 2 versus 3 carries the largest remaining support product and its discrimination is concentrated late, with slot 13 the earliest point reaching max separation for that pair"}
+{"ts": 1788013507.298, "cmd": "diagnostics"}
+{"ts": 1788013517.324, "cmd": "state"}
+{"ts": 1788013524.318, "cmd": "observe", "slot": 19, "ok": true, "rv": -19.026684, "why": "Support flipped sharply toward candidate 2 after slot 13, so this confirms the leading pair, 2 versus 3, at the earliest slot reaching comparable maximum separation"}
+{"ts": 1788013529.623, "cmd": "finalize", "why": "Candidate 2, period near 13.2 days, crossed theta at support 0.998 after the confirming observation at slot 19, resolving the alias unambiguously", "resolved": true}

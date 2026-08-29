@@ -1,0 +1,26 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "correct": true,
+  "false_resolution": false,
+  "max_support": 0.9979680931920705,
+  "truth_support": 0.9979680931920705,
+  "chi2s": [
+    23.596228158482287,
+    45.67397906159557,
+    10.972566314133928,
+    28.240865540217357,
+    31.19903911269343,
+    36.51392809051099
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    1,
+    5,
+    13,
+    19
+  ],
+  "stop_reason": "Candidate 2, period near 13.2 days, crossed theta at support 0.998 after the confirming observation at slot 19, resolving the alias unambiguously"
+}

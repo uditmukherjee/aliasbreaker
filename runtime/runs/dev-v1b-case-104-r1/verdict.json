@@ -1,0 +1,26 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 2,
+  "correct": false,
+  "false_resolution": false,
+  "max_support": 0.542182049608921,
+  "truth_support": 0.542182049608921,
+  "chi2s": [
+    10.244436986170518,
+    20.084274537867774,
+    9.715584327376135,
+    15.514847442773084,
+    17.989975034430334,
+    27.491073786509162
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    23,
+    27,
+    37,
+    46
+  ],
+  "stop_reason": "Candidates 0 and 2 remain close at 0.42 versus 0.54 support with no future slot separating them by more than 2 sigma, so the data cannot resolve the alias to theta and I abstain."
+}
