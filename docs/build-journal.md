@@ -265,3 +265,20 @@ Improvement Changelog.
   history rewrite for the deleted client doc (present in git history; the
   submission ZIP is built from the working tree, and the repo stays private
   until then).
+- 2026-08-30 · FREEZE CEREMONY, first attempt: generator FAILED CLOSED after
+  4000 seeds — ordinary/misleading/unresolvable quotas filled, but ZERO
+  tempting_early and ZERO scarce_window cases. A 200-case probe (committed
+  script) showed both strata are STRUCTURALLY ABSENT in this world:
+  tempting_early 0/200 at every threshold (truth always separates early from
+  some rival); the best rival pair has a median ~25 discriminating slots
+  spread across the horizon (5th pct of earliest-disc-from-end = 46 days),
+  so a natural late-narrow window cannot occur. Round-2 intuition, falsified
+  by measurement.
+- 2026-08-30 · Charter §5 amended pre-freeze (before any arm touched any
+  final seed; aborted partial generation discarded unrun): tempting_early ->
+  "crowded" (6 candidates AND sigma>=4, hardest natural axis);
+  scarce_window -> CONSTRUCTED by availability masking (remove early
+  discriminating slots of the best live rival except the final 25 days, 1-6
+  kept, oracle re-verified post-mask) — availability is exogenous, and the
+  stratum directly tests the pre-registered cursor-reservation hypothesis.
+  Natural scan restarts from seed 30000; constructed cases from 80000+.

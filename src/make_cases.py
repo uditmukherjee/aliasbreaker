@@ -56,16 +56,23 @@ def gen_dev(out_dir):
 
 # ---------------- Final-set strata (charter §5, predeclared) ----------------
 
-FINAL_SEED_START = 5000
+FINAL_SEED_START = 30000
 FINAL_KNOBS = [{"sigma": 2.0}, {"sigma": 3.0}, {"sigma": 4.0}, {"sigma": 5.0}]
-QUOTAS = {"ordinary": 4, "tempting_early": 2, "scarce_window": 2,
-          "misleading_obs": 2, "unresolvable": 2}
+# Amended pre-freeze (probe of 200 cases, committed evidence): the originally
+# hypothesized tempting_early stratum is structurally absent in this world
+# (0/200 at every threshold) and scarce_window never occurs naturally (median
+# rival pair has ~25 discriminating slots spread across the horizon). ->
+# tempting_early replaced by "crowded" (hardest natural axis); scarce_window
+# CONSTRUCTED by masking early discriminating slots (availability is
+# exogenous; masking uses truth, which stratum construction may).
+QUOTAS = {"ordinary": 4, "crowded": 2, "misleading_obs": 2,
+          "unresolvable": 2}
+N_SCARCE_CONSTRUCTED = 2
+SCARCE_KEEP_LAST_DAYS = 25.0
+SCARCE_MAX_DISC = 6
 
 
 LIVE_SUPPORT = 0.10          # a candidate is "live" iff init support >= this
-SCARCE_LAST_DAYS = 20.0      # scarce window: qualifying slots in last N days
-SCARCE_SPAN_DAYS = 5.0       # ... and spanning at most this many days
-SCARCE_MAX_SLOTS = 3
 
 
 def _structure(case):
@@ -131,39 +138,52 @@ def classify_stratum(case, is_resolvable):
     if flags["misleading_obs"]:
         return "misleading_obs", flags
 
-    # scarce_window: for the best-fitting LIVE rival pair vs truth, all
-    # discriminating slots (sep > 2 sigma) sit in the last SCARCE_LAST_DAYS
-    # days, number <= SCARCE_MAX_SLOTS, and span <= SCARCE_SPAN_DAYS days.
-    flags["scarce_window"] = False
-    live_rivals = [i for i in live if i != b]
-    if live_rivals:
-        r = min(live_rivals, key=lambda i: fits[i]["chi2"])
-        rp = (min(b, r), max(b, r))
-        disc = np.flatnonzero(sep[rp] > 2.0)
-        if 0 < len(disc) <= SCARCE_MAX_SLOTS:
-            times = case.slot_t[disc]
-            if (times.min() >= t_end - SCARCE_LAST_DAYS
-                    and times.max() - times.min() <= SCARCE_SPAN_DAYS):
-                flags["scarce_window"] = True
-    if flags["scarce_window"]:
-        return "scarce_window", flags
-
-    # tempting_early: strongest early separation belongs to a pair of LIVE
-    # wrong candidates while every truth-involving pair stays weak early.
-    flags["tempting_early"] = False
-    wrong_live_pairs = [p for p in sep
-                        if b not in p and p[0] in live and p[1] in live]
-    true_pairs = [p for p in sep if b in p]
-    if wrong_live_pairs and true_pairs:
-        e = list(early)
-        best_wrong = max(float(sep[p][e].max()) for p in wrong_live_pairs)
-        best_true = max(float(sep[p][e].max()) for p in true_pairs)
-        if best_wrong > 2.5 and best_true < 1.5:
-            flags["tempting_early"] = True
-    if flags["tempting_early"]:
-        return "tempting_early", flags
+    # crowded: maximum candidate load at high noise — the hardest NATURAL
+    # difficulty axis (replaces the structurally-absent tempting_early).
+    flags["crowded"] = (len(case.candidates) >= 6 and case.sigma >= 4.0)
+    if flags["crowded"]:
+        return "crowded", flags
 
     return "ordinary", flags
+
+
+def construct_scarce_case(seed, sigma):
+    """Constructed scarce-window case (reservation test): take a natural
+    resolvable case and REMOVE every slot where the best live rival pair
+    separates > 2 sigma, except those in the final SCARCE_KEEP_LAST_DAYS
+    days. Observatory availability is exogenous, so a schedule missing those
+    nights is physically legitimate; stratum construction may use hidden
+    truth (charter §5), never policy behavior. The masked case must still
+    pass the resolvability oracle."""
+    from dataclasses import replace as dc_replace
+    case = make_case(seed, sigma=sigma)
+    if case is None or len(case.candidates) < 3:
+        return None, None
+    fits, support0, curves, sep, b = _structure(case)
+    live_rivals = [i for i in range(len(fits))
+                   if i != b and support0[i] >= LIVE_SUPPORT]
+    if not live_rivals:
+        return None, None
+    r = min(live_rivals, key=lambda i: fits[i]["chi2"])
+    rp = (min(b, r), max(b, r))
+    disc = sep[rp] > 2.0
+    t_end = float(case.slot_t[-1])
+    keep = ~disc | (case.slot_t >= t_end - SCARCE_KEEP_LAST_DAYS)
+    kept_disc = int(np.sum(disc & keep))
+    if not (1 <= kept_disc <= SCARCE_MAX_DISC) or int(np.sum(keep)) < 12:
+        return None, None
+    masked = dc_replace(
+        case, case_id=f"case-{seed}m",
+        slot_t=case.slot_t[keep], slot_y=case.slot_y[keep])
+    is_res = resolvable(masked, theta=ORACLE_CFG["theta"],
+                        n_random=ORACLE_CFG["n_random"],
+                        oracle_seed=ORACLE_CFG["oracle_seed"])
+    if not is_res:
+        return None, None
+    flags = {"resolvable": True, "constructed_scarce": True,
+             "masked_slots": int(np.sum(~keep)), "kept_disc": kept_disc,
+             "rival_pair": list(rp)}
+    return masked, flags
 
 
 def gen_final(out_dir, manifest_path):
@@ -214,6 +234,33 @@ def gen_final(out_dir, manifest_path):
     if any(len(filled[s]) < QUOTAS[s] for s in QUOTAS):
         raise SystemExit(f"could not fill quotas within seed budget: "
                          f"{ {s: len(v) for s, v in filled.items()} }")
+
+    # Constructed scarce-window cases (reservation test), fresh seed range.
+    filled["scarce_window"] = []
+    s_seed = FINAL_SEED_START + 50000
+    s_sigmas = [3.0, 4.0]
+    while len(filled["scarce_window"]) < N_SCARCE_CONSTRUCTED and \
+            s_seed < FINAL_SEED_START + 52000:
+        s_seed += 1
+        sigma = s_sigmas[len(filled["scarce_window"]) % len(s_sigmas)]
+        masked, flags = construct_scarce_case(s_seed, sigma)
+        if masked is None:
+            continue
+        d = case_to_dict(masked)
+        d["hidden"]["oracle"] = {"resolvable": True, **ORACLE_CFG}
+        path = out_dir / f"{masked.case_id}.json"
+        path.write_text(json.dumps(d, indent=1))
+        filled["scarce_window"].append({
+            "case_id": masked.case_id, "seed": masked.seed,
+            "sigma": masked.sigma, "stratum": "scarce_window",
+            "constructed": True, "predicate_flags": flags,
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        })
+        print(f"{masked.case_id}: stratum=scarce_window (constructed) "
+              f"sigma={sigma} masked={flags['masked_slots']} "
+              f"kept_disc={flags['kept_disc']}")
+    if len(filled["scarce_window"]) < N_SCARCE_CONSTRUCTED:
+        raise SystemExit("could not construct scarce-window cases")
     import platform
     import subprocess as sp
     commit = sp.run(["git", "rev-parse", "HEAD"], capture_output=True,
@@ -221,22 +268,23 @@ def gen_final(out_dir, manifest_path):
     manifest = {
         "seed_range_scanned": [FINAL_SEED_START, seed],
         "n_seeds_scanned": n_scanned, "n_valid_cases_seen": n_valid,
-        "quotas": QUOTAS,
+        "quotas": {**QUOTAS, "scarce_window_constructed": N_SCARCE_CONSTRUCTED},
         "ordinary_sigma_subquota": "one case per sigma in {2,3,4,5}",
         "theta": THETA_DEFAULT,
         "oracle": ORACLE_CFG,
         "predicate_thresholds": {
             "live_support": LIVE_SUPPORT,
-            "scarce_last_days": SCARCE_LAST_DAYS,
-            "scarce_span_days": SCARCE_SPAN_DAYS,
-            "scarce_max_slots": SCARCE_MAX_SLOTS,
-            "tempting_wrong_sep_gt": 2.5, "tempting_true_sep_lt": 1.5,
             "misleading_overtake_support_ge": 0.5,
+            "crowded_min_candidates": 6, "crowded_min_sigma": 4.0,
+            "scarce_keep_last_days": SCARCE_KEEP_LAST_DAYS,
+            "scarce_max_disc_slots": SCARCE_MAX_DISC,
         },
         "stratum_precedence":
-            "unresolvable > misleading_obs > scarce_window > tempting_early "
-            "> ordinary (higher-precedence overflow cases are discarded, "
-            "never demoted)",
+            "unresolvable > misleading_obs > crowded > ordinary (natural "
+            "scan; overflow discarded, never demoted); scarce_window is "
+            "CONSTRUCTED from a separate fresh seed range by availability "
+            "masking (probe evidence: the stratum is structurally absent in "
+            "natural draws)",
         "generator_commit": commit,
         "environment": {"python": platform.python_version(),
                         "numpy": np.__version__},
