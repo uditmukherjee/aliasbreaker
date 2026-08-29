@@ -1,99 +1,107 @@
-"""Non-LLM arms: batch baseline and scripted-adaptive policy.
-
-Both share the same fitter, verifier, noise, and slots. The batch planner
-commits to all observation times upfront; the scripted-adaptive policy re-plans
-after every observation with updated candidate weights and refitted curves.
+"""Non-LLM arms v2 (charter §6): batch baseline, even-spacing context baseline,
+scripted-adaptive ablation. All run through the Campaign state machine and the
+shared evaluator verdict; none touch hidden truth or unvisited outcomes.
 """
 
 import numpy as np
 
-from .kepler import rv_params
-from .fitting import refit_candidates, weights_from_chi2
-from .world import observe
+from .fitting import fit_basin, predict_circular, support_from_chi2
+from .world import Campaign
+from .evaluator import verdict, THETA_DEFAULT
 
-B_CAP = 4.0          # per-observation discrimination cap (units of sigma)
-PAIR_NEED = 6.0      # total discrimination evidence sought per candidate pair
-CONF_THRESHOLD = 0.9
-EARLY_STOP = 0.97
+B_CAP = 4.0      # per-observation discrimination cap (units of sigma)
+PAIR_NEED = 6.0  # discrimination evidence sought per candidate pair
 
 
-def _pair_b(curves, sigma):
-    """b[i,j,t] = capped |v_i - v_j| / sigma for all candidate pairs."""
-    n = curves.shape[0]
+def _fits_and_support(case, t, y):
+    fits = [fit_basin(t, y, case.sigma, P, case.freq_df)
+            for P in case.candidates]
+    support = support_from_chi2([f["chi2"] for f in fits])
+    return fits, support
+
+
+def _pair_b(fits, slot_t, sigma):
+    curves = np.array([predict_circular(f, slot_t) for f in fits])
+    n = len(fits)
     pairs = [(i, j) for i in range(n) for j in range(i + 1, n)]
     b = np.array([np.clip(np.abs(curves[i] - curves[j]) / sigma, 0.0, B_CAP)
                   for i, j in pairs])
     return pairs, b
 
 
-def _slot_value(pairs, b, weights, remaining, used):
-    n_slots = b.shape[1]
-    value = np.zeros(n_slots)
+def _slot_value(pairs, b, support, remaining, forbidden):
+    value = np.zeros(b.shape[1])
     for k, (i, j) in enumerate(pairs):
-        value += weights[i] * weights[j] * np.minimum(b[k], remaining[k])
-    value[list(used)] = -np.inf
+        value += support[i] * support[j] * np.minimum(b[k], remaining[k])
+    if forbidden:
+        value[list(forbidden)] = -np.inf
     return value
 
 
-def final_verdict(case, obs_t, obs_y):
-    """Shared evaluator-facing verdict: refit all candidates on all data."""
-    all_t = np.concatenate([case.init_t, np.asarray(obs_t)])
-    all_y = np.concatenate([case.init_y, np.asarray(obs_y)])
-    fits = refit_candidates(case.candidates, all_t, all_y, case.sigma)
-    chi2s = [f["chi2"] for f in fits]
-    w = weights_from_chi2(chi2s)
-    pred = int(np.argmax(w))
-    confident = float(w[pred]) >= CONF_THRESHOLD
-    return {
-        "pred": pred,
-        "abstain": not confident,
-        "passed": confident and pred == case.true_index,
-        "truth_weight": float(w[case.true_index]),
-        "max_weight": float(w[pred]),
-        "chi2s": chi2s,
-    }
-
-
-def run_batch(case):
-    """Baseline: plan all observations upfront from the initial fits."""
-    curves = np.array([rv_params(c, case.slot_t) for c in case.candidates])
-    weights = weights_from_chi2([c["chi2"] for c in case.candidates])
-    pairs, b = _pair_b(curves, case.sigma)
+def batch_design(case):
+    """Joint greedy set design from the initial fits: each pick maximizes the
+    marginal pair-coverage gain of the whole plan. Deterministic tie-break:
+    earliest slot (argmax returns the first maximum)."""
+    fits, support = _fits_and_support(case, case.init_t, case.init_y)
+    pairs, b = _pair_b(fits, case.slot_t, case.sigma)
     remaining = np.full(len(pairs), PAIR_NEED)
-    used = []
-    for _ in range(case.budget):
-        value = _slot_value(pairs, b, weights, remaining, used)
+    picks = []
+    for _ in range(min(case.budget, len(case.slot_t))):
+        value = _slot_value(pairs, b, support, remaining, picks)
         pick = int(np.argmax(value))
-        used.append(pick)
+        picks.append(pick)
         remaining = np.maximum(remaining - b[:, pick], 0.0)
-    obs_t = [float(case.slot_t[i]) for i in used]
-    obs_y = [observe(case, i) for i in used]
-    out = final_verdict(case, obs_t, obs_y)
-    out.update({"obs_used": len(used), "slots": used})
+    return sorted(picks)
+
+
+def run_batch(case, theta=THETA_DEFAULT):
+    """Baseline: commit to the joint greedy design upfront; no feedback, no
+    early stopping (structural: a batch plan receives no interim results)."""
+    campaign = Campaign(case)
+    for idx in batch_design(case):
+        campaign.observe(idx)
+    out = verdict(case, campaign.obs_t, campaign.obs_y, theta)
+    out["slots"] = campaign.obs_idx
     return out
 
 
-def run_scripted_adaptive(case):
-    """Ablation arm: same scoring, re-planned after every observation."""
-    fits = list(case.candidates)
-    obs_slots, obs_t, obs_y = [], [], []
-    pairs = [(i, j) for i in range(len(fits)) for j in range(i + 1, len(fits))]
-    remaining = np.full(len(pairs), PAIR_NEED)
-    for _ in range(case.budget):
-        weights = weights_from_chi2([f["chi2"] for f in fits])
-        if float(np.max(weights)) >= EARLY_STOP:
+def run_even_spacing(case, theta=THETA_DEFAULT):
+    """Context baseline: k approximately evenly spaced slots."""
+    n = len(case.slot_t)
+    k = min(case.budget, n)
+    picks = sorted({int(round(i)) for i in np.linspace(0, n - 1, k)})
+    campaign = Campaign(case)
+    for idx in picks:
+        campaign.observe(idx)
+    out = verdict(case, campaign.obs_t, campaign.obs_y, theta)
+    out["slots"] = campaign.obs_idx
+    return out
+
+
+def run_scripted_adaptive(case, theta=THETA_DEFAULT):
+    """Ablation arm: same pair-coverage score as the batch design, recomputed
+    after every observation; stops when the shared verdict rule would resolve.
+    Fully predeclared; chronological (can only pick slots at/after the
+    cursor)."""
+    campaign = Campaign(case)
+    pairs0 = [(i, j) for i in range(len(case.candidates))
+              for j in range(i + 1, len(case.candidates))]
+    remaining = np.full(len(pairs0), PAIR_NEED)
+    while campaign.budget_left() > 0:
+        t, y = campaign.data()
+        fits, support = _fits_and_support(case, t, y)
+        if float(np.max(support)) >= theta:
             break
-        curves = np.array([rv_params(f, case.slot_t) for f in fits])
-        pairs, b = _pair_b(curves, case.sigma)
-        value = _slot_value(pairs, b, weights, remaining, obs_slots)
-        pick = int(np.argmax(value))
-        obs_slots.append(pick)
-        obs_t.append(float(case.slot_t[pick]))
-        obs_y.append(observe(case, pick))
-        remaining = np.maximum(remaining - b[:, pick], 0.0)
-        all_t = np.concatenate([case.init_t, obs_t])
-        all_y = np.concatenate([case.init_y, obs_y])
-        fits = refit_candidates(case.candidates, all_t, all_y, case.sigma)
-    out = final_verdict(case, obs_t, obs_y)
-    out.update({"obs_used": len(obs_slots), "slots": obs_slots})
+        future = campaign.remaining_slots()
+        if not future:
+            break
+        future_idx = [i for i, _ in future]
+        future_t = np.array([ft for _, ft in future])
+        pairs, b = _pair_b(fits, future_t, case.sigma)
+        value = _slot_value(pairs, b, support, remaining, forbidden=[])
+        local = int(np.argmax(value))
+        campaign.observe(future_idx[local])
+        remaining = np.maximum(remaining - b[:, local], 0.0)
+    out = verdict(case, campaign.obs_t, campaign.obs_y, theta)
+    out["slots"] = campaign.obs_idx
     return out
