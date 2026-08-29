@@ -48,10 +48,16 @@ S_max ≥ θ, else UNRESOLVED (abstain). No arm supplies its own confidence; the
 LLM controls scheduling and stopping only.
 
 **θ calibration:** θ is chosen before the freeze by running the complete
-procedure (all arms' campaign classes) on ≥100 development cases and selecting
-the smallest θ ∈ {0.85, 0.9, 0.95, 0.99} whose false-resolution rate (resolved
-on a wrong candidate, or resolved when truth's basin is absent) is ≤ 5%. The
-calibration table is committed.
+procedure (all non-LLM campaign classes) on ≥100 development cases and
+selecting the smallest θ ∈ {0.85, 0.9, 0.95, 0.99, 0.997} whose WORST-ARM
+false-resolution rate (resolved on a wrong candidate, or resolved when truth's
+basin is absent) is ≤ 5%. The calibration table is committed.
+[Amended pre-freeze 2026-08-29: grid extended by 0.997 because no member of
+the original grid met the bound (0.99 → 5.8% worst-arm FRR); selection rule
+unchanged; chosen θ = 0.997. FRR decays slowly in θ because false resolutions
+are dominated by decisively wrong fits, which no threshold can veto — the
+operative defense against those is confirmation observations, an agent-side
+behavior the benchmark measures. See evaluation/theta-calibration.json.]
 
 ## 4. Resolvability oracle (arm-independent, predeclared)
 

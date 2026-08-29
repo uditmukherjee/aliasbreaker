@@ -99,8 +99,9 @@ def cmd_start(args):
     run.mkdir(parents=True, exist_ok=True)
     case_path = Path(args.case)
     case = case_from_dict(json.loads(case_path.read_text()))
+    theta = args.theta if args.theta is not None else THETA_DEFAULT
     meta = {"case_path": str(case_path.resolve()), "case_id": case.case_id,
-            "theta": args.theta, "created": round(time.time(), 3)}
+            "theta": theta, "created": round(time.time(), 3)}
     (run / "meta.json").write_text(json.dumps(meta, indent=2))
     state = {"observed_slots": [], "finalized": False}
     _save_state(run, state)
@@ -178,7 +179,7 @@ def cmd_finalize(args):
     run, meta, state, case, campaign = _load_run(args.run)
     if state["finalized"]:
         _fail("run is already finalized")
-    theta = meta.get("theta") or THETA_DEFAULT
+    theta = meta["theta"]  # pinned at start; never floats with code changes
     v = verdict(case, campaign.obs_t, campaign.obs_y, theta)
     state["finalized"] = True
     _save_state(run, state)

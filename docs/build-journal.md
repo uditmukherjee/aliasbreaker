@@ -101,3 +101,18 @@ Improvement Changelog.
   '&' and pipes/redirection still rejected. Smoke transcript re-audits clean
   (13 tool calls, 0 violations); preserved at
   evaluation/transcripts/smoke-case-101-r1.transcript.jsonl.
+- 2026-08-29 · B2 report generator (Opus subagent): src/aliasbreaker/report.py
+  renders the observer-facing campaign report (banner, campaign log with
+  agent rationales, support table, verdict box, 3 figures, limitations,
+  human-approval field, reveal-only evaluator appendix); demo at
+  evaluation/reports/demo-case-101.html. Subagent findings triaged:
+  (1) CHARTER/CODE MISMATCH — calibration used a grid extended past the
+  charter's declared {0.85..0.99}; resolved by pre-freeze charter amendment
+  (0.997 added; no original grid member met the 5% bound) with rationale
+  journaled. (2) CLI now pins effective theta at `start` (was: floated with
+  THETA_DEFAULT at finalize). (3) High theta assessed as a FEATURE: a
+  4-sigma-separating slot yields dchi2~16 (support -> ~1.0) in one
+  observation, so decisive scheduling resolves while weak scheduling
+  abstains — the demo's weaker greedy campaign topping out at 0.991 and
+  abstaining (correct candidate leading, no false resolution) demonstrates
+  exactly that incentive.

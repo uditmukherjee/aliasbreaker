@@ -141,10 +141,13 @@ def _style(ax):
         ax.spines[s].set_color("#999999")
 
 
-def _draw_series(ax, case, campaign, fits, sel, xlim, label_models):
+def _draw_series(ax, case, campaign, fits, sel, xlim, label_models,
+                 only_selected=False):
     lo, hi = xlim
     grid = np.linspace(lo, hi, 4000)
     for i, f in enumerate(fits):
+        if only_selected and i != sel:
+            continue
         ax.plot(grid, predict_circular(f, grid),
                 color=C_MODEL[i % len(C_MODEL)],
                 lw=1.9 if i == sel else 0.9,
@@ -183,9 +186,12 @@ def plot_timeseries(case, campaign, fits, sel):
     pad = 0.03 * (hi - lo)
     lo, hi = lo - pad, hi + pad
 
-    _draw_series(ax1, case, campaign, fits, sel, (lo, hi), label_models=False)
-    ax1.set_title("Full time series: data and candidate models", fontsize=11)
+    _draw_series(ax1, case, campaign, fits, sel, (lo, hi), label_models=False,
+                 only_selected=True)
+    ax1.set_title(f"Full time series with the selected model "
+                  f"(P = {fits[sel]['P']:.3f} d)", fontsize=11)
     ax1.legend(fontsize=8, ncol=2, framealpha=0.95, loc="best")
+    ax1.set_xlabel("time (days)")
 
     width = min(hi - lo, max(8.0, 1.3 * max(f["P"] for f in fits)))
     center = (float(np.mean(campaign.obs_t)) if campaign.obs_t
@@ -194,8 +200,8 @@ def plot_timeseries(case, campaign, fits, sel):
     zhi = min(hi, zlo + width)
     zlo = max(lo, zhi - width)
     _draw_series(ax2, case, campaign, fits, sel, (zlo, zhi), label_models=True)
-    ax2.set_title(f"Zoom, nights {zlo:.1f}–{zhi:.1f}: candidate models "
-                  f"separate here", fontsize=11)
+    ax2.set_title(f"Zoom, nights {zlo:.1f}-{zhi:.1f}: all candidate models",
+                  fontsize=11)
     ax2.set_xlabel("time (days)")
     ax2.legend(fontsize=8, ncol=3, framealpha=0.95, loc="best")
     return _fig_b64(fig)
@@ -469,12 +475,12 @@ def render_report(case_path, run_dir, out_path, reveal=False):
 
     # figures
     a("<h2>Figures</h2>")
-    a(_img(p1, "Figure 1. Time series over the full campaign span (top) and "
-               "over a zoom window where the candidate models visibly "
-               "separate (bottom). Circles: initial observations. Diamonds: "
-               "campaign observations, numbered in the order they were taken. "
-               "Thin lines: candidate models refit on all data; the thick "
-               "line is the selected candidate. Error bars are +/- 1 sigma."))
+    a(_img(p1, "Figure 1. Top: the full campaign span with the selected "
+               "model. Bottom: a zoom window over which every candidate "
+               "model (thin lines, legend gives the refined periods) is "
+               "distinguishable. Circles: initial observations. Diamonds: "
+               "campaign observations, numbered in the order they were "
+               "taken. Error bars are +/- 1 sigma."))
     a(_img(p2, f"Figure 2. RV folded at the refined period of {sel_label}, "
                f"P = {_f(sel_fit['P'], 4)} d."))
     a(_img(p3, "Figure 3. Residuals to the selected model versus time, with "
