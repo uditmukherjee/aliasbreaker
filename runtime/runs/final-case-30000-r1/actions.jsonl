@@ -1,0 +1,10 @@
+{"ts": 1788019095.217, "cmd": "start", "case_id": "case-30000", "case_sha256": "42db816cacee6c410b8548f83a0018e5377f0f0395dc04616ef94dddbcbcfdd8", "theta": 0.997}
+{"ts": 1788019099.717, "cmd": "diagnostics"}
+{"ts": 1788019116.103, "cmd": "observe", "slot": 7, "ok": true, "rv": 13.042622, "why": "Slot 7 gives near-maximal separation for both leading pairs 0-5 and 1-5 while being the earliest reachable slot with that discriminating power, preserving later slots for confirmation"}
+{"ts": 1788019120.606, "cmd": "diagnostics"}
+{"ts": 1788019126.78, "cmd": "observe", "slot": 10, "ok": true, "rv": 9.464355, "why": "Only live pair remaining is 0 versus 1, and slot 10 is the earliest reachable slot at maximal separation for that pair"}
+{"ts": 1788019131.926, "cmd": "diagnostics"}
+{"ts": 1788019136.965, "cmd": "observe", "slot": 11, "ok": true, "rv": 13.822985, "why": "Pair 0 versus 1 is still the only live pair and slot 11 remains the earliest slot at maximal separation for it"}
+{"ts": 1788019141.663, "cmd": "diagnostics"}
+{"ts": 1788019145.925, "cmd": "observe", "slot": 12, "ok": true, "rv": 8.121113, "why": "Candidate 1 support is just below the resolution threshold so one confirmation observation at the earliest maximal separation slot for the remaining pair is warranted before finalizing"}
+{"ts": 1788019150.269, "cmd": "finalize", "why": "Candidate 1 at period 12.20245 days reached support 0.999982, exceeding theta 0.997, after confirmation observations at slots 11 and 12 resolved the leading pair against candidate 0", "resolved": true}

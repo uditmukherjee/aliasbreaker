@@ -1,0 +1,15 @@
+{"ts": 1788019802.256, "cmd": "start", "case_id": "case-30002", "case_sha256": "e27d9be2db4575d980d04d8eb86611bcee085c0f454f54381de892a2ea275335", "theta": 0.997}
+{"ts": 1788019806.621, "cmd": "diagnostics"}
+{"ts": 1788019822.662, "cmd": "observe", "slot": 0, "ok": true, "rv": -8.556268, "why": "Earliest reachable slot, t=31.29, gives 4-sigma separation for the pairs involving the two lowest-support candidates against several others, cheaply trimming the field before deeper cursor moves"}
+{"ts": 1788019826.861, "cmd": "diagnostics"}
+{"ts": 1788019836.63, "cmd": "state"}
+{"ts": 1788019842.788, "cmd": "observe", "slot": 2, "ok": true, "rv": 5.077782, "why": "t=33.14 is the earliest reachable slot giving 4-sigma separation for the leading pairs 0-1, 1-5, 0-2 and 2-5, so it discriminates the current top contenders together"}
+{"ts": 1788019847.362, "cmd": "diagnostics"}
+{"ts": 1788019853.865, "cmd": "observe", "slot": 9, "ok": true, "rv": -3.721657, "why": "Only the 0 versus 5 pair remains live, and t=41.57 is the earliest reachable slot with full 4-sigma separation for that pair, so it is the most efficient next measurement"}
+{"ts": 1788019859.35, "cmd": "diagnostics"}
+{"ts": 1788019873.419, "cmd": "state"}
+{"ts": 1788019884.249, "cmd": "observe", "slot": 32, "ok": true, "rv": 1.349345, "why": "The 0 versus 5 pair is the only live one and its discriminating power lives late, t=76.12 is the earliest reachable slot within 20 percent of the best available separation for this pair"}
+{"ts": 1788019888.373, "cmd": "diagnostics"}
+{"ts": 1788019897.748, "cmd": "observe", "slot": 40, "ok": true, "rv": 11.344676, "why": "The last reachable slot at t=89.47 is the only remaining point giving full 4-sigma separation for the surviving 0 versus 5 pair, so it is the best final confirmation before budget runs out"}
+{"ts": 1788019901.916, "cmd": "state"}
+{"ts": 1788019908.746, "cmd": "finalize", "why": "No slots remain, candidate 0 leads with support 0.96 over candidate 5 but this falls short of the required 0.997 threshold, so the data favor period 3.52 days strongly without formally resolving it", "resolved": false}

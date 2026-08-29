@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "max_support": 0.999994813309811,
+  "chi2s": [
+    45.866366509911145,
+    16.483026751217658,
+    40.98939075243867,
+    84.14487342700981,
+    74.85840228546449,
+    59.65264103831398
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    6,
+    22,
+    29,
+    36,
+    38
+  ],
+  "stop_reason": "Candidate 1 at period 19.349 days reached support 0.999995, far above theta 0.997, after sequentially eliminating candidates 3 and 4 at slot 2, candidate 2 competition at slots 6 and 36, and candidate 0 at slots 22, 29, and 38, all chosen as earliest maximally separating points for the live pairs at each stage"
+}

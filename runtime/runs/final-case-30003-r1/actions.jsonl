@@ -1,0 +1,10 @@
+{"ts": 1788019924.482, "cmd": "start", "case_id": "case-30003", "case_sha256": "5f55d304128fc1df84f2897bd8f93948bfc5c0c1057292c06eae736023c50b79", "theta": 0.997}
+{"ts": 1788019930.637, "cmd": "diagnostics"}
+{"ts": 1788019968.204, "cmd": "observe", "slot": 6, "ok": true, "rv": 25.784336, "why": "Slot 6 near day 38 separates both the 0 versus 2 and 1 versus 2 period pairs at strong significance, the two next-best-supported alias comparisons after the leading pair, while staying earlier than the only slot found for the top pair"}
+{"ts": 1788019973.728, "cmd": "diagnostics"}
+{"ts": 1788019985.321, "cmd": "observe", "slot": 7, "ok": true, "rv": 29.753421, "why": "Slot 7 near day 39 is the earliest reachable point and separates both the 4 versus 5 and 2 versus 5 pairs strongly, the two runner up alias comparisons now that candidates 2, 4, and 5 are the live set"}
+{"ts": 1788019990.58, "cmd": "diagnostics"}
+{"ts": 1788020001.366, "cmd": "observe", "slot": 10, "ok": true, "rv": -1.761432, "why": "Slot 10 near day 43 is one of the earliest top ranked points separating candidates 4 and 5, now the only pair with meaningful combined support after the previous two observations"}
+{"ts": 1788020007.193, "cmd": "diagnostics"}
+{"ts": 1788020013.397, "cmd": "observe", "slot": 11, "ok": true, "rv": -22.511631, "why": "Confirmation observation at slot 11 near day 44, the earliest top ranked point still separating candidate 4 from its only remaining rival candidate 5, before finalizing on the leading period"}
+{"ts": 1788020019.185, "cmd": "finalize", "why": "Candidate 4 at period 0.91362 days reached support 1.0, exceeding theta, after confirmation at slot 11 following the crossing at slot 10, with all rival candidates driven to zero support", "resolved": true}

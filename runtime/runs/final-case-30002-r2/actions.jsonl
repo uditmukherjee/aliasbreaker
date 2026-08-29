@@ -1,0 +1,13 @@
+{"ts": 1788019710.945, "cmd": "start", "case_id": "case-30002", "case_sha256": "e27d9be2db4575d980d04d8eb86611bcee085c0f454f54381de892a2ea275335", "theta": 0.997}
+{"ts": 1788019714.76, "cmd": "diagnostics"}
+{"ts": 1788019720.577, "cmd": "observe", "slot": 0, "ok": true, "rv": -8.556268, "why": "Earliest reachable slot separates several live pairs at max separation, especially candidate 3 versus 0,1,2,4 and candidate 4 versus 0,1,2, giving broad discriminating power at minimal cursor cost"}
+{"ts": 1788019724.47, "cmd": "diagnostics"}
+{"ts": 1788019746.603, "cmd": "observe", "slot": 2, "ok": true, "rv": 5.077782, "why": "This slot gives maximal four sigma separation for the leading pairs zero versus one, zero versus two, one versus five, and two versus five, covering most of the remaining probability mass at the earliest reachable epoch"}
+{"ts": 1788019750.961, "cmd": "diagnostics"}
+{"ts": 1788019756.097, "cmd": "observe", "slot": 9, "ok": true, "rv": -3.721657, "why": "Candidates zero and five are the only remaining live pair and this earliest slot gives the maximal four sigma separation between them"}
+{"ts": 1788019760.479, "cmd": "diagnostics"}
+{"ts": 1788019765.758, "cmd": "observe", "slot": 34, "ok": true, "rv": 5.984337, "why": "Candidates zero and five remain the sole live pair and this is the earliest reachable slot offering the maximal four sigma separation to push support past threshold"}
+{"ts": 1788019769.811, "cmd": "diagnostics"}
+{"ts": 1788019779.135, "cmd": "observe", "slot": 40, "ok": true, "rv": 11.344676, "why": "This is the last remaining slot with meaningful separation for the sole live pair zero versus five, all closer slots have collapsed below one sigma"}
+{"ts": 1788019783.134, "cmd": "state"}
+{"ts": 1788019788.345, "cmd": "finalize", "why": "Candidates zero and five remain the only live pair with support 0.82 versus 0.18, below the 0.997 resolution threshold, and no observation slots remain to separate them further, so the honest verdict is an abstention", "resolved": false}

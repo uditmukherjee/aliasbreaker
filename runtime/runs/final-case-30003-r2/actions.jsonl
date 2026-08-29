@@ -1,0 +1,11 @@
+{"ts": 1788020031.847, "cmd": "start", "case_id": "case-30003", "case_sha256": "5f55d304128fc1df84f2897bd8f93948bfc5c0c1057292c06eae736023c50b79", "theta": 0.997}
+{"ts": 1788020036.099, "cmd": "diagnostics"}
+{"ts": 1788020065.832, "cmd": "observe", "slot": 6, "ok": true, "rv": 25.784336, "why": "Earliest reachable slot at maximum separation for both candidate 2 versus candidate 0 and candidate 2 versus candidate 1, the two next most contested pairs after the leading pair"}
+{"ts": 1788020070.118, "cmd": "diagnostics"}
+{"ts": 1788020080.276, "cmd": "observe", "slot": 7, "ok": true, "rv": 29.753421, "why": "Earliest reachable slot at maximum separation for candidate 4 versus candidate 5 and candidate 2 versus candidate 5, now the second and third most contested pairs after the new leading pair"}
+{"ts": 1788020084.539, "cmd": "diagnostics"}
+{"ts": 1788020091.202, "cmd": "observe", "slot": 10, "ok": true, "rv": -1.761432, "why": "Earliest reachable slot at maximum separation for the now dominant candidate 4 versus candidate 5 pair, the only pair still carrying meaningful support"}
+{"ts": 1788020095.6, "cmd": "state"}
+{"ts": 1788020100.855, "cmd": "diagnostics"}
+{"ts": 1788020105.494, "cmd": "observe", "slot": 11, "ok": true, "rv": -22.511631, "why": "Confirmation observation at the earliest maximum separation slot for candidate 4 versus candidate 5, the sole remaining rival, before finalizing on the leading candidate"}
+{"ts": 1788020109.935, "cmd": "finalize", "why": "Candidate 4 at period 0.915 days reached support 1.0, crossing theta after a confirmation observation, with all rival pairs collapsed to zero support", "resolved": true}

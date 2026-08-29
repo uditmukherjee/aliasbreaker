@@ -1,0 +1,12 @@
+{"ts": 1788021514.979, "cmd": "start", "case_id": "case-30058", "case_sha256": "68e7e3b5b1c0a21d9c1e33da49b98f875e30c0e0713d7f9d419868fc468ff328", "theta": 0.997}
+{"ts": 1788021519.132, "cmd": "diagnostics"}
+{"ts": 1788021534.487, "cmd": "observe", "slot": 7, "ok": true, "rv": -20.561126, "why": "Slot discriminates both leading pairs candidate 0 vs 1 and candidate 0 vs 2 at maximum separation, and is the earliest slot offering that joint power"}
+{"ts": 1788021538.919, "cmd": "diagnostics"}
+{"ts": 1788021543.597, "cmd": "observe", "slot": 10, "ok": true, "rv": -17.135381, "why": "Confirmation point for the leading candidate zero, earliest slot with maximum separation against both remaining live rivals one and two"}
+{"ts": 1788021547.613, "cmd": "diagnostics"}
+{"ts": 1788021551.78, "cmd": "observe", "slot": 13, "ok": true, "rv": 2.13812, "why": "Only remaining live pair is zero versus one, this is the earliest slot with maximum separation to resolve it"}
+{"ts": 1788021556.322, "cmd": "diagnostics"}
+{"ts": 1788021561.483, "cmd": "observe", "slot": 18, "ok": true, "rv": -23.258342, "why": "Earliest slot tied for maximum separation on the sole remaining live pair zero versus one"}
+{"ts": 1788021567.378, "cmd": "diagnostics"}
+{"ts": 1788021571.953, "cmd": "observe", "slot": 20, "ok": true, "rv": -28.040135, "why": "Confirmation observation for candidate zero after crossing theta, guarding against the single noisy point seen earlier, earliest slot at maximum separation on the remaining pair"}
+{"ts": 1788021576.316, "cmd": "finalize", "why": "Candidate zero period 12.85958 days reaches support 0.999997, confirmed by two consecutive high-separation observations after crossing theta, all rival candidates driven near zero", "resolved": true}

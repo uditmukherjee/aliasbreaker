@@ -1,0 +1,24 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 0,
+  "max_support": 0.9598641780624143,
+  "chi2s": [
+    4.385723433543745,
+    17.366670319164637,
+    22.360783635110398,
+    22.38232849873499,
+    18.473756516054433,
+    10.86515431734197
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    2,
+    9,
+    32,
+    40
+  ],
+  "stop_reason": "No slots remain, candidate 0 leads with support 0.96 over candidate 5 but this falls short of the required 0.997 threshold, so the data favor period 3.52 days strongly without formally resolving it"
+}

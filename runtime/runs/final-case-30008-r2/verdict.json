@@ -1,0 +1,18 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9999999999998797,
+  "chi2s": [
+    2.8509865909213996,
+    269.94836777710793,
+    62.34803667154169
+  ],
+  "n_obs": 2,
+  "theta": 0.997,
+  "observed_slots": [
+    3,
+    4
+  ],
+  "stop_reason": "Period 9.418 days reached support 1.0 exceeding theta after slot 3 and held steady on the slot 4 confirmation point, the other two candidates are decisively excluded"
+}

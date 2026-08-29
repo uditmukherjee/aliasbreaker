@@ -1,0 +1,15 @@
+{"ts": 1788021300.971, "cmd": "start", "case_id": "case-30010", "case_sha256": "c2886a8b2a4cb8d22432f82437ba197a01adbf2ca95510a7acbf69fbe43e63cd", "theta": 0.997}
+{"ts": 1788021305.991, "cmd": "diagnostics"}
+{"ts": 1788021313.939, "cmd": "observe", "slot": 0, "ok": true, "rv": 8.890023, "why": "Earliest reachable slot at t=31.17 gives full 4-sigma separation for several live pairs at once, including 0-2, 0-3, 0-4, 2-5, 3-5, 4-5, so it discriminates broadly with minimal cursor cost"}
+{"ts": 1788021332.215, "cmd": "diagnostics"}
+{"ts": 1788021345.458, "cmd": "state"}
+{"ts": 1788021352.173, "cmd": "observe", "slot": 1, "ok": true, "rv": 7.544025, "why": "Slot at t=33.25 is the earliest reachable point and gives full 4-sigma separation for both the 0-5 and 1-5 pairs, cheaply testing whether candidate 5 survives before committing to the costlier slot needed for the 0-1 pair"}
+{"ts": 1788021356.806, "cmd": "diagnostics"}
+{"ts": 1788021369.337, "cmd": "observe", "slot": 33, "ok": true, "rv": 6.503704, "why": "Pair 0-1 dominates remaining support and only three future slots exceed 2-sigma separation for it, with slot 33 at t=78.56 giving the best available 3.42-sigma separation, so this deep jump is justified to resolve the leading pair"}
+{"ts": 1788021374.519, "cmd": "diagnostics"}
+{"ts": 1788021383.623, "cmd": "observe", "slot": 39, "ok": true, "rv": -9.512608, "why": "Candidate 1 leads but has not yet crossed the resolution threshold, so taking one confirmation observation at slot 39, t=86.18, the best available 3.93-sigma separation for the leading 0-1 pair, before finalizing"}
+{"ts": 1788021388.147, "cmd": "diagnostics"}
+{"ts": 1788021396.895, "cmd": "observe", "slot": 40, "ok": true, "rv": -6.711701, "why": "Candidate 1 leads with support 0.89 but has not crossed threshold, and slot 40 at t=87.32 gives strong separation for both remaining live pairs, 0-1 at 3.29 sigma and 1-5 at 4.0 sigma, resolving the two pairs still in contention at once"}
+{"ts": 1788021401.659, "cmd": "diagnostics"}
+{"ts": 1788021410.676, "cmd": "observe", "slot": 43, "ok": true, "rv": -7.232648, "why": "Candidate 1 is at 0.986 support just under the resolution threshold, and candidate 2 is the only remaining rival with meaningful support, with slot 43 at t=90.25 giving the best available 3.25-sigma separation for the 1-2 pair, spending the final budget slot here"}
+{"ts": 1788021416.687, "cmd": "finalize", "why": "Candidate 1, period 1.32 days, reached support 0.9989 above theta 0.997 after sequentially eliminating candidates 2 through 4 at slot 0, suppressing candidate 5 at slot 1, and resolving the close 0-1 pair with confirmation observations at slots 33, 39, 40, and 43, so the campaign resolves to candidate 1 as the true orbit", "resolved": true}

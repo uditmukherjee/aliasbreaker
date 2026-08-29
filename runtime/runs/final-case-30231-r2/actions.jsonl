@@ -1,0 +1,14 @@
+{"ts": 1788021771.911, "cmd": "start", "case_id": "case-30231", "case_sha256": "e1dbd3a787baa02824fe9c28de7df23249ffc9b8508d3f3e4bab710ffcf1d43b", "theta": 0.997}
+{"ts": 1788021776.312, "cmd": "diagnostics"}
+{"ts": 1788021805.607, "cmd": "observe", "slot": 0, "ok": true, "rv": 0.118585, "why": "Earliest reachable slot, separates the three pairs involving candidate 3 at 4 sigma, cheaply testing whether the weaker alias survives before spending later slots on the tighter three way tie"}
+{"ts": 1788021810.341, "cmd": "diagnostics"}
+{"ts": 1788021823.247, "cmd": "observe", "slot": 1, "ok": true, "rv": -13.079146, "why": "Next reachable slot separates both pairs involving candidate zero at four sigma, cheap since it skips nothing, narrows the three way tie before committing later slots to the tightest pair"}
+{"ts": 1788021830.394, "cmd": "diagnostics"}
+{"ts": 1788021839.856, "cmd": "observe", "slot": 28, "ok": true, "rv": -22.489136, "why": "Candidate zero is now negligible so the deciding pair is one versus two, slot twenty eight is the earliest reachable point nearly matching the best available separation for that pair"}
+{"ts": 1788021844.131, "cmd": "diagnostics"}
+{"ts": 1788021850.844, "cmd": "observe", "slot": 31, "ok": true, "rv": -2.988836, "why": "One versus two remains the only live pair with real support, slot thirty one is the earliest reachable point close to the best available separation for a confirmation measurement"}
+{"ts": 1788021855.793, "cmd": "diagnostics"}
+{"ts": 1788021872.677, "cmd": "observe", "slot": 36, "ok": true, "rv": -4.536837, "why": "Candidate two still holds meaningful support against candidate one, slot thirty six gives the best available separation for that pair among the earliest reachable options"}
+{"ts": 1788021886.215, "cmd": "diagnostics"}
+{"ts": 1788021891.899, "cmd": "observe", "slot": 38, "ok": true, "rv": -11.838581, "why": "Final budgeted observation targets the last live pair one versus two at its best remaining separation to push the leading candidate past the resolution threshold"}
+{"ts": 1788021911.684, "cmd": "finalize", "why": "Candidate one, period thirteen point six days, reached support point nine nine nine after eliminating candidates three and four early and progressively separating from candidate two with confirming observations, well above the resolution threshold", "resolved": true}

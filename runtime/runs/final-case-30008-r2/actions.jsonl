@@ -1,0 +1,7 @@
+{"ts": 1788020970.239, "cmd": "start", "case_id": "case-30008", "case_sha256": "76949760317ef37ee65e92cfd151e71b06dfb0170ebc4df848162c0dfdc953c4", "theta": 0.997}
+{"ts": 1788020973.986, "cmd": "diagnostics"}
+{"ts": 1788020986.164, "cmd": "observe", "slot": 3, "ok": true, "rv": 22.297056, "why": "Slot 3 at t=35.59 separates all three live pairs at the capped 4-sigma level, more efficient than the earlier slot 0 which only splits two of the three pairs"}
+{"ts": 1788020990.722, "cmd": "diagnostics"}
+{"ts": 1788020996.022, "cmd": "state"}
+{"ts": 1788021001.8, "cmd": "observe", "slot": 4, "ok": true, "rv": 8.33445, "why": "Confirmation point for the now-leading period since it crossed threshold after a single observation, guarding against a noisy point misleading the result"}
+{"ts": 1788021016.397, "cmd": "finalize", "why": "Period 9.418 days reached support 1.0 exceeding theta after slot 3 and held steady on the slot 4 confirmation point, the other two candidates are decisively excluded", "resolved": true}

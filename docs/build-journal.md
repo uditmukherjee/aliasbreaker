@@ -282,3 +282,22 @@ Improvement Changelog.
   kept, oracle re-verified post-mask) — availability is exogenous, and the
   stratum directly tests the pre-registered cursor-reservation hypothesis.
   Natural scan restarts from seed 30000; constructed cases from 80000+.
+- 2026-08-30 · FREEZE executed: selection-lock v2 (2afd065) -> generation ->
+  one correctness fix (manifest assembly omitted constructed entries;
+  fixtures proven byte-identical across regeneration) -> FREEZE commit
+  bae385d, tag freeze-v1. 12 cases / 5 strata / one-per-sigma ordinary,
+  34 KB fixtures, all hashes verified, no stratum/oracle leakage.
+- 2026-08-30 · FINAL RESULTS (frozen; evaluation/final-analysis.json).
+  36/36 LLM runs eligible — zero protocol violations across the entire
+  official matrix; prompt sha + commit recorded per run. Resolvable (n=10):
+  LLM 76.7% vs batch 20%, even 40%, adaptive 40%; paired LLM-batch +0.57,
+  bootstrap 95% [0.30, 0.83]; LLM mean obs 4.9. Strata: misleading 6/6 LLM
+  replicate wins (confirmation behavior defeats the planted trap; batch
+  0/2); scarce/reservation 5/6 (cursor management works); crowded 2/6
+  (hard for everyone); ordinary 10/12. NEGATIVE RESULT, reported unretouched:
+  unresolvable stratum 6/6 FALSE RESOLUTIONS by the LLM (scripted arm: 0) —
+  on basin-absent cases the agent's superior discrimination drives a wrong
+  candidate decisively past theta. Named: menu-incompleteness amplification.
+  Insight for future systems: relative support needs an absolute
+  model-adequacy companion check with "none of the above" scoreable.
+  README updated with final tables, failure mode, and hot take.

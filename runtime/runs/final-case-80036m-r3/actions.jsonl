@@ -1,0 +1,13 @@
+{"ts": 1788022565.49, "cmd": "start", "case_id": "case-80036m", "case_sha256": "f9ee2991bd908685c8f2be78a5d7e57d463b7981bd32be5e2bebfd52380a88b4", "theta": 0.997}
+{"ts": 1788022569.829, "cmd": "diagnostics"}
+{"ts": 1788022579.46, "cmd": "observe", "slot": 0, "ok": true, "rv": 29.626428, "why": "Earliest reachable slot, separates two live pairs at near-maximal significance, preserves later slots for confirmation"}
+{"ts": 1788022584.656, "cmd": "diagnostics"}
+{"ts": 1788022591.016, "cmd": "state"}
+{"ts": 1788022599.923, "cmd": "observe", "slot": 10, "ok": true, "rv": 25.677019, "why": "Candidate two has collapsed, this is the earliest slot with maximal separation for the remaining live pair"}
+{"ts": 1788022604.52, "cmd": "diagnostics"}
+{"ts": 1788022609.056, "cmd": "observe", "slot": 11, "ok": true, "rv": 31.251078, "why": "Confirmation observation at the earliest maximal-separation slot for the still-live leading pair before finalizing"}
+{"ts": 1788022614.198, "cmd": "diagnostics"}
+{"ts": 1788022619.337, "cmd": "observe", "slot": 13, "ok": true, "rv": 16.323424, "why": "Support flipped leadership after last point, taking earliest maximal-separation slot to resolve the oscillating leading pair"}
+{"ts": 1788022625.39, "cmd": "diagnostics"}
+{"ts": 1788022631.386, "cmd": "observe", "slot": 15, "ok": true, "rv": 8.25467, "why": "Leading candidate has not yet crossed the resolution threshold, taking one confirmation observation at the earliest maximal-separation slot before finalizing"}
+{"ts": 1788022636.407, "cmd": "finalize", "why": "Candidate 0 at period near 5.27 days crossed the resolution threshold with support 0.998 after a confirmation observation, following an earlier leadership flip that was resolved by two additional high-separation points", "resolved": true}

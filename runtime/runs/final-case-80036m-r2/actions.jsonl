@@ -1,0 +1,12 @@
+{"ts": 1788022499.522, "cmd": "start", "case_id": "case-80036m", "case_sha256": "f9ee2991bd908685c8f2be78a5d7e57d463b7981bd32be5e2bebfd52380a88b4", "theta": 0.997}
+{"ts": 1788022503.669, "cmd": "diagnostics"}
+{"ts": 1788022509.935, "cmd": "observe", "slot": 0, "ok": true, "rv": 29.626428, "why": "Earliest reachable slot, separates pairs 0-2 and 1-2 at max sigma, cheapest way to start narrowing three live candidates"}
+{"ts": 1788022513.885, "cmd": "diagnostics"}
+{"ts": 1788022521.939, "cmd": "observe", "slot": 10, "ok": true, "rv": 25.677019, "why": "Only live pair is 0 vs 1, this is the earliest reachable slot with maximal separation for that pair"}
+{"ts": 1788022526.093, "cmd": "diagnostics"}
+{"ts": 1788022530.38, "cmd": "observe", "slot": 11, "ok": true, "rv": 31.251078, "why": "Confirmation point for the still-open 0 versus 1 pair, earliest slot with maximal separation right after the previous measurement"}
+{"ts": 1788022534.413, "cmd": "diagnostics"}
+{"ts": 1788022539.595, "cmd": "observe", "slot": 13, "ok": true, "rv": 16.323424, "why": "The leader flipped after the last point so another high separation measurement on the 0 versus 1 pair is needed before trusting a verdict"}
+{"ts": 1788022543.772, "cmd": "diagnostics"}
+{"ts": 1788022548.242, "cmd": "observe", "slot": 15, "ok": true, "rv": 8.25467, "why": "Support for the leading candidate is just under the resolution threshold, one more high separation point on the remaining live pair should settle it"}
+{"ts": 1788022552.546, "cmd": "finalize", "why": "Candidate 0 support reached 0.998 exceeding theta 0.997 after two confirming observations resolved a leader flip, all other candidates collapsed below 0.002", "resolved": true}

@@ -1,0 +1,10 @@
+{"ts": 1788021588.916, "cmd": "start", "case_id": "case-30058", "case_sha256": "68e7e3b5b1c0a21d9c1e33da49b98f875e30c0e0713d7f9d419868fc468ff328", "theta": 0.997}
+{"ts": 1788021593.024, "cmd": "diagnostics"}
+{"ts": 1788021609.374, "cmd": "observe", "slot": 7, "ok": true, "rv": -20.561126, "why": "Slot 7 is the earliest point that separates both leading pairs, candidate 0 vs 1 and candidate 0 vs 2, at maximal separation, giving the most discriminating power per observation"}
+{"ts": 1788021613.606, "cmd": "diagnostics"}
+{"ts": 1788021618.725, "cmd": "observe", "slot": 10, "ok": true, "rv": -17.135381, "why": "Confirming candidate 0 by observing slot 10, the earliest point that separates it from both remaining rivals candidate 1 and candidate 2 at maximal separation"}
+{"ts": 1788021622.798, "cmd": "diagnostics"}
+{"ts": 1788021627.411, "cmd": "observe", "slot": 13, "ok": true, "rv": 2.13812, "why": "One more confirmation at slot 13, the earliest remaining point that maximally separates candidate 0 from the only surviving rival candidate 1, to push support past the resolution threshold"}
+{"ts": 1788021632.269, "cmd": "diagnostics"}
+{"ts": 1788021637.183, "cmd": "observe", "slot": 18, "ok": true, "rv": -23.258342, "why": "Support has not yet crossed the resolution threshold so taking the earliest slot with maximal separation between candidate 0 and candidate 1 to keep pushing toward resolution while preserving late-time budget"}
+{"ts": 1788021641.756, "cmd": "finalize", "why": "Candidate 0 at period 12.85958 days reached support 0.999, above the theta threshold of 0.997, after four confirming observations against its closest rivals, resolving the alias", "resolved": true}

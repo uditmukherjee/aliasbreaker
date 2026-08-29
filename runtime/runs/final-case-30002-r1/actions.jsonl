@@ -1,0 +1,15 @@
+{"ts": 1788019599.662, "cmd": "start", "case_id": "case-30002", "case_sha256": "e27d9be2db4575d980d04d8eb86611bcee085c0f454f54381de892a2ea275335", "theta": 0.997}
+{"ts": 1788019604.373, "cmd": "diagnostics"}
+{"ts": 1788019633.972, "cmd": "observe", "slot": 2, "ok": true, "rv": 5.077782, "why": "Earliest slot giving full four sigma separation for the four leading candidate pairs zero-one, zero-two, one-five, and two-five, the most efficient first probe"}
+{"ts": 1788019638.164, "cmd": "diagnostics"}
+{"ts": 1788019644.702, "cmd": "observe", "slot": 9, "ok": true, "rv": -3.721657, "why": "Only remaining live pair is zero versus five, and this slot gives the maximum four sigma separation between them with just five future slots offering any real separation at all"}
+{"ts": 1788019648.586, "cmd": "diagnostics"}
+{"ts": 1788019656.63, "cmd": "state"}
+{"ts": 1788019662.146, "cmd": "observe", "slot": 17, "ok": true, "rv": 5.214614, "why": "Earliest reachable slot within twenty percent of the best available separation for the sole live pair zero versus five, preserving later slots as a safety margin"}
+{"ts": 1788019666.22, "cmd": "diagnostics"}
+{"ts": 1788019674.8, "cmd": "observe", "slot": 27, "ok": true, "rv": -1.23232, "why": "Best remaining separation for the live pair zero versus five, with only three future slots offering any real discrimination left"}
+{"ts": 1788019678.386, "cmd": "diagnostics"}
+{"ts": 1788019683.83, "cmd": "observe", "slot": 28, "ok": true, "rv": 11.002347, "why": "Best remaining separation for the still-dominant live pair zero versus five, needed to push support past the resolution threshold"}
+{"ts": 1788019687.614, "cmd": "diagnostics"}
+{"ts": 1788019693.032, "cmd": "observe", "slot": 33, "ok": true, "rv": -13.169253, "why": "Final budget spent at the highest separation slot for the still dominant live pair zero versus five to make the last push toward resolution"}
+{"ts": 1788019697.861, "cmd": "finalize", "why": "Candidate zero at period three point four six days reached support zero point nine nine nine, clearing the theta threshold after budget was exhausted resolving the dominant zero versus five ambiguity", "resolved": true}

@@ -1,0 +1,10 @@
+{"ts": 1788020384.792, "cmd": "start", "case_id": "case-30005", "case_sha256": "6b36c866c708d851993406a3683cfd98be473a3f2914148c9f02263befa1ec1e", "theta": 0.997}
+{"ts": 1788020388.95, "cmd": "diagnostics"}
+{"ts": 1788020397.096, "cmd": "observe", "slot": 0, "ok": true, "rv": -16.97046, "why": "Earliest reachable slot at t=31.12 gives near-maximal 4-sigma separation for most live candidate pairs, discriminating several aliases at once with minimal cursor cost"}
+{"ts": 1788020401.808, "cmd": "diagnostics"}
+{"ts": 1788020421.266, "cmd": "observe", "slot": 3, "ok": true, "rv": -9.961713, "why": "Candidates 1, 4 and 5 are now the live tie, and slot at t=34.32 gives max separation for both the 1 versus 5 and 4 versus 5 pairs at once, more efficient than the earlier slot which only separates the already low-support candidate 3"}
+{"ts": 1788020425.907, "cmd": "diagnostics"}
+{"ts": 1788020434.037, "cmd": "observe", "slot": 8, "ok": true, "rv": -6.905986, "why": "Candidate 4 leads but has not crossed the resolution threshold, and pair 1 versus 4 is now the only pair with meaningful support product, with the earliest max-separation slot for that pair at t=44.55"}
+{"ts": 1788020438.366, "cmd": "diagnostics"}
+{"ts": 1788020443.26, "cmd": "observe", "slot": 9, "ok": true, "rv": -15.161293, "why": "Candidate 4 support at 0.9949 is just under the resolution threshold, so one confirmation observation at the earliest max-separation slot for the remaining live pair 1 versus 4 guards against a single noisy point before finalizing"}
+{"ts": 1788020448.146, "cmd": "finalize", "why": "Candidate 4, period near 15.24 days, reached support 0.999 exceeding the theta threshold of 0.997 after a confirming observation, while all other candidates including the closest rival at 1.07 days collapsed to near zero support", "resolved": true}

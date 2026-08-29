@@ -1,0 +1,15 @@
+{"ts": 1788019506.906, "cmd": "start", "case_id": "case-30001", "case_sha256": "30feece3b2d9c0a19bcfe9b51ba250a95f2a093793a6ea92bc300f86d4be06ea", "theta": 0.997}
+{"ts": 1788019511.033, "cmd": "diagnostics"}
+{"ts": 1788019529.154, "cmd": "observe", "slot": 2, "ok": true, "rv": -10.27163, "why": "Slot 2 gives near-max separation for the leading pair candidate 0 versus candidate 4 while also discriminating several other live pairs, and it is the earliest slot achieving that separation"}
+{"ts": 1788019533.803, "cmd": "diagnostics"}
+{"ts": 1788019539.907, "cmd": "state"}
+{"ts": 1788019545.84, "cmd": "observe", "slot": 6, "ok": true, "rv": -12.359059, "why": "Slot 6 is the earliest reachable slot giving near-max separation for both the candidate one versus two pair and the candidate zero versus two pair, the two strongest surviving pairs"}
+{"ts": 1788019550.508, "cmd": "diagnostics"}
+{"ts": 1788019558.027, "cmd": "observe", "slot": 22, "ok": true, "rv": -16.904138, "why": "Slot 22 is the earliest of the top discriminating slots for the sole remaining live pair candidate zero versus candidate one"}
+{"ts": 1788019561.561, "cmd": "diagnostics"}
+{"ts": 1788019566.088, "cmd": "observe", "slot": 29, "ok": true, "rv": -5.987752, "why": "Confirmation observation at the earliest high separation slot for the still dominant candidate zero versus candidate one pair before finalizing, since candidate one crossed above candidate zero after only one prior observation"}
+{"ts": 1788019569.883, "cmd": "diagnostics"}
+{"ts": 1788019575.485, "cmd": "observe", "slot": 36, "ok": true, "rv": -0.056966, "why": "Candidate one leads but is just under the resolution threshold, and the remaining live pair is candidate one versus candidate two, so I take the earliest slot that best separates that pair"}
+{"ts": 1788019579.145, "cmd": "diagnostics"}
+{"ts": 1788019583.492, "cmd": "observe", "slot": 38, "ok": true, "rv": 7.607329, "why": "Final budgeted observation at the earliest slot that best separates both remaining live pairs to push the leading candidate past the resolution threshold if the data supports it"}
+{"ts": 1788019587.857, "cmd": "finalize", "why": "Candidate one support crossed the resolution threshold after the final confirmation observation, with all other candidates driven effectively to zero support, resolving the true orbital period", "resolved": true}

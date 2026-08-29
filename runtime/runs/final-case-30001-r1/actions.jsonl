@@ -1,0 +1,15 @@
+{"ts": 1788019327.665, "cmd": "start", "case_id": "case-30001", "case_sha256": "30feece3b2d9c0a19bcfe9b51ba250a95f2a093793a6ea92bc300f86d4be06ea", "theta": 0.997}
+{"ts": 1788019331.637, "cmd": "diagnostics"}
+{"ts": 1788019340.012, "cmd": "observe", "slot": 2, "ok": true, "rv": -10.27163, "why": "Slot 2 near-term epoch separates the leading pairs 0-4, 1-4, and 2-4 at high sigma, an efficient early multi-pair discriminator"}
+{"ts": 1788019344.117, "cmd": "diagnostics"}
+{"ts": 1788019351.043, "cmd": "state"}
+{"ts": 1788019357.099, "cmd": "observe", "slot": 6, "ok": true, "rv": -12.359059, "why": "Slot 6 is the earliest epoch that jointly separates the two strongest live pairs, one-two and zero-two, at high sigma"}
+{"ts": 1788019360.892, "cmd": "diagnostics"}
+{"ts": 1788019365.429, "cmd": "observe", "slot": 22, "ok": true, "rv": -16.904138, "why": "Slot 22 is the earliest high-separation epoch for the only surviving live pair, zero versus one"}
+{"ts": 1788019369.104, "cmd": "diagnostics"}
+{"ts": 1788019373.38, "cmd": "observe", "slot": 29, "ok": true, "rv": -5.987752, "why": "Confirmation observation at the earliest high-separation epoch for the still-live zero versus one pair before finalizing"}
+{"ts": 1788019377.321, "cmd": "diagnostics"}
+{"ts": 1788019384.345, "cmd": "observe", "slot": 36, "ok": true, "rv": -0.056966, "why": "Support has not yet crossed theta, this earliest slot targets the remaining one versus two ambiguity which now carries more residual weight than zero versus one"}
+{"ts": 1788019387.779, "cmd": "diagnostics"}
+{"ts": 1788019391.957, "cmd": "observe", "slot": 38, "ok": true, "rv": 7.607329, "why": "Final budgeted observation at slot 38, the earliest epoch that jointly discriminates both remaining low-weight pairs to push support past threshold"}
+{"ts": 1788019396.598, "cmd": "finalize", "why": "Candidate one, period near 19.35 days, reached support 0.999995 above the 0.997 threshold after budget exhausted, all rival pairs collapsed to negligible support", "resolved": true}

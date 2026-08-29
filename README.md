@@ -62,9 +62,40 @@ recomputation — tamper-detecting). Ineligible runs score as noncompletion.
 
 ### Final evaluation (frozen set, 12 cases, 5 strata, 3 LLM replicates)
 
-<!-- FINAL RESULTS TABLE — inserted from evaluation/final-analysis.json after
-the frozen run completes. -->
-*(being generated from the frozen commit `freeze-v1`)*
+Run from tag `freeze-v1`; all 36 LLM sessions eligible (0 protocol
+violations; every trace audit and replay clean). Full detail:
+`evaluation/final-analysis.json`.
+
+**Primary — correct-resolution rate on the 10 resolvable cases:**
+
+| Arm | Correct rate | Mean obs |
+| --- | ---: | ---: |
+| Batch baseline | 20% (2/10) | 5.5 |
+| Even spacing | 40% (4/10) | 5.4 |
+| Scripted-adaptive | 40% (4/10) | 3.8 |
+| **LLM agent (mean of 3 replicates)** | **76.7%** | **4.9** |
+
+Paired LLM−batch difference: **+0.57** (two-stage case-clustered bootstrap
+95% interval **[0.30, 0.83]** — descriptive; n=10 supports no significance
+claim).
+
+**By stratum (LLM replicate wins / 6 per stratum):**
+
+| Stratum | LLM | Batch | What it shows |
+| --- | ---: | ---: | --- |
+| Misleading-observation (2 cases) | 6/6 | 0/2 | Confirmation-before-commitment defeats the planted trap |
+| Scarce-window / reservation (2) | 5/6 | 1/2 | Cursor management: the agent reserves late windows |
+| Ordinary (4) | 10/12 | 1/4 | |
+| Crowded (2) | 2/6 | 0/2 | Hard for everyone; the honest frontier |
+
+**The negative result (unresolvable stratum, 2 cases):** the LLM **falsely
+resolved both cases in all 3 replicates** (6/6), where the scripted-adaptive
+arm abstained (0 false resolutions) and batch/even each produced 1. On cases
+whose true period is *not among the candidates*, the agent's superior
+evidence-gathering drives a wrong candidate decisively past the support
+threshold — **being better at discrimination amplifies confidence exactly
+when the hypothesis menu is broken.** This is reported unretouched and drives
+the hot take below.
 
 ### Development ledger (12 dev cases, single replicate, in-sample)
 
@@ -95,20 +126,27 @@ every row links to a machine-readable artifact in `evaluation/` and a commit.
 | Strata probe | 200-case predicate distribution probe | `scripts/predicate_probe.py` | Two hypothesized adversarial strata are structurally absent in this world; charter amended pre-freeze (crowded stratum + constructed scarce-window) |
 | Freeze + final | Frozen protocol, fresh stratified cases | `evaluation/final-manifest.json`, tag `freeze-v1` | Results below are whatever the frozen run produced |
 
-**Main observed failure mode:** decisively wrong fits — a wrong candidate
-that fits the acquired data *better than the truth* (from an unlucky noise
-draw or a misleading early observation). No support threshold can veto these;
-the effective defenses are behavioral: confirmation observations before
-committing, and honest abstention. The scripted arm lacks that judgment; the
-LLM agent demonstrates it in its trajectories.
+**Main observed failure mode (from the final run):** *menu-incompleteness
+amplification.* When the true period is absent from the candidate set, the
+agent cannot know it — support is candidate-set-relative — and its superior
+discrimination drives the best wrong candidate decisively past θ: 6/6 false
+resolutions on the unresolvable stratum, where the dumber scripted arm
+abstained. Skill at gathering evidence amplified confidence in a broken
+hypothesis menu. During development the sibling failure was decisively wrong
+fits from misleading noise draws — defeated behaviorally (confirmation
+observations, 6/6 on that stratum) — but no *relative* support rule can
+defend against an incomplete menu.
 
-**Hot take:** *protocol compliance is a capability, not paperwork.* Our
-strict fail-closed eligibility gate cost the agent an otherwise-correct case
-over a semicolon in a rationale — and that is the right trade. An agent that
-cannot follow a declared protocol under pressure cannot be trusted with a
-telescope queue, a trading book, or a production deploy. Separately: the most
-valuable reviews in this project were adversarial ones pointed at *our own
-evaluation* — they found a degenerate baseline and two impossible strata that
+**Hot take:** relative confidence is a trap: an agent that only asks "which
+hypothesis fits best?" becomes MORE dangerously wrong as it gets BETTER at
+asking. Future systems need an absolute model-adequacy check (e.g. χ²/dof of
+the winning candidate against its own degrees of freedom) with menu-doubt as
+a first-class output — "none of the above" must be scoreable. And two
+process lessons that generalized: protocol compliance is a capability (our
+fail-closed gate cost an otherwise-correct case over a semicolon — the right
+trade for anything operating real infrastructure), and the highest-value
+reviews were adversarial ones aimed at *our own evaluation* — they caught a
+degenerate baseline and two structurally impossible test strata that
 friendly review had waved through.
 
 ## Repository map

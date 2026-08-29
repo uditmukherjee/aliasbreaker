@@ -1,0 +1,19 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 1.0,
+  "chi2s": [
+    6.911300903452011,
+    430.3742017011118,
+    191.57983464930143
+  ],
+  "n_obs": 3,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    3,
+    4
+  ],
+  "stop_reason": "Candidate 0 at period near 9.28 days reached support 1.0 after slot 0 and slot 3, confirmed with an additional point at slot 4, the other two candidates collapsed to zero support and no live pair remains to test"
+}

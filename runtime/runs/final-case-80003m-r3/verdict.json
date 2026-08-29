@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "max_support": 0.9996295469465,
+  "chi2s": [
+    22.34120780336248,
+    44.77652478488052,
+    6.515891229713119,
+    31.14232419581216,
+    50.291141093614314,
+    42.83448189428503
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    1,
+    2,
+    10,
+    12,
+    15,
+    31
+  ],
+  "stop_reason": "Candidate two, period near 10.5 days, reached support 0.9996 above theta 0.997 after six observations that progressively eliminated candidates five, one, and four, then isolated and confirmed candidate two over its closest rival zero across three separating slots"
+}

@@ -1,0 +1,11 @@
+{"ts": 1788019164.483, "cmd": "start", "case_id": "case-30000", "case_sha256": "42db816cacee6c410b8548f83a0018e5377f0f0395dc04616ef94dddbcbcfdd8", "theta": 0.997}
+{"ts": 1788019169.142, "cmd": "diagnostics"}
+{"ts": 1788019181.871, "cmd": "observe", "slot": 7, "ok": true, "rv": 13.042622, "why": "Slot 7 is the earliest reachable point that separates both live pairs 0-5 and 1-5 at high sigma, keeping later high-value slots like 10 and 11 available for confirmation"}
+{"ts": 1788019186.465, "cmd": "diagnostics"}
+{"ts": 1788019193.015, "cmd": "observe", "slot": 10, "ok": true, "rv": 9.464355, "why": "Only the 0-1 pair remains live and slot 10 is the earliest of its top discriminating slots, preserving slot 11 for a confirmation follow-up"}
+{"ts": 1788019197.156, "cmd": "diagnostics"}
+{"ts": 1788019202.875, "cmd": "observe", "slot": 11, "ok": true, "rv": 13.822985, "why": "The 0-1 pair remains nearly tied and slot 11 is the earliest and highest separation slot remaining to push it toward resolution"}
+{"ts": 1788019207.127, "cmd": "state"}
+{"ts": 1788019212.446, "cmd": "diagnostics"}
+{"ts": 1788019217.104, "cmd": "observe", "slot": 12, "ok": true, "rv": 8.121113, "why": "Support for candidate 1 sits just under theta so one more confirmation at the earliest high separation slot for the remaining 0-1 pair is needed before finalizing"}
+{"ts": 1788019221.589, "cmd": "finalize", "why": "Candidate 1 at period 12.49 days reached support 0.999982 exceeding theta 0.997 after a confirmation observation, resolving the alias against candidate 0 which collapsed to near zero support", "resolved": true}

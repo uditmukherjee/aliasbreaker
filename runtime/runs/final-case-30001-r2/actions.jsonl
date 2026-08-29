@@ -1,0 +1,15 @@
+{"ts": 1788019409.759, "cmd": "start", "case_id": "case-30001", "case_sha256": "30feece3b2d9c0a19bcfe9b51ba250a95f2a093793a6ea92bc300f86d4be06ea", "theta": 0.997}
+{"ts": 1788019414.521, "cmd": "diagnostics"}
+{"ts": 1788019428.076, "cmd": "observe", "slot": 2, "ok": true, "rv": -10.27163, "why": "Slot 2 gives max separation for the leading pair 0 versus 4, the highest support-product pair, and also discriminates pairs 1-4, 2-4, and 2-3 at the same time, and is the earliest slot offering this coverage"}
+{"ts": 1788019432.741, "cmd": "diagnostics"}
+{"ts": 1788019438.814, "cmd": "state"}
+{"ts": 1788019444.083, "cmd": "observe", "slot": 6, "ok": true, "rv": -12.359059, "why": "Slot 6 is the earliest reachable point offering max separation for both leading pairs 1 versus 2 and 0 versus 2, the two highest support-product pairs after candidates 3 and 4 collapsed"}
+{"ts": 1788019448.526, "cmd": "diagnostics"}
+{"ts": 1788019459.747, "cmd": "observe", "slot": 22, "ok": true, "rv": -16.904138, "why": "Slot 22 is the earliest slot offering maximum separation for the sole remaining live pair 0 versus 1, since candidate 2 has effectively collapsed"}
+{"ts": 1788019463.916, "cmd": "diagnostics"}
+{"ts": 1788019468.157, "cmd": "observe", "slot": 29, "ok": true, "rv": -5.987752, "why": "Confirmation observation at the earliest slot with maximum separation for the still-dominant pair 0 versus 1, since support has not yet crossed the resolution threshold"}
+{"ts": 1788019473.612, "cmd": "diagnostics"}
+{"ts": 1788019477.855, "cmd": "observe", "slot": 36, "ok": true, "rv": -0.056966, "why": "Targeting the last live pair 1 versus 2 at its earliest maximally separating slot to push candidate 1 support above the resolution threshold"}
+{"ts": 1788019481.859, "cmd": "diagnostics"}
+{"ts": 1788019486.262, "cmd": "observe", "slot": 38, "ok": true, "rv": 7.607329, "why": "Final budgeted observation at the earliest slot with maximum separation for both remaining live pairs to push the leading candidate over the resolution threshold if the true orbit supports it"}
+{"ts": 1788019491.433, "cmd": "finalize", "why": "Candidate 1 at period 19.349 days reached support 0.999995, far above theta 0.997, after sequentially eliminating candidates 3 and 4 at slot 2, candidate 2 competition at slots 6 and 36, and candidate 0 at slots 22, 29, and 38, all chosen as earliest maximally separating points for the live pairs at each stage", "resolved": true}

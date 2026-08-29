@@ -1,0 +1,15 @@
+{"ts": 1788020458.754, "cmd": "start", "case_id": "case-30007", "case_sha256": "dc679d63483ab8065451b0b90cf8f62d9a979112d3c885a6270f937ee9f638c1", "theta": 0.997}
+{"ts": 1788020462.731, "cmd": "diagnostics"}
+{"ts": 1788020477.132, "cmd": "observe", "slot": 3, "ok": true, "rv": -6.369, "why": "slot 3 hits 4 sigma separation for five candidate-0 pairs at once, the earliest point that tests the leading candidate against nearly all rivals together"}
+{"ts": 1788020481.296, "cmd": "diagnostics"}
+{"ts": 1788020490.31, "cmd": "observe", "slot": 7, "ok": true, "rv": 6.898328, "why": "slot 7 gives 4 sigma separation simultaneously for the three dominant pairs one-two one-four and one-three, the earliest point that tests all top contenders at once"}
+{"ts": 1788020494.046, "cmd": "diagnostics"}
+{"ts": 1788020502.886, "cmd": "observe", "slot": 18, "ok": true, "rv": 14.654238, "why": "slot 18 reaches near-4 sigma separation for all four pairs involving the leading candidate at once, the most efficient remaining test of candidate one against its rivals"}
+{"ts": 1788020507.053, "cmd": "diagnostics"}
+{"ts": 1788020536.515, "cmd": "state"}
+{"ts": 1788020543.142, "cmd": "observe", "slot": 21, "ok": true, "rv": 1.81631, "why": "slot 21 gives near-maximal separation across seven pairs at once including the two runner-up candidates against the weaker ones, the earliest broad cleanup point"}
+{"ts": 1788020547.721, "cmd": "diagnostics"}
+{"ts": 1788020555.38, "cmd": "observe", "slot": 23, "ok": true, "rv": -4.70619, "why": "slot 23 is the earliest and strongest available test of the leading pair one versus three at full separation, also cutting into the one versus two pair"}
+{"ts": 1788020560.204, "cmd": "diagnostics"}
+{"ts": 1788020568.705, "cmd": "observe", "slot": 30, "ok": true, "rv": 3.844841, "why": "final confirmation observation at the strongest available separation for the leading pair one versus three before finalizing"}
+{"ts": 1788020573.774, "cmd": "finalize", "why": "budget exhausted with candidate one leading at support near 0.67, well short of the theta threshold, so the campaign abstains rather than overclaim resolution", "resolved": false}

@@ -1,0 +1,15 @@
+{"ts": 1788022040.712, "cmd": "start", "case_id": "case-80003m", "case_sha256": "f0fa3ee082e8a22cf0c64659300c09f472d62f749a5a1fe31ecb5419d82bac0b", "theta": 0.997}
+{"ts": 1788022044.846, "cmd": "diagnostics"}
+{"ts": 1788022062.192, "cmd": "observe", "slot": 1, "ok": true, "rv": 5.899014, "why": "Earliest reachable slot with maximal 4-sigma separation across six live candidate pairs including the closely spaced period aliases, preserving all later high-value slots for follow-up"}
+{"ts": 1788022066.841, "cmd": "diagnostics"}
+{"ts": 1788022074.037, "cmd": "observe", "slot": 2, "ok": true, "rv": 10.229283, "why": "Candidate five is the current leader and this earliest available slot gives four-sigma separation against every rival pair involving it, directly testing the leading hypothesis"}
+{"ts": 1788022079.11, "cmd": "diagnostics"}
+{"ts": 1788022104.628, "cmd": "observe", "slot": 4, "ok": true, "rv": -3.610452, "why": "Earliest slot reaching the four sigma separation ceiling, resolving the third versus fourth ranked candidate pair while also giving strong partial separation on the current top two leaders"}
+{"ts": 1788022109.201, "cmd": "diagnostics"}
+{"ts": 1788022123.192, "cmd": "observe", "slot": 8, "ok": true, "rv": 4.570594, "why": "Earliest slot at the four sigma separation ceiling, simultaneously testing candidate one against four rivals including the two closest competitors in the current tied leaderboard"}
+{"ts": 1788022127.484, "cmd": "diagnostics"}
+{"ts": 1788022134.016, "cmd": "observe", "slot": 10, "ok": true, "rv": -6.690804, "why": "Earliest four sigma slot targeting the leader against its strongest remaining rival while also covering three other live pairs at maximal separation"}
+{"ts": 1788022138.244, "cmd": "diagnostics"}
+{"ts": 1788022151.253, "cmd": "observe", "slot": 24, "ok": true, "rv": 0.047668, "why": "Final budgeted observation, chosen for the single highest separation available on the decisive leader versus second place pair to confirm the resolution as strongly as possible"}
+{"ts": 1788022155.534, "cmd": "state"}
+{"ts": 1788022161.753, "cmd": "finalize", "why": "Budget exhausted with candidate zero the clear leader at eighty six percent support after six discriminating observations that eliminated three aliases outright, but support falls short of the strict resolution threshold so this is reported as a strong lead rather than a confirmed resolution", "resolved": false}

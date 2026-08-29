@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "max_support": 0.9999815548105412,
+  "chi2s": [
+    25.23600715298405,
+    3.433870373463789,
+    97.01325296085763,
+    113.41471213387918,
+    43.18174606695189,
+    41.79907920797704
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    7,
+    10,
+    11,
+    12
+  ],
+  "stop_reason": "Candidate 1 at period 12.49 days reached support 0.999982 exceeding theta 0.997 after a confirmation observation, resolving the alias against candidate 0 which collapsed to near zero support"
+}

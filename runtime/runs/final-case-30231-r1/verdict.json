@@ -1,0 +1,24 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 1,
+  "max_support": 0.9883986558568318,
+  "chi2s": [
+    23.209972400364897,
+    8.221263427975847,
+    17.208289509063526,
+    100.8588132450037,
+    46.42601664775997
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    5,
+    7,
+    17,
+    19,
+    20
+  ],
+  "stop_reason": "Budget exhausted with candidate one at support near ninety nine percent after six discriminating observations that eliminated candidates zero, three, and four and pushed candidate two below two percent, but the leading support falls just short of the strict resolution threshold so this is reported as a strong lean toward the twelve point six day period rather than a formal resolution"
+}

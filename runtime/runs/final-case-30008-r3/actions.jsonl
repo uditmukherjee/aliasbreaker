@@ -1,0 +1,9 @@
+{"ts": 1788021027.605, "cmd": "start", "case_id": "case-30008", "case_sha256": "76949760317ef37ee65e92cfd151e71b06dfb0170ebc4df848162c0dfdc953c4", "theta": 0.997}
+{"ts": 1788021031.685, "cmd": "diagnostics"}
+{"ts": 1788021039.679, "cmd": "observe", "slot": 0, "ok": true, "rv": -15.664421, "why": "Earliest reachable slot t=31.12 gives max separation for pairs 0-2 and 1-2, cheapest way to start narrowing the three candidates"}
+{"ts": 1788021044.446, "cmd": "diagnostics"}
+{"ts": 1788021052.051, "cmd": "observe", "slot": 3, "ok": true, "rv": 22.297056, "why": "Candidate 1 is effectively eliminated, remaining live pair is 0 vs 2, slot 3 at t=35.59 is the earliest of the tied maximal-separation slots for that pair"}
+{"ts": 1788021056.877, "cmd": "diagnostics"}
+{"ts": 1788021062.765, "cmd": "state"}
+{"ts": 1788021069.673, "cmd": "observe", "slot": 4, "ok": true, "rv": 8.33445, "why": "Support already crossed to candidate 0 after only two observations, taking one confirmation point at the earliest remaining slot to guard against a single noisy measurement misleading the resolution"}
+{"ts": 1788021074.785, "cmd": "finalize", "why": "Candidate 0 at period 9.278 days reached support 1.0 after two discriminating observations and held through a confirmation point, while candidates 1 and 2 were driven to chi2 above 160 and 300, a clean and stable resolution", "resolved": true}

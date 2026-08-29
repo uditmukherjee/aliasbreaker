@@ -1,0 +1,15 @@
+{"ts": 1788022173.533, "cmd": "start", "case_id": "case-80003m", "case_sha256": "f0fa3ee082e8a22cf0c64659300c09f472d62f749a5a1fe31ecb5419d82bac0b", "theta": 0.997}
+{"ts": 1788022177.989, "cmd": "diagnostics"}
+{"ts": 1788022187.441, "cmd": "observe", "slot": 1, "ok": true, "rv": 5.899014, "why": "Earliest reachable slot that separates most live period pairs at the capped 4-sigma level, including candidates 0 vs 1, 1 vs 2, 1 vs 3, 0 vs 4, 2 vs 4, and 3 vs 4"}
+{"ts": 1788022191.225, "cmd": "diagnostics"}
+{"ts": 1788022198.618, "cmd": "observe", "slot": 2, "ok": true, "rv": 10.229283, "why": "Earliest reachable slot separating the now-leading candidate 5 from every other surviving candidate at the capped 4-sigma level, which is where the current support mass concentrates"}
+{"ts": 1788022202.837, "cmd": "diagnostics"}
+{"ts": 1788022220.967, "cmd": "state"}
+{"ts": 1788022226.67, "cmd": "observe", "slot": 8, "ok": true, "rv": 4.570594, "why": "Earliest reachable slot that jointly discriminates four of the highest-support live pairs at capped 4-sigma separation, including the leading candidate 3 against candidates 1 and 4"}
+{"ts": 1788022230.329, "cmd": "diagnostics"}
+{"ts": 1788022237.244, "cmd": "observe", "slot": 9, "ok": true, "rv": 1.211336, "why": "Earliest reachable slot resolving the dominant live pair of candidates 0 and 4 at capped 4-sigma separation, the pair now carrying by far the largest support product"}
+{"ts": 1788022241.636, "cmd": "diagnostics"}
+{"ts": 1788022250.193, "cmd": "observe", "slot": 10, "ok": true, "rv": -6.690804, "why": "Earliest reachable slot resolving the leading candidate 0 against candidates 1 and 4 at capped 4-sigma separation, the two highest remaining support-product pairs after candidate 3 collapsed"}
+{"ts": 1788022254.389, "cmd": "diagnostics"}
+{"ts": 1788022261.115, "cmd": "observe", "slot": 12, "ok": true, "rv": 15.422603, "why": "Final budget slot, earliest and highest-separation option for the last live pair, candidate 0 against candidate 2, which now holds nearly all remaining competing support"}
+{"ts": 1788022266.906, "cmd": "finalize", "why": "Budget exhausted, candidate 2 near period 10.95 days crossed the resolution threshold at support 0.999 after the final slot overturned the previously leading short-period alias, so I finalize on candidate 2 rather than abstain", "resolved": true}

@@ -1,0 +1,12 @@
+{"ts": 1788021430.347, "cmd": "start", "case_id": "case-30058", "case_sha256": "68e7e3b5b1c0a21d9c1e33da49b98f875e30c0e0713d7f9d419868fc468ff328", "theta": 0.997}
+{"ts": 1788021434.657, "cmd": "diagnostics"}
+{"ts": 1788021451.572, "cmd": "state"}
+{"ts": 1788021457.549, "cmd": "observe", "slot": 7, "ok": true, "rv": -20.561126, "why": "slot 7 gives max separation for both the 0-1 and 0-2 pairs, the two strongest live pairs, so it discriminates two rivals at once with minimal cursor jump"}
+{"ts": 1788021462.106, "cmd": "diagnostics"}
+{"ts": 1788021468.235, "cmd": "state"}
+{"ts": 1788021477.6, "cmd": "observe", "slot": 10, "ok": true, "rv": -17.135381, "why": "confirmation point at max separation for the leading 0-1 pair, also high separation for 0-2, to guard against a single noisy point before finalizing"}
+{"ts": 1788021482.218, "cmd": "diagnostics"}
+{"ts": 1788021486.52, "cmd": "observe", "slot": 13, "ok": true, "rv": 2.13812, "why": "only the 0-1 pair remains live, and slot 13 is the earliest reachable slot at maximum separation for that pair"}
+{"ts": 1788021490.987, "cmd": "diagnostics"}
+{"ts": 1788021496.905, "cmd": "observe", "slot": 18, "ok": true, "rv": -23.258342, "why": "the 0-1 pair is still the only live rivalry and slot 18 is the earliest of the remaining max separation slots for it"}
+{"ts": 1788021502.869, "cmd": "finalize", "why": "candidate 0 support reached 0.999, decisively above theta, after two confirmation observations at high separation slots for the closest rival pair 0-1, so the true period is resolved", "resolved": true}

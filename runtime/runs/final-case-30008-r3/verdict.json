@@ -1,0 +1,19 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 1.0,
+  "chi2s": [
+    6.911300903452011,
+    430.3742017011118,
+    191.57983464930143
+  ],
+  "n_obs": 3,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    3,
+    4
+  ],
+  "stop_reason": "Candidate 0 at period 9.278 days reached support 1.0 after two discriminating observations and held through a confirmation point, while candidates 1 and 2 were driven to chi2 above 160 and 300, a clean and stable resolution"
+}

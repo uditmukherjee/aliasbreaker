@@ -1,0 +1,15 @@
+{"ts": 1788020794.544, "cmd": "start", "case_id": "case-30007", "case_sha256": "dc679d63483ab8065451b0b90cf8f62d9a979112d3c885a6270f937ee9f638c1", "theta": 0.997}
+{"ts": 1788020798.397, "cmd": "diagnostics"}
+{"ts": 1788020809.545, "cmd": "observe", "slot": 3, "ok": true, "rv": -6.369, "why": "Slot at t=37.3 gives near-maximal separation for candidate 0 against candidates 1, 2, and 3 simultaneously, the most efficient early discriminator among the top-support pairs"}
+{"ts": 1788020813.138, "cmd": "diagnostics"}
+{"ts": 1788020822.33, "cmd": "state"}
+{"ts": 1788020828.185, "cmd": "observe", "slot": 7, "ok": true, "rv": 6.898328, "why": "Slot at t=44.2 is the earliest reachable point that separates the current leader from its three closest rivals at maximal sigma simultaneously"}
+{"ts": 1788020832.917, "cmd": "diagnostics"}
+{"ts": 1788020840.904, "cmd": "observe", "slot": 11, "ok": true, "rv": -11.046253, "why": "Slot at t=49.3 is the earliest reachable point that separates the leader from its two strongest rivals at maximal sigma simultaneously"}
+{"ts": 1788020845.145, "cmd": "diagnostics"}
+{"ts": 1788020851.36, "cmd": "observe", "slot": 15, "ok": true, "rv": 18.655713, "why": "Slot at t=54.2 is the earliest reachable point that separates the leader from its remaining live rivals at maximal sigma simultaneously"}
+{"ts": 1788020855.358, "cmd": "diagnostics"}
+{"ts": 1788020870.012, "cmd": "observe", "slot": 27, "ok": true, "rv": 19.187456, "why": "Slot at t=69.2 is the earliest reachable point with maximal separation for the leader against its strongest remaining rival, the pair driving most of the residual ambiguity"}
+{"ts": 1788020874.084, "cmd": "diagnostics"}
+{"ts": 1788020879.717, "cmd": "observe", "slot": 33, "ok": true, "rv": -16.117682, "why": "Final budgeted observation at t=75.3 targets maximal separation for the leader against the sole remaining live rival, confirming the resolution before finalizing"}
+{"ts": 1788020884.407, "cmd": "finalize", "why": "Candidate 1 at period 16.35 days reached support 0.9999, decisively above theta after sequential discrimination against every rival culminating in a confirmation point for the last live pair", "resolved": true}

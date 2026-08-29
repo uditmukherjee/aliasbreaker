@@ -1,0 +1,22 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9989952980911936,
+  "chi2s": [
+    4.971940103178557,
+    18.777774567712463,
+    32.92106853846611,
+    41.915604326104905,
+    50.5139370602186
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    7,
+    10,
+    13,
+    18
+  ],
+  "stop_reason": "candidate 0 support reached 0.999, decisively above theta, after two confirmation observations at high separation slots for the closest rival pair 0-1, so the true period is resolved"
+}

@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 4,
+  "max_support": 0.999999999999982,
+  "chi2s": [
+    79.96126684115792,
+    75.2156619520595,
+    79.6653320622523,
+    73.06898874771684,
+    8.840686467035143,
+    76.43807340399479
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    6,
+    7,
+    10,
+    11
+  ],
+  "stop_reason": "Candidate 4 at period 0.91362 days reached support 1.0, exceeding theta, after confirmation at slot 11 following the crossing at slot 10, with all rival candidates driven to zero support"
+}

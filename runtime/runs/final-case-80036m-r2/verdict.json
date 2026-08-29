@@ -1,0 +1,21 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9980311133304955,
+  "chi2s": [
+    7.238731589001901,
+    23.065172596741338,
+    20.10563285083624
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    10,
+    11,
+    13,
+    15
+  ],
+  "stop_reason": "Candidate 0 support reached 0.998 exceeding theta 0.997 after two confirming observations resolved a leader flip, all other candidates collapsed below 0.002"
+}

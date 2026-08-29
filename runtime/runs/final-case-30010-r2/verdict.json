@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "max_support": 0.9988751266902277,
+  "chi2s": [
+    18.953580713332215,
+    4.641855862404235,
+    24.68791463845491,
+    28.299939748146908,
+    28.737518293743804,
+    20.944524127657907
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    1,
+    33,
+    39,
+    40,
+    43
+  ],
+  "stop_reason": "Candidate one period one point three two two days reached support point nine nine nine, clearing the theta threshold after six discriminating observations that eliminated all rival aliases including the strong candidate zero and candidate five pairs"
+}

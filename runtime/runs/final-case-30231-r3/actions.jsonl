@@ -1,0 +1,15 @@
+{"ts": 1788021926.076, "cmd": "start", "case_id": "case-30231", "case_sha256": "e1dbd3a787baa02824fe9c28de7df23249ffc9b8508d3f3e4bab710ffcf1d43b", "theta": 0.997}
+{"ts": 1788021930.072, "cmd": "diagnostics"}
+{"ts": 1788021962.328, "cmd": "observe", "slot": 2, "ok": true, "rv": -13.451944, "why": "Earliest reachable slot at 4 sigma separation for the leading 0 vs 2 period pair, and it also splits candidate 3 from candidates 0, 1, and 2 at once"}
+{"ts": 1788021966.531, "cmd": "diagnostics"}
+{"ts": 1788021971.905, "cmd": "observe", "slot": 5, "ok": true, "rv": 12.178716, "why": "Earliest reachable slot at 4 sigma separation that discriminates both the 0 vs 1 and 0 vs 2 period pairs simultaneously"}
+{"ts": 1788021976.198, "cmd": "diagnostics"}
+{"ts": 1788021980.797, "cmd": "observe", "slot": 7, "ok": true, "rv": -2.689349, "why": "Earliest reachable slot at 4 sigma separation for the now-dominant 0 vs 2 period pair, the leading candidate contest"}
+{"ts": 1788021984.903, "cmd": "diagnostics"}
+{"ts": 1788021989.291, "cmd": "observe", "slot": 17, "ok": true, "rv": -10.537413, "why": "Earliest reachable slot at 4 sigma separation for the dominant 0 vs 1 pair, now the closest race after the last flip"}
+{"ts": 1788021993.488, "cmd": "diagnostics"}
+{"ts": 1788022002.991, "cmd": "observe", "slot": 19, "ok": true, "rv": -21.27714, "why": "Earliest reachable slot at 4 sigma separation that discriminates both the 0 vs 1 and 0 vs 2 pairs at once, with two slots left to confirm the leader"}
+{"ts": 1788022007.458, "cmd": "diagnostics"}
+{"ts": 1788022012.953, "cmd": "observe", "slot": 20, "ok": true, "rv": -13.082355, "why": "Final budget slot, earliest reachable option within 20 percent of peak separation for the only remaining live pair, 1 vs 2, with candidate 0 already effectively eliminated"}
+{"ts": 1788022019.202, "cmd": "state"}
+{"ts": 1788022025.867, "cmd": "finalize", "why": "Budget exhausted, candidate 1 near period 12.6 days holds 0.988 support after six targeted observations that eliminated candidates 3 and 4 and drove down 0 and 2, just short of the 0.997 resolution threshold so this is reported as a strong but not fully certified lean toward candidate 1", "resolved": false}

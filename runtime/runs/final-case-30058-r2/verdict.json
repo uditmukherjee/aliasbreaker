@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9999968496971424,
+  "chi2s": [
+    7.808259273485571,
+    37.274507413628605,
+    33.4154888567679,
+    56.28871993773963,
+    63.31464564035952
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    7,
+    10,
+    13,
+    18,
+    20
+  ],
+  "stop_reason": "Candidate zero period 12.85958 days reaches support 0.999997, confirmed by two consecutive high-separation observations after crossing theta, all rival candidates driven near zero"
+}

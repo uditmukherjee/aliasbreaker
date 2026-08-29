@@ -1,0 +1,15 @@
+{"ts": 1788021652.419, "cmd": "start", "case_id": "case-30231", "case_sha256": "e1dbd3a787baa02824fe9c28de7df23249ffc9b8508d3f3e4bab710ffcf1d43b", "theta": 0.997}
+{"ts": 1788021656.696, "cmd": "diagnostics"}
+{"ts": 1788021681.214, "cmd": "observe", "slot": 2, "ok": true, "rv": -13.451944, "why": "Earliest reachable slot giving maximal separation for the leading zero versus two period pair, the two closest-support candidates after the initial fit"}
+{"ts": 1788021685.833, "cmd": "diagnostics"}
+{"ts": 1788021691.612, "cmd": "observe", "slot": 5, "ok": true, "rv": 12.178716, "why": "Earliest reachable slot with maximal separation for both the zero versus one and zero versus two pairs, discriminating two of the three live candidates at once"}
+{"ts": 1788021696.083, "cmd": "diagnostics"}
+{"ts": 1788021701.904, "cmd": "observe", "slot": 7, "ok": true, "rv": -2.689349, "why": "Earliest slot with maximal separation for the zero versus two pair, now the dominant remaining uncertainty since candidate one has fallen behind"}
+{"ts": 1788021706.432, "cmd": "diagnostics"}
+{"ts": 1788021711.863, "cmd": "observe", "slot": 17, "ok": true, "rv": -10.537413, "why": "Earliest slot with maximal separation for the zero versus one pair, now the dominant remaining uncertainty and also strong for zero versus two"}
+{"ts": 1788021716.572, "cmd": "diagnostics"}
+{"ts": 1788021731.142, "cmd": "observe", "slot": 19, "ok": true, "rv": -21.27714, "why": "Earliest slot giving maximal separation for both pairs involving candidate zero while keeping slot 23 reachable for a follow up on candidate one versus candidate two"}
+{"ts": 1788021735.48, "cmd": "diagnostics"}
+{"ts": 1788021745.737, "cmd": "observe", "slot": 20, "ok": true, "rv": -13.082355, "why": "Final confirmation observation at a near maximal separation slot for the sole remaining live pair, candidate one versus candidate two"}
+{"ts": 1788021750.428, "cmd": "state"}
+{"ts": 1788021757.302, "cmd": "finalize", "why": "Budget exhausted with candidate one at support near ninety nine percent after six discriminating observations that eliminated candidates zero, three, and four and pushed candidate two below two percent, but the leading support falls just short of the strict resolution threshold so this is reported as a strong lean toward the twelve point six day period rather than a formal resolution", "resolved": false}

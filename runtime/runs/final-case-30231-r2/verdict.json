@@ -1,0 +1,24 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "max_support": 0.9993618658487914,
+  "chi2s": [
+    23.495602459451558,
+    6.984516207756256,
+    22.74190473674764,
+    88.35995116773745,
+    65.92519722587795
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    1,
+    28,
+    31,
+    36,
+    38
+  ],
+  "stop_reason": "Candidate one, period thirteen point six days, reached support point nine nine nine after eliminating candidates three and four early and progressively separating from candidate two with confirming observations, well above the resolution threshold"
+}

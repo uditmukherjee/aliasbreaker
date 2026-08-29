@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 4,
+  "max_support": 0.9999483297015411,
+  "chi2s": [
+    41.272153175587505,
+    31.389449715067276,
+    34.71457521879189,
+    43.902724365627186,
+    1.4796166342716446,
+    21.235670761356353
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    4,
+    8,
+    19
+  ],
+  "stop_reason": "Candidate four support reached 0.9999 clearing the 0.997 threshold after a confirming observation, all other candidates including the closest rival one are effectively eliminated"
+}

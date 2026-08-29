@@ -1,0 +1,25 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 1,
+  "max_support": 0.6695891527841097,
+  "chi2s": [
+    12.697614440203376,
+    5.1187618784216244,
+    8.389441992660277,
+    7.935264066388724,
+    12.905262830879924,
+    14.136880333104054
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    3,
+    7,
+    18,
+    21,
+    23,
+    30
+  ],
+  "stop_reason": "budget exhausted with candidate one leading at support near 0.67, well short of the theta threshold, so the campaign abstains rather than overclaim resolution"
+}

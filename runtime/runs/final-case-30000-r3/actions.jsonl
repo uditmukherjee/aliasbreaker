@@ -1,0 +1,10 @@
+{"ts": 1788019239.481, "cmd": "start", "case_id": "case-30000", "case_sha256": "42db816cacee6c410b8548f83a0018e5377f0f0395dc04616ef94dddbcbcfdd8", "theta": 0.997}
+{"ts": 1788019246.779, "cmd": "diagnostics"}
+{"ts": 1788019265.584, "cmd": "observe", "slot": 7, "ok": true, "rv": 13.042622, "why": "Slot 7 gives 4-sigma separation for both the 0-5 and 1-5 pairs, the two runner-up live pairs behind the leading 0-1 pair, making it the earliest point that discriminates multiple live candidates at once"}
+{"ts": 1788019271.989, "cmd": "diagnostics"}
+{"ts": 1788019280.201, "cmd": "observe", "slot": 10, "ok": true, "rv": 9.464355, "why": "Only the 0-1 pair remains live, and slot 10 is the earliest reachable point giving the full 4-sigma separation between periods 1.088 and 12.202 days"}
+{"ts": 1788019286.125, "cmd": "diagnostics"}
+{"ts": 1788019293.308, "cmd": "observe", "slot": 11, "ok": true, "rv": 13.822985, "why": "The 0-1 pair still dominates support and slot 11 remains the earliest reachable point offering the full 4-sigma separation between these two periods"}
+{"ts": 1788019300.612, "cmd": "diagnostics"}
+{"ts": 1788019307.078, "cmd": "observe", "slot": 12, "ok": true, "rv": 8.121113, "why": "Candidate 1 support is 0.9942, just under the theta threshold of 0.997, and slot 12 is the earliest remaining point that still separates the 0-1 pair at 4 sigma, so this confirms the leading candidate before finalizing"}
+{"ts": 1788019313.719, "cmd": "finalize", "why": "Candidate 1 at period 12.20245 days reached support 0.999982, above theta 0.997, after a confirming observation at slot 12 following the crossing at slot 11, resolving the alias in favor of the 12.2 day orbit over the 1.088 day alias", "resolved": true}

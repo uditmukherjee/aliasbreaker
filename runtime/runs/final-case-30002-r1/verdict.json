@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9990144516425857,
+  "chi2s": [
+    6.835331529025239,
+    21.25329948752483,
+    34.12214692837124,
+    33.21765397550128,
+    23.761860986306818,
+    27.50538475224624
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    9,
+    17,
+    27,
+    28,
+    33
+  ],
+  "stop_reason": "Candidate zero at period three point four six days reached support zero point nine nine nine, clearing the theta threshold after budget was exhausted resolving the dominant zero versus five ambiguity"
+}

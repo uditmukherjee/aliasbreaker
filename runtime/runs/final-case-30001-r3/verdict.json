@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "max_support": 0.999994813309811,
+  "chi2s": [
+    45.866366509911145,
+    16.483026751217658,
+    40.98939075243867,
+    84.14487342700981,
+    74.85840228546449,
+    59.65264103831398
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    6,
+    22,
+    29,
+    36,
+    38
+  ],
+  "stop_reason": "Candidate one support crossed the resolution threshold after the final confirmation observation, with all other candidates driven effectively to zero support, resolving the true orbital period"
+}

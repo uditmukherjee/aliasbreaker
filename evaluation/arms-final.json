@@ -1,0 +1,605 @@
+{
+  "summary": {
+    "label": "final",
+    "theta": 0.997,
+    "n_cases": 12,
+    "n_resolvable": 10,
+    "elapsed_s": 0.62,
+    "batch_correct_on_resolvable": 2,
+    "batch_false_resolutions": 1,
+    "batch_mean_obs": 5.5,
+    "even_correct_on_resolvable": 4,
+    "even_false_resolutions": 1,
+    "even_mean_obs": 5.42,
+    "adaptive_correct_on_resolvable": 4,
+    "adaptive_false_resolutions": 0,
+    "adaptive_mean_obs": 3.83
+  },
+  "rows": [
+    {
+      "case": "case-30000",
+      "sigma": 2.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-30000.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9936724311224463,
+        "n_obs": 6,
+        "slots": [
+          5,
+          10,
+          18,
+          20,
+          31,
+          36
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9990236924922461,
+        "n_obs": 4,
+        "slots": [
+          0,
+          8,
+          17,
+          25
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.17983131025974045,
+        "n_obs": 3,
+        "slots": [
+          29,
+          32,
+          42
+        ]
+      }
+    },
+    {
+      "case": "case-30001",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-30001.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.2407583240316745,
+        "n_obs": 6,
+        "slots": [
+          0,
+          7,
+          11,
+          20,
+          33,
+          35
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999040173299445,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          26,
+          35,
+          44
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9984644850200965,
+        "n_obs": 5,
+        "slots": [
+          20,
+          24,
+          35,
+          41,
+          44
+        ]
+      }
+    },
+    {
+      "case": "case-30002",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-30002.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9782875580452303,
+        "n_obs": 6,
+        "slots": [
+          0,
+          2,
+          9,
+          13,
+          25,
+          26
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.7612410134648356,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9403294145067183,
+        "n_obs": 6,
+        "slots": [
+          2,
+          9,
+          35,
+          36,
+          39,
+          40
+        ]
+      }
+    },
+    {
+      "case": "case-30003",
+      "sigma": 5.0,
+      "n_candidates": 6,
+      "resolvable": false,
+      "fixture": "case-30003.json",
+      "batch": {
+        "correct": false,
+        "abstained": false,
+        "false_resolution": true,
+        "truth_support": 0.0,
+        "n_obs": 5,
+        "slots": [
+          2,
+          35,
+          41,
+          42,
+          43
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": false,
+        "false_resolution": true,
+        "truth_support": 0.0,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          18,
+          28,
+          37,
+          46
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.0,
+        "n_obs": 2,
+        "slots": [
+          35,
+          46
+        ]
+      }
+    },
+    {
+      "case": "case-30005",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-30005.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9697497742068617,
+        "n_obs": 6,
+        "slots": [
+          0,
+          2,
+          3,
+          10,
+          24,
+          25
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9636327128591573,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          23,
+          31,
+          39
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9992641088951754,
+        "n_obs": 5,
+        "slots": [
+          25,
+          26,
+          30,
+          31,
+          39
+        ]
+      }
+    },
+    {
+      "case": "case-30007",
+      "sigma": 5.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-30007.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.4768374702567619,
+        "n_obs": 6,
+        "slots": [
+          15,
+          18,
+          20,
+          24,
+          28,
+          36
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9121888927699036,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          16,
+          23,
+          31,
+          39
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.1898520318146483,
+        "n_obs": 3,
+        "slots": [
+          15,
+          28,
+          39
+        ]
+      }
+    },
+    {
+      "case": "case-30008",
+      "sigma": 2.0,
+      "n_candidates": 3,
+      "resolvable": true,
+      "fixture": "case-30008.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999991698401,
+        "n_obs": 1,
+        "slots": [
+          3
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9979488537322523,
+        "n_obs": 2,
+        "slots": [
+          0,
+          9
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9999999991698401,
+        "n_obs": 1,
+        "slots": [
+          3
+        ]
+      }
+    },
+    {
+      "case": "case-30010",
+      "sigma": 4.0,
+      "n_candidates": 6,
+      "resolvable": false,
+      "fixture": "case-30010.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.0,
+        "n_obs": 6,
+        "slots": [
+          5,
+          19,
+          26,
+          28,
+          33,
+          37
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.0,
+        "n_obs": 6,
+        "slots": [
+          0,
+          9,
+          17,
+          26,
+          34,
+          43
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.0,
+        "n_obs": 6,
+        "slots": [
+          0,
+          33,
+          37,
+          38,
+          42,
+          43
+        ]
+      }
+    },
+    {
+      "case": "case-30058",
+      "sigma": 4.0,
+      "n_candidates": 5,
+      "resolvable": true,
+      "fixture": "case-30058.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9513185595804805,
+        "n_obs": 6,
+        "slots": [
+          1,
+          6,
+          16,
+          19,
+          36,
+          37
+        ]
+      },
+      "even": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9986107610112457,
+        "n_obs": 5,
+        "slots": [
+          0,
+          9,
+          18,
+          28,
+          37
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9018392558001564,
+        "n_obs": 5,
+        "slots": [
+          37,
+          40,
+          43,
+          45,
+          46
+        ]
+      }
+    },
+    {
+      "case": "case-30231",
+      "sigma": 5.0,
+      "n_candidates": 5,
+      "resolvable": true,
+      "fixture": "case-30231.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.9524951181384235,
+        "n_obs": 6,
+        "slots": [
+          17,
+          23,
+          27,
+          31,
+          36,
+          41
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.49601371167208935,
+        "n_obs": 6,
+        "slots": [
+          0,
+          8,
+          17,
+          25,
+          34,
+          42
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.8662499160473806,
+        "n_obs": 3,
+        "slots": [
+          36,
+          39,
+          42
+        ]
+      }
+    },
+    {
+      "case": "case-80003m",
+      "sigma": 3.0,
+      "n_candidates": 6,
+      "resolvable": true,
+      "fixture": "case-80003m.json",
+      "batch": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.6305052118412368,
+        "n_obs": 6,
+        "slots": [
+          4,
+          5,
+          11,
+          12,
+          19,
+          27
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.17390578270590837,
+        "n_obs": 6,
+        "slots": [
+          0,
+          7,
+          14,
+          22,
+          29,
+          36
+        ]
+      },
+      "adaptive": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.18256181896018206,
+        "n_obs": 4,
+        "slots": [
+          6,
+          28,
+          35,
+          36
+        ]
+      }
+    },
+    {
+      "case": "case-80036m",
+      "sigma": 4.0,
+      "n_candidates": 3,
+      "resolvable": true,
+      "fixture": "case-80036m.json",
+      "batch": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9996310329992867,
+        "n_obs": 6,
+        "slots": [
+          0,
+          18,
+          22,
+          23,
+          25,
+          27
+        ]
+      },
+      "even": {
+        "correct": false,
+        "abstained": true,
+        "false_resolution": false,
+        "truth_support": 0.996600049577456,
+        "n_obs": 6,
+        "slots": [
+          0,
+          6,
+          12,
+          18,
+          24,
+          30
+        ]
+      },
+      "adaptive": {
+        "correct": true,
+        "abstained": false,
+        "false_resolution": false,
+        "truth_support": 0.9985468401412463,
+        "n_obs": 3,
+        "slots": [
+          18,
+          26,
+          29
+        ]
+      }
+    }
+  ]
+}

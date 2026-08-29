@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 1,
+  "max_support": 0.9999815548105412,
+  "chi2s": [
+    25.23600715298405,
+    3.433870373463789,
+    97.01325296085763,
+    113.41471213387918,
+    43.18174606695189,
+    41.79907920797704
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    7,
+    10,
+    11,
+    12
+  ],
+  "stop_reason": "Candidate 1 at period 12.20245 days reached support 0.999982, above theta 0.997, after a confirming observation at slot 12 following the crossing at slot 11, resolving the alias in favor of the 12.2 day orbit over the 1.088 day alias"
+}

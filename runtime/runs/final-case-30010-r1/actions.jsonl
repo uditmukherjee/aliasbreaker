@@ -1,0 +1,14 @@
+{"ts": 1788021087.191, "cmd": "start", "case_id": "case-30010", "case_sha256": "c2886a8b2a4cb8d22432f82437ba197a01adbf2ca95510a7acbf69fbe43e63cd", "theta": 0.997}
+{"ts": 1788021091.059, "cmd": "diagnostics"}
+{"ts": 1788021111.703, "cmd": "observe", "slot": 0, "ok": true, "rv": 8.890023, "why": "earliest reachable slot, near-max separation for several live pairs at once including 0v2 0v3 0v4 1v3 1v4, cheap way to prune the middle candidates before deciding between the top two"}
+{"ts": 1788021115.859, "cmd": "diagnostics"}
+{"ts": 1788021133.418, "cmd": "observe", "slot": 1, "ok": true, "rv": 7.544025, "why": "earliest slot giving max separation for both the zero versus five and one versus five pairs, cheaply eliminating the remaining third candidate before the deep slot needed for zero versus one"}
+{"ts": 1788021137.288, "cmd": "diagnostics"}
+{"ts": 1788021146.103, "cmd": "observe", "slot": 33, "ok": true, "rv": 6.503704, "why": "zero versus one is now the dominant live pair with support product far above any other, and diagnostics show its discriminating power lives late, only three future slots exceed two sigma and this is the best of them"}
+{"ts": 1788021150.1, "cmd": "diagnostics"}
+{"ts": 1788021156.067, "cmd": "observe", "slot": 39, "ok": true, "rv": -9.512608, "why": "confirmation point for the still-dominant zero versus one pair at the highest available separation, needed since support has not yet crossed the strict resolution threshold"}
+{"ts": 1788021159.48, "cmd": "diagnostics"}
+{"ts": 1788021166.761, "cmd": "observe", "slot": 40, "ok": true, "rv": -6.711701, "why": "slot forty gives near maximal separation simultaneously for the remaining live pairs one versus five and zero versus one, the two largest support products left, best use of a scarce late observation"}
+{"ts": 1788021171.858, "cmd": "diagnostics"}
+{"ts": 1788021179.429, "cmd": "observe", "slot": 43, "ok": true, "rv": -7.232648, "why": "final budgeted observation, targets the largest remaining live pair one versus two at its best available separation to push the leading candidate toward the resolution threshold"}
+{"ts": 1788021184.526, "cmd": "finalize", "why": "candidate one, period near 1.32 days, resolved to support above the strict threshold after six observations that first pruned the middle candidates, then targeted the persistent zero versus one and one versus five pairs at their best late separations, with a final confirmation against candidate two", "resolved": true}

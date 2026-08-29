@@ -1,0 +1,13 @@
+{"ts": 1788022427.551, "cmd": "start", "case_id": "case-80036m", "case_sha256": "f9ee2991bd908685c8f2be78a5d7e57d463b7981bd32be5e2bebfd52380a88b4", "theta": 0.997}
+{"ts": 1788022431.295, "cmd": "diagnostics"}
+{"ts": 1788022435.785, "cmd": "observe", "slot": 0, "ok": true, "rv": 29.626428, "why": "Earliest reachable slot, separates both the 0-2 and 1-2 period pairs at full 4 sigma, best early discriminating power"}
+{"ts": 1788022439.643, "cmd": "diagnostics"}
+{"ts": 1788022448.941, "cmd": "state"}
+{"ts": 1788022456.599, "cmd": "observe", "slot": 10, "ok": true, "rv": 25.677019, "why": "Earliest slot among the top separating points for the remaining live pair between the 5.27 day and 1.23 day period candidates, full 4 sigma separation"}
+{"ts": 1788022460.205, "cmd": "diagnostics"}
+{"ts": 1788022464.809, "cmd": "observe", "slot": 11, "ok": true, "rv": 31.251078, "why": "Confirmation point at the earliest reachable full separation slot for the still-live 5.27 versus 1.23 day pair, current leader has not yet crossed the resolution threshold"}
+{"ts": 1788022468.781, "cmd": "diagnostics"}
+{"ts": 1788022473.456, "cmd": "observe", "slot": 13, "ok": true, "rv": 16.323424, "why": "Earliest full separation slot for the persistently live 5.27 versus 1.23 day pair, support has been oscillating and needs another discriminating point before it can resolve"}
+{"ts": 1788022477.886, "cmd": "diagnostics"}
+{"ts": 1788022482.544, "cmd": "observe", "slot": 15, "ok": true, "rv": 8.25467, "why": "Confirmation observation, leading 5.27 day candidate is just under the resolution threshold and this earliest slot gives full separation against the remaining rival before finalizing"}
+{"ts": 1788022486.857, "cmd": "finalize", "why": "Candidate 0 at 5.27 day period reached 0.998 support after a confirming observation, above the 0.997 resolution threshold, the other two candidates collapsed below 0.002, campaign resolved with one slot of budget unused", "resolved": true}

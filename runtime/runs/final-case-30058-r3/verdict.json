@@ -1,0 +1,22 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9989952980911936,
+  "chi2s": [
+    4.971940103178557,
+    18.777774567712463,
+    32.92106853846611,
+    41.915604326104905,
+    50.5139370602186
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    7,
+    10,
+    13,
+    18
+  ],
+  "stop_reason": "Candidate 0 at period 12.85958 days reached support 0.999, above the theta threshold of 0.997, after four confirming observations against its closest rivals, resolving the alias"
+}

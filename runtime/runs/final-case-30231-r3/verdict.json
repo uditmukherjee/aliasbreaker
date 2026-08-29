@@ -1,0 +1,24 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 1,
+  "max_support": 0.9883986558568318,
+  "chi2s": [
+    23.209972400364897,
+    8.221263427975847,
+    17.208289509063526,
+    100.8588132450037,
+    46.42601664775997
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    5,
+    7,
+    17,
+    19,
+    20
+  ],
+  "stop_reason": "Budget exhausted, candidate 1 near period 12.6 days holds 0.988 support after six targeted observations that eliminated candidates 3 and 4 and drove down 0 and 2, just short of the 0.997 resolution threshold so this is reported as a strong but not fully certified lean toward candidate 1"
+}

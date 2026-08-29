@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 4,
+  "max_support": 0.999146979621592,
+  "chi2s": [
+    62.65966347297541,
+    31.066779720956355,
+    63.23957701514599,
+    45.83772509935344,
+    2.8753722639240595,
+    17.008891783628666
+  ],
+  "n_obs": 4,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    3,
+    8,
+    9
+  ],
+  "stop_reason": "Candidate 4, period near 15.24 days, reached support 0.999 exceeding the theta threshold of 0.997 after a confirming observation, while all other candidates including the closest rival at 1.07 days collapsed to near zero support"
+}

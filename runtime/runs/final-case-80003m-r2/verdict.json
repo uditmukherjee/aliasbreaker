@@ -1,0 +1,25 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 2,
+  "max_support": 0.9985763940134991,
+  "chi2s": [
+    23.743182268242375,
+    25.761409083165447,
+    9.992108423273567,
+    32.033273415910685,
+    56.54372623898284,
+    43.50631188732785
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    1,
+    2,
+    8,
+    9,
+    10,
+    12
+  ],
+  "stop_reason": "Budget exhausted, candidate 2 near period 10.95 days crossed the resolution threshold at support 0.999 after the final slot overturned the previously leading short-period alias, so I finalize on candidate 2 rather than abstain"
+}

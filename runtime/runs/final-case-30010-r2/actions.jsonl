@@ -1,0 +1,14 @@
+{"ts": 1788021197.373, "cmd": "start", "case_id": "case-30010", "case_sha256": "c2886a8b2a4cb8d22432f82437ba197a01adbf2ca95510a7acbf69fbe43e63cd", "theta": 0.997}
+{"ts": 1788021201.704, "cmd": "diagnostics"}
+{"ts": 1788021208.355, "cmd": "observe", "slot": 0, "ok": true, "rv": 8.890023, "why": "Earliest reachable slot with maximal 4-sigma separation across many live pairs including the two top candidates period ratios, best first discriminator"}
+{"ts": 1788021212.712, "cmd": "diagnostics"}
+{"ts": 1788021235.295, "cmd": "observe", "slot": 1, "ok": true, "rv": 7.544025, "why": "Earliest slot giving 4 sigma separation for both leader versus candidate five pairs, testing the remaining live long-period alias before committing to a late slot for the top two"}
+{"ts": 1788021239.339, "cmd": "diagnostics"}
+{"ts": 1788021248.333, "cmd": "observe", "slot": 33, "ok": true, "rv": 6.503704, "why": "Pair zero versus one is now the dominant undecided pair by support product and slot thirty three gives its best available separation at three point four sigma"}
+{"ts": 1788021251.913, "cmd": "diagnostics"}
+{"ts": 1788021260.331, "cmd": "observe", "slot": 39, "ok": true, "rv": -9.512608, "why": "Pair zero versus one remains dominant by support product and slot thirty nine gives near maximal three point nine sigma separation for it, the earliest slot at that separation level"}
+{"ts": 1788021263.986, "cmd": "diagnostics"}
+{"ts": 1788021271.04, "cmd": "observe", "slot": 40, "ok": true, "rv": -6.711701, "why": "Slot forty gives maximal four sigma separation for the leader versus candidate five pair and strong three point three sigma for leader versus candidate zero, discriminating both live pairs at once"}
+{"ts": 1788021275.808, "cmd": "diagnostics"}
+{"ts": 1788021281.556, "cmd": "observe", "slot": 43, "ok": true, "rv": -7.232648, "why": "Final confirmation observation, slot forty three gives the best remaining separation three point two five sigma against the last live rival candidate two to push the leader past the resolution threshold"}
+{"ts": 1788021286.153, "cmd": "finalize", "why": "Candidate one period one point three two two days reached support point nine nine nine, clearing the theta threshold after six discriminating observations that eliminated all rival aliases including the strong candidate zero and candidate five pairs", "resolved": true}

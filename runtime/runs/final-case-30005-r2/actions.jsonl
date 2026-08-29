@@ -1,0 +1,11 @@
+{"ts": 1788020313.625, "cmd": "start", "case_id": "case-30005", "case_sha256": "6b36c866c708d851993406a3683cfd98be473a3f2914148c9f02263befa1ec1e", "theta": 0.997}
+{"ts": 1788020317.683, "cmd": "diagnostics"}
+{"ts": 1788020323.62, "cmd": "observe", "slot": 0, "ok": true, "rv": -16.97046, "why": "Earliest reachable slot separates most live pairs at 4 sigma, best thrift choice to start narrowing candidates"}
+{"ts": 1788020327.271, "cmd": "diagnostics"}
+{"ts": 1788020337.355, "cmd": "state"}
+{"ts": 1788020350.709, "cmd": "observe", "slot": 4, "ok": true, "rv": 0.15918, "why": "Targets the leading pair one versus four which carries the highest support product, at four sigma separation, while also splitting one versus five"}
+{"ts": 1788020354.573, "cmd": "diagnostics"}
+{"ts": 1788020359.847, "cmd": "observe", "slot": 8, "ok": true, "rv": -6.905986, "why": "Confirmation observation at the earliest four sigma slot for the still live one versus four pair before finalizing"}
+{"ts": 1788020363.429, "cmd": "diagnostics"}
+{"ts": 1788020368.151, "cmd": "observe", "slot": 19, "ok": true, "rv": 6.818379, "why": "Only remaining live pair is four versus five, earliest four sigma slot to push support past threshold or reveal a surprise"}
+{"ts": 1788020372.323, "cmd": "finalize", "why": "Candidate four support reached 0.9999 clearing the 0.997 threshold after a confirming observation, all other candidates including the closest rival one are effectively eliminated", "resolved": true}

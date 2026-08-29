@@ -1,0 +1,25 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 1,
+  "max_support": 0.6695891527841097,
+  "chi2s": [
+    12.697614440203376,
+    5.1187618784216244,
+    8.389441992660277,
+    7.935264066388724,
+    12.905262830879924,
+    14.136880333104054
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    3,
+    7,
+    18,
+    21,
+    23,
+    30
+  ],
+  "stop_reason": "Budget exhausted with the 13.5 day candidate leading at support near 0.67, well below the 0.997 threshold, so the data cannot decide among the remaining live candidates and I abstain"
+}

@@ -1,0 +1,11 @@
+{"ts": 1788020202.253, "cmd": "start", "case_id": "case-30005", "case_sha256": "6b36c866c708d851993406a3683cfd98be473a3f2914148c9f02263befa1ec1e", "theta": 0.997}
+{"ts": 1788020207.227, "cmd": "diagnostics"}
+{"ts": 1788020242.403, "cmd": "observe", "slot": 0, "ok": true, "rv": -16.97046, "why": "Earliest reachable slot separates the most live candidate pairs including 0-1, 1-2, 2-4, and 0-4 near maximal sigma, so it gives the broadest early discrimination before committing later budget"}
+{"ts": 1788020247.526, "cmd": "diagnostics"}
+{"ts": 1788020262.398, "cmd": "observe", "slot": 4, "ok": true, "rv": 0.15918, "why": "Candidates 1 and 4 now dominate support with pair 1-4 the highest product, and this is the earliest slot that maximally separates both the 1-4 and 1-5 pairs at once"}
+{"ts": 1788020268.596, "cmd": "diagnostics"}
+{"ts": 1788020274.935, "cmd": "observe", "slot": 8, "ok": true, "rv": -6.905986, "why": "Candidate 4 leads but candidate 1 still holds meaningful support, so this confirmation observation at the earliest slot maximally separating the 1-4 pair is needed before finalizing"}
+{"ts": 1788020280.271, "cmd": "state"}
+{"ts": 1788020286.077, "cmd": "diagnostics"}
+{"ts": 1788020294.229, "cmd": "observe", "slot": 19, "ok": true, "rv": 6.818379, "why": "Candidate 4 support sits just under the resolution threshold with candidate 5 as the only remaining live rival, so this earliest maximal-separation slot for the 4-5 pair should confirm the resolution"}
+{"ts": 1788020300.405, "cmd": "finalize", "why": "Candidate 4 at period near 15.65 days reached support 0.9999, well above theta 0.997, after sequentially eliminating candidates 0 and 2, then 3, then 1, and finally 5 via the highest-value discriminating slots", "resolved": true}

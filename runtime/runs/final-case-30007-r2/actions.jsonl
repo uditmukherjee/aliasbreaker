@@ -1,0 +1,15 @@
+{"ts": 1788020587.938, "cmd": "start", "case_id": "case-30007", "case_sha256": "dc679d63483ab8065451b0b90cf8f62d9a979112d3c885a6270f937ee9f638c1", "theta": 0.997}
+{"ts": 1788020592.229, "cmd": "diagnostics"}
+{"ts": 1788020611.401, "cmd": "observe", "slot": 3, "ok": true, "rv": -6.369, "why": "Earliest slot that separates the leading candidate from three rival periods at maximum discriminating power"}
+{"ts": 1788020618.162, "cmd": "diagnostics"}
+{"ts": 1788020631.274, "cmd": "observe", "slot": 7, "ok": true, "rv": 6.898328, "why": "This slot separates the current leader from its three strongest remaining rivals simultaneously at maximum discriminating power"}
+{"ts": 1788020639.598, "cmd": "diagnostics"}
+{"ts": 1788020654.877, "cmd": "observe", "slot": 18, "ok": true, "rv": 14.654238, "why": "This slot separates the leading candidate from all four remaining rival periods simultaneously at maximum discriminating power"}
+{"ts": 1788020659.583, "cmd": "diagnostics"}
+{"ts": 1788020740.783, "cmd": "observe", "slot": 21, "ok": true, "rv": 1.81631, "why": "This slot achieves maximum separation across six live candidate pairs at once, the broadest discriminating power available this early"}
+{"ts": 1788020746.813, "cmd": "diagnostics"}
+{"ts": 1788020755.371, "cmd": "observe", "slot": 23, "ok": true, "rv": -4.70619, "why": "This is the earliest slot and it resolves the now-dominant pair between the leader and its closest rival at near maximum separation"}
+{"ts": 1788020762.788, "cmd": "diagnostics"}
+{"ts": 1788020769.789, "cmd": "observe", "slot": 30, "ok": true, "rv": 3.844841, "why": "Final confirmation observation at the highest available separation for the leading candidate against its closest remaining rival"}
+{"ts": 1788020775.217, "cmd": "state"}
+{"ts": 1788020782.06, "cmd": "finalize", "why": "Budget exhausted with the 13.5 day candidate leading at support near 0.67, well below the 0.997 threshold, so the data cannot decide among the remaining live candidates and I abstain", "resolved": false}

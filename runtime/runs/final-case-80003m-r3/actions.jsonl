@@ -1,0 +1,15 @@
+{"ts": 1788022279.914, "cmd": "start", "case_id": "case-80003m", "case_sha256": "f0fa3ee082e8a22cf0c64659300c09f472d62f749a5a1fe31ecb5419d82bac0b", "theta": 0.997}
+{"ts": 1788022284.516, "cmd": "diagnostics"}
+{"ts": 1788022310.625, "cmd": "observe", "slot": 1, "ok": true, "rv": 5.899014, "why": "Earliest slot reaching the capped 4 sigma separation for six live pairs including 0-1, 0-4, 1-2, 1-3, 2-4, 3-4, at minimal cost of only slot 0 which discriminates nothing"}
+{"ts": 1788022314.781, "cmd": "diagnostics"}
+{"ts": 1788022323.791, "cmd": "observe", "slot": 2, "ok": true, "rv": 10.229283, "why": "Earliest slot giving capped four sigma separation for every pair involving the now leading candidate five against all others, a single measurement that tests the whole leaderboard"}
+{"ts": 1788022327.929, "cmd": "diagnostics"}
+{"ts": 1788022355.394, "cmd": "state"}
+{"ts": 1788022373.224, "cmd": "observe", "slot": 10, "ok": true, "rv": -6.690804, "why": "This slot hits capped four sigma separation for six live pairs at once including zero-one, zero-four, one-two, one-three, two-four, and three-four, the broadest single test available while still leaving slot twelve reachable for the top pair two-three"}
+{"ts": 1788022377.264, "cmd": "diagnostics"}
+{"ts": 1788022389.503, "cmd": "observe", "slot": 12, "ok": true, "rv": 15.422603, "why": "This slot reaches capped four sigma separation for both remaining highest product pairs two-three and zero-two at once, the most efficient test of the current top three candidates"}
+{"ts": 1788022394.249, "cmd": "diagnostics"}
+{"ts": 1788022400.365, "cmd": "observe", "slot": 15, "ok": true, "rv": -0.340654, "why": "Confirmation observation at the earliest slot with full four sigma separation for the last live pair zero-two before finalizing on candidate two"}
+{"ts": 1788022404.403, "cmd": "diagnostics"}
+{"ts": 1788022409.39, "cmd": "observe", "slot": 31, "ok": true, "rv": 4.166601, "why": "Final budgeted observation at the earliest remaining slot with full four sigma separation for the last live pair zero-two to push support past the resolution threshold if the true orbit is candidate two"}
+{"ts": 1788022414.593, "cmd": "finalize", "why": "Candidate two, period near 10.5 days, reached support 0.9996 above theta 0.997 after six observations that progressively eliminated candidates five, one, and four, then isolated and confirmed candidate two over its closest rival zero across three separating slots", "resolved": true}

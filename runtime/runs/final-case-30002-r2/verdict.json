@@ -1,0 +1,24 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 0,
+  "max_support": 0.8173671957636858,
+  "chi2s": [
+    4.390909088827299,
+    24.896125376818095,
+    19.7068618172869,
+    23.094976971409032,
+    26.36596930472296,
+    7.393609313730742
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    0,
+    2,
+    9,
+    34,
+    40
+  ],
+  "stop_reason": "Candidates zero and five remain the only live pair with support 0.82 versus 0.18, below the 0.997 resolution threshold, and no observation slots remain to separate them further, so the honest verdict is an abstention"
+}

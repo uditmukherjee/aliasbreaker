@@ -1,0 +1,9 @@
+{"ts": 1788020907.928, "cmd": "start", "case_id": "case-30008", "case_sha256": "76949760317ef37ee65e92cfd151e71b06dfb0170ebc4df848162c0dfdc953c4", "theta": 0.997}
+{"ts": 1788020914.091, "cmd": "diagnostics"}
+{"ts": 1788020922.663, "cmd": "observe", "slot": 0, "ok": true, "rv": -15.664421, "why": "Earliest reachable slot, separates the 0-2 and 1-2 pairs at the capped maximum separation, good first discriminator"}
+{"ts": 1788020927.292, "cmd": "diagnostics"}
+{"ts": 1788020935.116, "cmd": "observe", "slot": 3, "ok": true, "rv": 22.297056, "why": "Candidate 1 has collapsed, remaining live pair is 0 versus 2, this is the earliest slot offering maximal separation for that pair"}
+{"ts": 1788020940.114, "cmd": "diagnostics"}
+{"ts": 1788020945.008, "cmd": "state"}
+{"ts": 1788020952.666, "cmd": "observe", "slot": 4, "ok": true, "rv": 8.33445, "why": "Support has already crossed the resolution threshold for candidate 0 after only two observations, taking one confirmation point at the earliest remaining slot to guard against a single noisy measurement"}
+{"ts": 1788020958.763, "cmd": "finalize", "why": "Candidate 0 at period near 9.28 days reached support 1.0 after slot 0 and slot 3, confirmed with an additional point at slot 4, the other two candidates collapsed to zero support and no live pair remains to test", "resolved": true}

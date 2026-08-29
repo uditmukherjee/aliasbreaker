@@ -1,0 +1,25 @@
+{
+  "resolved": false,
+  "abstained": true,
+  "pred": 0,
+  "max_support": 0.8646096603054906,
+  "chi2s": [
+    6.73418087800729,
+    37.86892416330058,
+    10.567819363166103,
+    16.04435217162566,
+    31.598147597855977,
+    48.876771937183634
+  ],
+  "n_obs": 6,
+  "theta": 0.997,
+  "observed_slots": [
+    1,
+    2,
+    4,
+    8,
+    10,
+    24
+  ],
+  "stop_reason": "Budget exhausted with candidate zero the clear leader at eighty six percent support after six discriminating observations that eliminated three aliases outright, but support falls short of the strict resolution threshold so this is reported as a strong lead rather than a confirmed resolution"
+}

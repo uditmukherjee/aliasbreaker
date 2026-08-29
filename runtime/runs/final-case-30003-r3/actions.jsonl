@@ -1,0 +1,10 @@
+{"ts": 1788020123.277, "cmd": "start", "case_id": "case-30003", "case_sha256": "5f55d304128fc1df84f2897bd8f93948bfc5c0c1057292c06eae736023c50b79", "theta": 0.997}
+{"ts": 1788020127.446, "cmd": "diagnostics"}
+{"ts": 1788020140.384, "cmd": "observe", "slot": 6, "ok": true, "rv": 25.784336, "why": "Slot 6 gives maximal separation for both the 0-2 and 1-2 period pairs at the earliest reachable point, efficiently testing the three leading candidates together"}
+{"ts": 1788020144.621, "cmd": "diagnostics"}
+{"ts": 1788020164.229, "cmd": "observe", "slot": 7, "ok": true, "rv": 29.753421, "why": "Candidates 0 and 1 are now effectively eliminated, so slot 7 is chosen as the earliest point giving maximal separation for both live pairs 2-5 and 4-5"}
+{"ts": 1788020168.116, "cmd": "diagnostics"}
+{"ts": 1788020173.685, "cmd": "observe", "slot": 10, "ok": true, "rv": -1.761432, "why": "The only live pair left is 4 and 5, and slot 10 is the earliest reachable slot giving maximal separation for that pair"}
+{"ts": 1788020178.938, "cmd": "diagnostics"}
+{"ts": 1788020183.675, "cmd": "observe", "slot": 11, "ok": true, "rv": -22.511631, "why": "Candidate 4 support is near but below the resolution threshold, so a confirmation observation at slot 11, the earliest high separation point for the remaining live pair 4 and 5, is warranted before finalizing"}
+{"ts": 1788020187.794, "cmd": "finalize", "why": "Candidate 4 reached full support of 1.0, well above the resolution threshold, after two discriminating observations and one confirmation, so the campaign resolves cleanly to that period", "resolved": true}
