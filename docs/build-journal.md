@@ -301,3 +301,17 @@ Improvement Changelog.
   Insight for future systems: relative support needs an absolute
   model-adequacy companion check with "none of the above" scoreable.
   README updated with final tables, failure mode, and hot take.
+- 2026-08-30 · Packaging verification (subagent, clean extraction): 199 tests
+  OK; arms byte-identical to committed finals; 36/36 replays and 36/36 trace
+  audits clean; analysis reproduces exactly; 12/12 fixture hashes match the
+  manifest; no secrets, no forbidden files; ZIP 2.53 MB. Disclosures from
+  the scan, shipped as-is: (a) transcript init records (a harness artifact)
+  contain the local account name, absolute workspace paths, and the NAMES of
+  the developer's connected MCP servers — no credentials (apiKeySource
+  "none"); transcripts are frozen evidentiary artifacts and are not edited
+  post-freeze. (b) Those MCP tools were technically AVAILABLE to runtime
+  sessions (the permission deny-list names core tools, not mcp__*); the
+  trace auditor verifies none was ever invoked in any of the 72 recorded
+  transcripts — the deferred deny-by-default hardening remains the right
+  future fix. (c) scripts/predicate_probe.py hardcodes a local path;
+  dev-only, not on the documented reproduction path.
