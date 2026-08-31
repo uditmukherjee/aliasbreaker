@@ -315,3 +315,8 @@ Improvement Changelog.
   transcripts — the deferred deny-by-default hardening remains the right
   future fix. (c) scripts/predicate_probe.py hardcodes a local path;
   dev-only, not on the documented reproduction path.
+- 2026-08-31 · SUBMITTED. Demo video (4:56 — six shots joined at 1.22x
+  tempo, unlisted, verified reachable logged-out), ZIP 2.53 MB from commit
+  ba1108e, HackerEarth form completed before the 23:30 IST deadline.
+  Freeze lock lifted for post-submission work; tag freeze-v1 remains the
+  immutable anchor for every reported number.
