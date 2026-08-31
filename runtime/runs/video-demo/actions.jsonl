@@ -1,0 +1,12 @@
+{"ts": 1788157923.033, "cmd": "start", "case_id": "case-101", "case_sha256": "4c569bd20af66de0601452bca10687f165ef8f51e08f3f50e9dd30587015013f", "theta": 0.997}
+{"ts": 1788157927.902, "cmd": "diagnostics"}
+{"ts": 1788157933.945, "cmd": "observe", "slot": 2, "ok": true, "rv": -15.158607, "why": "Slot 2 is the earliest slot that separates both live pairs involving the leading candidate 1 at the capped 4 sigma, so it discriminates two pairs at once while spending only two slots of cursor."}
+{"ts": 1788157938.912, "cmd": "diagnostics"}
+{"ts": 1788157944.016, "cmd": "observe", "slot": 3, "ok": true, "rv": -16.492803, "why": "Candidate 1 collapsed after the first point, so the live pair is 0 versus 2, and slot 3 is the earliest slot separating that pair at 4 sigma, costing no skipped slots."}
+{"ts": 1788157950.558, "cmd": "diagnostics"}
+{"ts": 1788157957.531, "cmd": "observe", "slot": 8, "ok": true, "rv": 17.205527, "why": "The only live pair is 0 versus 2 and after refitting its earliest 4 sigma slot is 8, the intervening slots 4 to 7 no longer discriminate this pair, so the jump spends cursor only where it buys separation."}
+{"ts": 1788157962.848, "cmd": "diagnostics"}
+{"ts": 1788157969.887, "cmd": "observe", "slot": 12, "ok": true, "rv": -12.333609, "why": "Candidate 0 leads at 0.991 but sits just below theta, and slot 12 is the earliest 4 sigma slot against the strongest surviving rival candidate 2, while slot 16 that also tests candidate 1 remains reachable if needed."}
+{"ts": 1788157975.32, "cmd": "diagnostics"}
+{"ts": 1788157980.533, "cmd": "observe", "slot": 16, "ok": true, "rv": -1.283895, "why": "Candidate 0 is at 0.9956 and needs one more point against candidate 2 to clear theta, and slot 16 is the earliest 4 sigma slot for that pair with slot 18 still reachable as a fallback for the final observation."}
+{"ts": 1788157987.518, "cmd": "finalize", "why": "Candidate 0 with period 12.27 days reached support 0.9997 above theta 0.997 after five observations that successively eliminated the 1.09 day alias at slot 2 and the 0.92 day alias across slots 8, 12 and 16, so the resolution rests on multiple independent points rather than a single lucky measurement and the last budget unit is not needed.", "resolved": true}

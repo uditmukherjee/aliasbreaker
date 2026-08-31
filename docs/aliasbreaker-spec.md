@@ -1,7 +1,7 @@
 # AliasBreaker — Design Spec v2 (post plan-gate)
 
 v1 was reviewed by the Codex plan-gate (NEEDS-REWORK, 32 findings; see
-`brainstorm/spec-review-codex.md` and `brainstorm/spec-review-triage.md`).
+`docs/process/spec-review-codex.md` and `docs/process/spec-review-triage.md`).
 v2 incorporates the accepted findings. Evaluation protocol lives in
 `docs/evaluation-charter.md` (the charter is the authority on metrics, arms,
 fixtures, and freeze discipline; this spec defers to it).

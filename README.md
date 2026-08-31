@@ -1,199 +1,149 @@
 # AliasBreaker
 
-**An agentic workflow that decides *when to look* — allocating scarce
-telescope follow-up observations to break orbital-period aliases in
-radial-velocity (RV) exoplanet data.**
+**An agent that decides *when to look*: allocating scarce telescope
+follow-up observations to break orbital-period aliases in radial-velocity
+exoplanet data — and a reference implementation of evaluation-first agent
+development.**
 
-Built solo (with Claude Code as development harness and runtime, and Codex as
-an independent review gate) for the micro1 Frontier Engineering Challenge
-2026. Everything in this repository was created during the hackathon window;
-see [Disclosures](#disclosures).
+The physics is real. The point is the method: a fair baseline, a scripted
+ablation, an LLM agent that cannot grade itself, fail-closed trace gates,
+tamper-detecting replay, and a frozen evaluation — every claim traceable to a
+committed artifact and reproducible offline in minutes. Built in a 72-hour
+sprint by one person with Claude Code (orchestrator and agent runtime) and
+Codex (independent reviewer); see [how it actually went](docs/narrative.md)
+and the [playbook](docs/playbook.md) distilled from it.
 
-> **SYNTHETIC BENCHMARK — DECISION SUPPORT ONLY.** All data is generated from
-> a real Keplerian physics model; no real telescope data is used and no real
-> observations are scheduled. Not validated for operational telescope
-> scheduling; any real-world use requires astronomer review.
+> **Synthetic benchmark — decision support only.** All data is generated
+> from a real Keplerian physics model; no real telescope data is used and no
+> real observations are scheduled.
 
-## The user and the bottleneck
+## The problem
 
-**User:** a radial-velocity follow-up observer who, after an initial sparse
-campaign shows a periodic signal, must allocate a small budget of follow-up
-visits on a ground-based spectrograph.
+When astronomers hunt planets with the radial-velocity method they measure a
+star's line-of-sight velocity roughly once per night. That sampling creates a
+trap: a slow orbit and a fast *alias* — frequencies separated by exactly one
+cycle per day — pass through the very same nightly points. Several candidate
+orbits fit the data equally well; published planets have been retracted over
+exactly this (Dawson & Fabrycky 2010, ApJ 722, 937). Follow-up telescope
+nights are scarce and scheduled in advance, so the real skill is choosing
+*which night* discriminates the survivors — a planning problem under a
+budget, with a cursor that only moves forward.
 
-**Bottleneck:** observing roughly once per night samples the RV sinusoid so
-sparsely that a slow orbit and a fast *alias* (frequency 1/P ± k cycles/day)
-pass through the same nightly points. Several candidate orbits fit equally
-well; telescope nights are scarce and scheduled in advance; each visit should
-be chosen to maximally discriminate the survivors. Choosing wrongly wastes
-allocation — and published planet claims have been retracted over exactly
-this failure (period aliasing from diurnal sampling; see Dawson & Fabrycky
-2010, ApJ 722, 937, "Radial Velocity Planets De-aliased").
+## The approach
 
-**What the workflow produces:** a night-by-night observation campaign with a
-written rationale per visit, an evidence-backed resolution (or honest
-abstention), and an observer-facing report (support table, folded RV plot,
-campaign log, limitations).
+**A world with ground truth by construction.** Circular-orbit RV signals
+with realistic parameters (P 3–20 d, K 8–30 m/s, σ 2–5 m/s), white Gaussian
+noise, realized measurements stored per slot in committed fixtures (no
+runtime randomness, ~34 KB for the whole final set). Candidate periods come
+from a truth-blind periodogram of the initial data. Six observations of
+budget across sixty nights of scheduled availability; skipped nights are gone
+forever.
 
-## The experiment: four arms, one world
+**An evaluator that owns the verdict.** After a campaign, every candidate is
+refit on all acquired data; the campaign resolves only if normalized support
+≥ θ = 0.997, a threshold calibrated on 120 independent cases. No arm supplies
+its own confidence.
 
-A synthetic world with **ground truth by construction**: circular-orbit RV
-model with realistic parameters (P 3–20 d, K 8–30 m/s, σ 2–5 m/s), white
-Gaussian noise, fixture-stored realized outcomes for every legal slot (no
-runtime RNG anywhere). Candidates come from a truth-blind periodogram of the
-initial data. Time is chronological: skipped nights are gone forever; budget
-is 6 observations. An independent evaluator refits every candidate and
-resolves only when normalized support ≥ θ = 0.997 (calibrated; see
-`evaluation/theta-calibration.json`).
+**Four arms sharing one world:**
 
-| Arm | What it is |
+| Arm | Scheduling |
 | --- | --- |
-| **Even spacing** | 6 evenly spread nights (the naive floor) |
-| **Batch baseline** | Joint greedy χ²-shaped 6-night design, committed upfront — the strongest of 8 scoring variants we swept, adopted deliberately to avoid a strawman |
-| **Scripted-adaptive** | Same scoring re-planned after every observation (isolates the value of adaptivity itself) |
-| **LLM agent** | A Claude (Sonnet 5) session in a locked-down Claude Code project: it may ONLY call the World CLI, decides observe/skip/stop night by night, and cannot see hidden truth, score its own confidence, or bypass chronology |
+| Even spacing | six evenly spread nights (the naive floor) |
+| **Batch baseline** | a joint χ²-shaped six-night design committed upfront — the strongest of eight scoring variants we swept, on purpose |
+| Scripted-adaptive | the same scoring re-planned after every observation (isolates adaptivity itself) |
+| **LLM agent** | a Claude Sonnet 5 session in a permission-locked Claude Code project whose only tool is a five-command World CLI; it decides observe/skip/stop night by night and writes a rationale for every choice |
 
-All arms share the same fitter, verdict rule, and pre-stored measurements
-(noise keyed per slot: identical requests receive identical values). Every
-LLM run is gated by a **trace auditor** (any out-of-protocol tool call
-disqualifies) and **audit replay** (fixture hash, measurement match, verdict
-recomputation — tamper-detecting). Ineligible runs score as noncompletion.
+**Gates instead of trust.** Every LLM run must pass a trace auditor (any
+tool call outside the declared grammar disqualifies), an audit replay
+(actions re-executed against hashed fixtures; measurements and verdict
+recomputed; tampering detected), and a model-identity check — or it scores
+as noncompletion. The evaluation set was generated from fresh seeds only
+after a pushed selection-lock commit; the freeze is tag `freeze-v1`.
 
 ## Results
 
-### Final evaluation (frozen set, 12 cases, 5 strata, 3 LLM replicates)
+Frozen set: 12 cases in 5 strata (ordinary, crowded, misleading-observation,
+constructed scarce-window, unresolvable); 3 LLM replicates per case; all 36
+sessions audit- and replay-clean. Detail: `evaluation/final-analysis.json`.
 
-Run from tag `freeze-v1`; all 36 LLM sessions eligible (0 protocol
-violations; every trace audit and replay clean). Full detail:
-`evaluation/final-analysis.json`.
+**Correct-resolution rate on the 10 resolvable cases**
 
-**Primary — correct-resolution rate on the 10 resolvable cases:**
-
-| Arm | Correct rate | Mean obs |
+| Arm | Correct | Mean obs |
 | --- | ---: | ---: |
-| Batch baseline | 20% (2/10) | 5.5 |
-| Even spacing | 40% (4/10) | 5.4 |
-| Scripted-adaptive | 40% (4/10) | 3.8 |
-| **LLM agent (mean of 3 replicates)** | **76.7%** | **4.9** |
+| Batch baseline | 20% | 5.5 |
+| Even spacing | 40% | 5.4 |
+| Scripted-adaptive | 40% | 3.8 |
+| **LLM agent** | **76.7%** | **4.9** |
 
-Paired LLM−batch difference: **+0.57** (two-stage case-clustered bootstrap
-95% interval **[0.30, 0.83]** — descriptive; n=10 supports no significance
-claim).
+Paired LLM−batch difference **+0.57**, two-stage case-clustered bootstrap 95%
+interval **[0.30, 0.83]** (n=10; descriptive, no significance claim).
 
-**By stratum (LLM replicate wins / 6 per stratum):**
-
-| Stratum | LLM | Batch | What it shows |
+| Stratum | LLM wins / 6 | Batch / 2 | What it shows |
 | --- | ---: | ---: | --- |
-| Misleading-observation (2 cases) | 6/6 | 0/2 | Confirmation-before-commitment defeats the planted trap |
-| Scarce-window / reservation (2) | 5/6 | 1/2 | Cursor management: the agent reserves late windows |
-| Ordinary (4) | 10/12 | 1/4 | |
-| Crowded (2) | 2/6 | 0/2 | Hard for everyone; the honest frontier |
+| Misleading observation | 6 | 0 | confirmation-before-commitment defeats the planted trap |
+| Scarce window (reservation) | 5 | 1 | the agent reserves late discriminating nights |
+| Ordinary | 10/12 | 1/4 | |
+| Crowded | 2 | 0 | hard for everyone |
 
-**The negative result (unresolvable stratum, 2 cases):** the LLM **falsely
-resolved both cases in all 3 replicates** (6/6), where the scripted-adaptive
-arm abstained (0 false resolutions) and batch/even each produced 1. On cases
-whose true period is *not among the candidates*, the agent's superior
-evidence-gathering drives a wrong candidate decisively past the support
-threshold — **being better at discrimination amplifies confidence exactly
-when the hypothesis menu is broken.** This is reported unretouched and drives
-the hot take below.
+**The negative result.** On the two *unresolvable* cases — true period not
+among the candidates — the agent falsely resolved a wrong candidate in **all
+six runs**, while the scripted-adaptive arm abstained every time. Its
+superior evidence-gathering drove a wrong answer decisively past the
+threshold. We call it *menu-incompleteness amplification*: relative
+confidence becomes more dangerous as the agent gets better at earning it.
+The fix direction — an absolute model-adequacy check with "none of the
+above" as a scoreable answer — is the most transferable lesson here
+(playbook §12).
 
-### Development ledger (12 dev cases, single replicate, in-sample)
+**Development ledger** (12 dev cases, single replicate, in-sample): even 4/12
+· scripted-adaptive 4/12 · batch 7/12 · LLM prompt v1 9/12 · LLM prompt v2
+11/12. Each step is a journal row with its artifact.
 
-| Arm | Correct | False res. | Mean obs |
-| --- | ---: | ---: | ---: |
-| Even spacing | 4/12 | 0 | 5.5 |
-| Scripted-adaptive | 4/12 | 0 | 4.25 |
-| Batch baseline (fair) | 7/12 | 0 | 5.17 |
-| LLM agent (prompt v2) | 11/12 | 0 | ~4.4 |
+## How it was built
 
-Dev numbers are development evidence (cases inspected during prompt design,
-one replicate); the frozen final evaluation is the headline.
+- **Ideation by adversarial convergence** — six real-data ideas killed by an
+  independent critique; a blind second round in which two different models
+  proposed the same direction. `docs/process/`.
+- **Gated development** — plan-gate, two diff-gates, and a mock-judging pass
+  by reviewers with no shared context (verbatim in `docs/process/`); each
+  triaged in writing. The mock judge found our baseline picking nights by
+  array index; fixing it shrank the margin and made it defensible.
+- **Evidence ledger** — every phase closed with an artifact, a journal row,
+  and a commit: [`docs/build-journal.md`](docs/build-journal.md), written in
+  real time.
+- **Removed experiment** — eccentric-orbit fitting: built, measured
+  (`evaluation/killtest-results.json`), removed (five effective parameters
+  from six points overfit and its χ² plateau misled the planner).
+- **Playbook + narrative** — [`docs/playbook.md`](docs/playbook.md),
+  [`docs/narrative.md`](docs/narrative.md).
 
-## Improvement Changelog
+## Demo
 
-Full evidence trail in [`docs/build-journal.md`](docs/build-journal.md);
-every row links to a machine-readable artifact in `evaluation/` and a commit.
+Five-minute walkthrough — problem, baseline, one live agent campaign,
+results, changelog: https://youtu.be/oVLeWbnmYa0
 
-| Stage | What we tried and why | Evidence | Decision / learning |
-| --- | --- | --- | --- |
-| Ideation | 6 real-data science ideas (exoplanet vetting, quantum, grav waves…) | `brainstorm/` | All killed by data logistics / fuzzy ground truth; pivoted to synthetic worlds with ground truth by construction |
-| Feasibility | World + candidate construction + 2 arms | `evaluation/feasibility-results.json` | Caught the basin-drift bug: candidates frozen at periodogram grid peaks accumulate phase error → false resolutions everywhere. Fix: basin-refit |
-| θ calibration | 120 fresh cases, 5 thresholds, worst-arm FRR ≤ 5% | `evaluation/theta-calibration.json` | θ = 0.997; FRR decays slowly because false resolutions come from decisively wrong fits — thresholds can't veto them, confirmation behavior can |
-| **Removed experiment** | Eccentric-orbit fitting (grid + linear LS over e, T0) | `evaluation/killtest-results.json` @ `ffd8e19` | Removed: ~5 effective params from 6–8 points overfits, and the coarse-T0 χ² plateau actively misled the adaptive arm (case-006, truth-weight 0.09) |
-| LLM v1 | Runtime agent, protocol v1 | `evaluation/llm-arm-dev-v1b.json` | 9/12; one otherwise-correct run disqualified for a semicolon in a rationale (the eligibility gate working); two abstentions traced to cursor-stranding |
-| LLM v2 | Rationale hygiene + cursor thrift, from observed failures | `evaluation/llm-arm-dev-v2.json` | 11/12, no protocol violations; single-replicate caveats apply |
-| Mock judging | Adversarial evaluator-role review | `docs/build-journal.md` 2026-08-29 | **Our baseline was accidentally degenerate** (score saturation → slots picked by array index). Rebuilt χ²-shaped, swept 8 variants, adopted the strongest; margin honestly shrank |
-| Strata probe | 200-case predicate distribution probe | `scripts/predicate_probe.py` | Two hypothesized adversarial strata are structurally absent in this world; charter amended pre-freeze (crowded stratum + constructed scarce-window) |
-| Freeze + final | Frozen protocol, fresh stratified cases | `evaluation/final-manifest.json`, tag `freeze-v1` | Results below are whatever the frozen run produced |
+## Run it
 
-**Main observed failure mode (from the final run):** *menu-incompleteness
-amplification.* When the true period is absent from the candidate set, the
-agent cannot know it — support is candidate-set-relative — and its superior
-discrimination drives the best wrong candidate decisively past θ: 6/6 false
-resolutions on the unresolvable stratum, where the dumber scripted arm
-abstained. Skill at gathering evidence amplified confidence in a broken
-hypothesis menu. During development the sibling failure was decisively wrong
-fits from misleading noise draws — defeated behaviorally (confirmation
-observations, 6/6 on that stratum) — but no *relative* support rule can
-defend against an incomplete menu.
-
-**Hot take:** relative confidence is a trap: an agent that only asks "which
-hypothesis fits best?" becomes MORE dangerously wrong as it gets BETTER at
-asking. Future systems need an absolute model-adequacy check (e.g. χ²/dof of
-the winning candidate against its own degrees of freedom) with menu-doubt as
-a first-class output — "none of the above" must be scoreable. And two
-process lessons that generalized: protocol compliance is a capability (our
-fail-closed gate cost an otherwise-correct case over a semicolon — the right
-trade for anything operating real infrastructure), and the highest-value
-reviews were adversarial ones aimed at *our own evaluation* — they caught a
-degenerate baseline and two structurally impossible test strata that
-friendly review had waved through.
-
-## Demo video
-
-Five-minute walkthrough (problem, baseline, one live agent campaign, frozen
-results, changelog, removed experiment): https://youtu.be/oVLeWbnmYa0
-
-## Repository map
+See [`docs/reproduction.md`](docs/reproduction.md). Python 3.12 + pinned
+NumPy/matplotlib; the test suite (199 tests), the deterministic arms, all 36
+official replays, and the frozen analysis reproduce offline with no API key.
+Re-running the agent live needs Claude Code.
 
 ```
-data/cases/          dev + final fixtures (JSON, hidden truth under "hidden")
-docs/                charter (the evaluation authority), spec, build journal
-runtime/             the runtime agent: CLAUDE.md protocol, locked settings,
-                     /aliasbreaker skill; runs/ holds trajectories + verdicts
+data/cases/          dev + final fixtures (hidden truth under "hidden")
+docs/                charter (the evaluation authority), spec, journal,
+                     playbook, narrative, process/ (ideation + reviews)
+runtime/             the agent: CLAUDE.md protocol, locked settings,
+                     /aliasbreaker skill, runs/ (trajectories + verdicts)
 src/aliasbreaker/    world, fitting, evaluator, planners, CLI, replay, report
-src/                 make_cases, run_arms, calibrate_theta, analyze_final
-scripts/             run_llm_arm (launcher), audit_trace (auditor), probe
-tests/               199 stdlib unittest tests incl. leakage + tamper proofs
+scripts/             launcher, trace auditor, strata probe
+tests/               stdlib unittest incl. leakage and tamper proofs
 evaluation/          every result artifact, manifests, calibration, analysis
-brainstorm/          ideation + independent Codex gate reviews (verbatim)
 ```
 
-## Reproduction
+## Provenance and license
 
-See [`docs/reproduction.md`](docs/reproduction.md) for the clean-environment
-guide (setup, exact commands per arm, audit replay without any API key,
-expected outputs, runtime, cost, troubleshooting).
-
-## Disclosures
-
-- **Individual participation** by Udit Mukherjee. Coding agents were used
-  throughout (required by the challenge): Claude Code (orchestration +
-  implementation; also the runtime harness for the LLM arm) and OpenAI Codex
-  CLI as an independent review gate (plan-gate, two diff-gates — its verbatim
-  reviews are in `brainstorm/`). Development trajectories: `runtime/runs/`
-  and the gate documents.
-- **Pre-existing components:** none beyond public libraries (NumPy,
-  matplotlib, Anthropic tooling). All code, prompts, fixtures, and documents
-  were created during the hackathon window. The multi-agent development
-  process (planner/reviewer gating) follows a working pattern from the
-  author's prior practice; no prior code was reused.
-- **Data:** 100% synthetic, generated by committed seeded code from a real
-  physics model. No personal data, no external data, no credentials.
-- **Safety/ground rules:** no consequential real-world actions; outputs are
-  labeled decision-support-only with a human-approval field; the runtime
-  agent operates in a permission-locked profile with an auditable transcript.
-
-## License
-
-MIT (see `LICENSE`).
+Everything here was created during the sprint (Aug 28–31, 2026) by Udit
+Mukherjee with Claude Code and Codex; no pre-existing code; 100% synthetic
+data; no credentials. Agent trajectories, including failures, are committed
+under `runtime/runs/`. MIT license.

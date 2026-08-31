@@ -1,0 +1,21 @@
+{
+  "resolved": true,
+  "abstained": false,
+  "pred": 0,
+  "max_support": 0.9997308688720046,
+  "chi2s": [
+    12.539254046357154,
+    28.979340667154187,
+    57.486500143580756
+  ],
+  "n_obs": 5,
+  "theta": 0.997,
+  "observed_slots": [
+    2,
+    3,
+    8,
+    12,
+    16
+  ],
+  "stop_reason": "Candidate 0 with period 12.27 days reached support 0.9997 above theta 0.997 after five observations that successively eliminated the 1.09 day alias at slot 2 and the 0.92 day alias across slots 8, 12 and 16, so the resolution rests on multiple independent points rather than a single lucky measurement and the last budget unit is not needed."
+}
