@@ -1,9 +1,9 @@
-# AliasBreaker
+# AliasBreaker — an agent that decides *when to look*, to break orbital-period aliases in exoplanet radial-velocity data
 
-**An agent that decides *when to look*: allocating scarce telescope
-follow-up observations to break orbital-period aliases in radial-velocity
-exoplanet data — and a reference implementation of evaluation-first agent
-development.**
+**When a star's nightly velocity measurements fit several candidate orbits
+equally well (the aliasing trap), AliasBreaker allocates the scarce follow-up
+telescope nights that tell them apart — and it is built as a reference
+implementation of evaluation-first agent development.**
 
 The physics is real. The point is the method: a fair baseline, a scripted
 ablation, an LLM agent that cannot grade itself, fail-closed trace gates,
@@ -179,4 +179,8 @@ evaluation/          every result artifact, manifests, calibration, analysis
 Everything here was created during the sprint (Aug 28–31, 2026) by Udit
 Mukherjee with Claude Code and Codex; no pre-existing code; 100% synthetic
 data; no credentials. Agent trajectories, including failures, are committed
-under `runtime/runs/`. MIT license.
+under `runtime/runs/`; before publication, three developer-machine metadata
+fields in each transcript's harness init record (local account path,
+connected-service names, socket path) were redacted by
+`scripts/scrub_transcript_metadata.py` — every tool call and result is
+verbatim, and the auditor and replay were re-run afterward. MIT license.
