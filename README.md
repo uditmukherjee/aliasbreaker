@@ -17,17 +17,50 @@ and the [playbook](docs/playbook.md) distilled from it.
 > from a real Keplerian physics model; no real telescope data is used and no
 > real observations are scheduled.
 
+## The science, briefly
+
+**How a planet is "seen" without being seen.** A star and its planet orbit
+their common center of mass, so the star itself moves in a small circle. When
+it moves toward us its light is blue-shifted; away, red-shifted. Spectrographs
+measure that Doppler shift as a velocity — the star's *radial velocity* (RV)
+— to a precision of a few meters per second, night after night. A planet
+shows up as a sinusoid in those measurements: its **period P** is the orbital
+period, its **semi-amplitude K** scales with the planet's mass (Jupiter moves
+the Sun by ~12 m/s; Earth by ~0.09 m/s), and the phase fixes where the planet
+is in its orbit. Fix P, and fitting K, phase, and the star's mean velocity is
+a linear least-squares problem — which is why astronomers scan P on a grid.
+
+![The radial-velocity method](docs/figures/rv-method.png)
+
+**The trap: aliasing.** Telescopes on Earth observe roughly once per night,
+so the sampling has a rhythm of exactly one cycle per day. Any signal at
+frequency *f* is then indistinguishable at the sample times from signals at
+*f* ± 1, *f* ± 2 … cycles per day — the *daily aliases*. A slow orbit and a
+fast alias thread the very same nightly points; only an observation
+off-cadence (or a well-chosen later night) separates them. Published planets
+have been retracted over exactly this failure (Dawson & Fabrycky 2010,
+ApJ 722, 937, "Radial Velocity Planets De-aliased").
+
+![Aliasing](docs/figures/aliasing.png)
+
+**What astronomers do.** Collect sparse epochs → compute a *periodogram*
+(fit a sinusoid at every trial frequency; the best fits are the candidate
+periods) → discover that several alias peaks are nearly equal → apply for
+scarce follow-up telescope time → schedule extra epochs, often by rule of
+thumb or evenly spaced → refit and hope the aliases separate. The periodogram
+below is computed by this repository's own code from six nightly points of a
+real fixture; three candidates fit almost equally well.
+
+![Periodogram](docs/figures/periodogram.png)
+
 ## The problem
 
-When astronomers hunt planets with the radial-velocity method they measure a
-star's line-of-sight velocity roughly once per night. That sampling creates a
-trap: a slow orbit and a fast *alias* — frequencies separated by exactly one
-cycle per day — pass through the very same nightly points. Several candidate
-orbits fit the data equally well; published planets have been retracted over
-exactly this (Dawson & Fabrycky 2010, ApJ 722, 937). Follow-up telescope
-nights are scarce and scheduled in advance, so the real skill is choosing
-*which night* discriminates the survivors — a planning problem under a
-budget, with a cursor that only moves forward.
+Follow-up nights are scarce, allocated in small budgets, and scheduled in
+advance; availability is patchy; and time only moves forward — a night you
+skip is gone. Each additional visit should be chosen to maximally
+discriminate the *surviving* candidates given everything measured so far.
+That is a sequential planning problem under a budget, and it is exactly the
+kind of decision an agent can either make well or make confidently wrong.
 
 ## The approach
 
