@@ -320,3 +320,14 @@ Improvement Changelog.
   ba1108e, HackerEarth form completed before the 23:30 IST deadline.
   Freeze lock lifted for post-submission work; tag freeze-v1 remains the
   immutable anchor for every reported number.
+- 2026-08-31 · PUBLISHED. Post-submission: README reframed as a reference
+  implementation of evaluation-first agent development with a science
+  explainer and reproducible figures; docs/playbook.md and docs/narrative.md
+  added; brainstorm/ -> docs/process/; organizer materials removed; this
+  journal left verbatim. Transcript init-record metadata redacted by
+  scripts/scrub_transcript_metadata.py (auditor 36/36 and replay
+  re-verified). History rewritten once with git filter-repo (a private
+  third-party document removed from all commits; the same redactions
+  applied to every historical blob); every SHA changed, freeze-v1 re-points
+  to the content-identical frozen commit (final fixtures byte-identical);
+  a pre-rewrite backup bundle is kept offline. Repository made public.
