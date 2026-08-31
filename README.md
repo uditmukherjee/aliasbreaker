@@ -149,6 +149,11 @@ reviews were adversarial ones aimed at *our own evaluation* — they caught a
 degenerate baseline and two structurally impossible test strata that
 friendly review had waved through.
 
+## Demo video
+
+Five-minute walkthrough (problem, baseline, one live agent campaign, frozen
+results, changelog, removed experiment): https://youtu.be/oVLeWbnmYa0
+
 ## Repository map
 
 ```
